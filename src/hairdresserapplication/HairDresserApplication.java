@@ -15,7 +15,7 @@ public class HairDresserApplication {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // Oi Kelly, esta pronta para nao dormir ate dia 19 de Dezembro ?
+        //Vamos de teste 
     }
     
 }
