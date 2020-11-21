@@ -45,17 +45,15 @@ public void MainPage()
     this.setVisible(true);
     this.setSize(600,700);
     this.setTitle("Amil's hair");
-    
-    
-    
+       
     BorderLayout frame = new BorderLayout();
     this.setLayout(frame);
     
     // header
     JPanel header = new JPanel(); // creating header
     
-    
-    GridLayout headerLayout = new GridLayout(1,3); // adding a grid to the header 1 row and 3 columns
+    // adding a grid to the header (1 row and 3 columns)
+    GridLayout headerLayout = new GridLayout(1,3); 
     header.setLayout(headerLayout);
     header.setBorder(BorderFactory.createLineBorder(Color.BLACK, 10));
    
@@ -80,6 +78,7 @@ public void MainPage()
     menuList.setBackground(Color.GRAY);
     menuList.setForeground(Color.PINK);
     
+    // ADDING IT TO THE TOP SECTION the leftHeader to header Panel
     header.add(leftHeader);
     
     
@@ -90,11 +89,10 @@ public void MainPage()
     centreLayout.setAlignment(FlowLayout.CENTER);
     centreHeader.setBackground(Color.BLACK);
    
-
-    
+    //set the logo on the centreHeader panel
     JLabel logo = new JLabel();
     logo.setIcon(new ImageIcon("image/logo.png"));
-    
+    //centreHeader add logo
     centreHeader.add(logo);
     
 
@@ -129,27 +127,81 @@ public void MainPage()
     //put it on the header
     header.add(rightHeader);
     
-    // Main Area
-    JPanel main = new JPanel(); // creating the main panel
+    // Main Area setup from here
+    JPanel mainArea = new JPanel(); // creating the main panel
     BorderLayout mainLayout = new BorderLayout();
-    main.setLayout(mainLayout);
-    this.add(main, BorderLayout.CENTER); // adding it to the frame
+    mainArea.setLayout(mainLayout);
+    this.add(mainArea, BorderLayout.CENTER); // adding mainArea to the frame
     
-    JPanel mainCenter = new JPanel();
-    mainCenter.setBackground(Color.PINK);
+    //create a main panel to hold panels
+    JPanel mainArea2 = new JPanel();
+    GridLayout mainBorder = new GridLayout(1,1);
+    mainArea2.setLayout(mainBorder);
+    // insert a border around the main panel and the border size
+    mainArea2.setBorder(BorderFactory.createLineBorder(Color.WHITE, 1));
     
-    main.add(mainCenter);
+        // ORGANISING RIGHT HAND SIDE -- 
+        JPanel backMainPanel = new JPanel();
+        mainArea2.add(backMainPanel);
+        backMainPanel.setBackground(Color.ORANGE);//just in case to see if is all good
+        
+        // DEVIDING MINI RIGHT SECCTION INTO TWO (TWO ROWS - ONE COLUMN)
+        GridLayout miniMainRightLayout = new GridLayout(2,1); //check this bit
+        backMainPanel.setLayout(miniMainRightLayout);
+        
+        // ORGANISING THE UPPER PART
+        JPanel topPart = new JPanel();
+        backMainPanel.add(topPart);
+        // insert a border around the leftHeader panel and the border size
+        topPart.setBorder(BorderFactory.createLineBorder(Color.pink, 5));
+        topPart.setBackground(Color.pink);
+//        JLabel p3 = new JLabel("photo and promotion");
+//        topPart.add(p3);
+        
+        // ORGANISING THE LOWER PART
+        JPanel bottonPart = new JPanel();
+        backMainPanel.add(bottonPart);
+        // insert a border around the leftHeader panel and the border size
+        bottonPart.setBackground(Color.GRAY);
+        bottonPart.setBorder(BorderFactory.createLineBorder(Color.black, 1));
+        
+        
+        JPanel p4 = new JPanel();
+        p4.setBorder(BorderFactory.createLineBorder(Color.black, 1));
+        JPanel p5 = new JPanel();
+        p5.setBorder(BorderFactory.createLineBorder(Color.black, 1));
+        JPanel p6 = new JPanel();
+        p6.setBorder(BorderFactory.createLineBorder(Color.black, 1));
+        JPanel p7 = new JPanel();
+        p7.setBorder(BorderFactory.createLineBorder(Color.black, 1));
+        bottonPart.add(p4);
+        bottonPart.add(p5);
+        bottonPart.add(p6);
+        bottonPart.add(p7);
+        
+        mainArea.add(mainArea2, BorderLayout.CENTER);
+       
+        //this set close/stop the program copletetly once you close the window
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
     
-    // adding a grid to devide the photo and the promotion into 2 sections
-    GridLayout photoPromotion = new GridLayout(1,2);
-    mainCenter.setLayout(photoPromotion);
-    
+ 
+//    JPanel mainCenter = new JPanel();
+//    mainCenter.setBackground(Color.PINK);
+//    
+//    mainArea.add(mainCenter);
+//    
+//    // adding a grid to devide the photo and the promotion into 2 sections
+//    GridLayout photoPromotion = new GridLayout(1,2);
+//    mainCenter.setLayout(photoPromotion);
+      
+        
     // organising the left side
     JPanel leftMain = new JPanel();
-    mainCenter.add(leftMain);
+    topPart.add(leftMain);
     leftMain.setBackground(Color.PINK);
     
-    
+    //set photo into panel
     JLabel photo = new JLabel();
     photo.setIcon(new ImageIcon("image/photo.png"));
     
@@ -157,7 +209,7 @@ public void MainPage()
  
     // organising the right side
     JPanel rightMain = new JPanel();
-    mainCenter.add(rightMain);
+    topPart.add(rightMain);
     rightMain.setBackground(Color.PINK);
     
     JLabel promotion = new JLabel("Promotion goes here");
