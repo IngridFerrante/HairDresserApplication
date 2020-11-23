@@ -20,7 +20,9 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.UIManager;
 
 /**
  *
@@ -124,6 +126,12 @@ public void MainPage()
     login.addActionListener(this);
     register.addActionListener(this);
     
+    //adding color to the pop up panel
+     UIManager.put("OptionPane.background", Color.PINK);
+     UIManager.getLookAndFeelDefaults().put("Panel.background", Color.PINK);
+     //adding color to the pop up choices
+     UIManager.put("JOptionPane.background", Color.PINK);
+     
     //put it on the header
     header.add(rightHeader);
     
@@ -167,13 +175,30 @@ public void MainPage()
         
         
         JPanel p4 = new JPanel();
+        JLabel txtp4 = new JLabel("Cut");
+        p4.add(txtp4);
+        p4.setBackground(Color.white);
         p4.setBorder(BorderFactory.createLineBorder(Color.black, 1));
+        
+        
         JPanel p5 = new JPanel();
+        JLabel txtp5 = new JLabel("BlowDry");
+        p5.add(txtp5);
+        p5.setBackground(Color.white);
         p5.setBorder(BorderFactory.createLineBorder(Color.black, 1));
+        
         JPanel p6 = new JPanel();
+        JLabel txtp6 = new JLabel("Colour");
+        p6.add(txtp6);
+        p6.setBackground(Color.white);
         p6.setBorder(BorderFactory.createLineBorder(Color.black, 1));
+        
         JPanel p7 = new JPanel();
+        JLabel txtp7 = new JLabel("Styling");
+        p7.setBackground(Color.white);
+        p7.add(txtp7);
         p7.setBorder(BorderFactory.createLineBorder(Color.black, 1));
+        
         bottonPart.add(p4);
         bottonPart.add(p5);
         bottonPart.add(p6);
@@ -185,17 +210,6 @@ public void MainPage()
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
     
- 
-//    JPanel mainCenter = new JPanel();
-//    mainCenter.setBackground(Color.PINK);
-//    
-//    mainArea.add(mainCenter);
-//    
-//    // adding a grid to devide the photo and the promotion into 2 sections
-//    GridLayout photoPromotion = new GridLayout(1,2);
-//    mainCenter.setLayout(photoPromotion);
-      
-        
     // organising the left side
     JPanel leftMain = new JPanel();
     topPart.add(leftMain);
@@ -215,27 +229,7 @@ public void MainPage()
     JLabel promotion = new JLabel("Promotion goes here");
     rightMain.add(promotion);
     
-    
-//    //Main down part
-//        JPanel mainDown = new JPanel();
-//        BorderLayout mainDownLayout = new BorderLayout();
-//        mainDown.setLayout(mainDownLayout);
-//        this.add(mainDown, BorderLayout.SOUTH); // added to the frame
-//        
-//        JPanel minimainDown = new JPanel();
-//        mainDown.setBackground(Color.gray);
-//        
-//        //devide the services into 4 (one row and 4 columns) 
-//        GridLayout miniMainLayout = new GridLayout(1,4);
-//        minimainDown.setLayout(miniMainLayout);
-//        
-//        //organizing left side
-//        JPanel miniMainLeft = new JPanel();
-//        mainDown.add(miniMainLeft);
-//        miniMainLeft.setBackground(Color.GRAY);
-//        // WE CAN ADD A FLOW LAYOUT MANAGER HERE TO PUT IT IN THE MIDDLE
-//        JLabel squares = new JLabel("squares");
-//        miniMainLeft.add(squares);
+
         
 
 // FOOTER
@@ -246,19 +240,61 @@ public void MainPage()
         GridLayout footerLayout = new GridLayout(1,3); // adding a grid to the header 1 row and 3 columns
         footer.setLayout(footerLayout);
         footer.setBorder(BorderFactory.createLineBorder(Color.BLACK, 10));
-
+        footer.setBackground(Color.BLACK);
         //add the panel to the frame
         this.add(footer, BorderLayout.PAGE_END);
-
-      
         
         
+        // organising left side
+        JPanel leftFooter = new JPanel();
+        FlowLayout footerLeft = new FlowLayout();
+        leftFooter.setLayout(footerLeft);
+        footerLeft.setAlignment(FlowLayout.LEFT);
+        leftFooter.setBackground(Color.BLACK);
+        
+        JLabel leftCol = new JLabel("<html><b>Follow us:</b> <br> Facebook <br> Instagram <br> Twitter </html>");
+        leftCol.setForeground(Color.PINK);
+        leftFooter.add(leftCol);
+        
+        footer.add(leftFooter);
+        
+        // organising center side
+        JPanel centerFooter = new JPanel();
+        FlowLayout footerCenter = new FlowLayout();
+        centerFooter.setLayout(footerCenter);
+        footerCenter.setAlignment(FlowLayout.CENTER);
+        centerFooter.setBackground(Color.BLACK);
+        
+        JLabel centerCol = new JLabel("<html><b>Contact Hairdresser:</b> <br> Brighton Rd, Foxrock, Dublin 18 <br> 083 001 1000 <br> foxrock@milhair.com </html>");
+        centerCol.setForeground(Color.PINK);
+        centerFooter.add(centerCol);
+        
+        footer.add(centerCol);
+        
+        //organising right side
+        JPanel rightFooter = new JPanel();
+        FlowLayout footerRight = new FlowLayout();
+        rightFooter.setLayout(footerRight);
+        footerRight.setAlignment(FlowLayout.RIGHT);
+        rightFooter.setBackground(Color.BLACK);
+        
+        JLabel rightCol = new JLabel("<html> <br> Serpentine Ave, Ballsbridge, Dublin 4\n" +
+                                        " <br> 083 001 1002\n" +
+                                        " <br> ballsbridge@milhair.com </html>");
+        rightCol.setForeground(Color.PINK);
+        rightFooter.add(rightCol);
+        
+        footer.add(rightCol);
         
         
        
-        
-        
+        JPanel footer2 = new JPanel(); // creating header
     
+    
+     
+        // login page
+       
+                 
     
     
     
@@ -275,11 +311,29 @@ public void MainPage()
 
 //        to identify different text field
         if(e.getActionCommand().equals("login")){  
-            System.out.println("Thanks for select the login!");
+            
         
     }
         else if(e.getActionCommand().equals("register")){
-            System.out.println("Button register clicked!");
+            
+            ImageIcon icon = new ImageIcon("image/logo.png");
+            
+            Object[] registerChoice = {"Hairdresser", "Client"};
+                Object defaultChoice = registerChoice[0];
+                JOptionPane.showOptionDialog(this,
+             "Who are you ?",
+             "Register",
+             JOptionPane.YES_NO_OPTION,
+             JOptionPane.QUESTION_MESSAGE,
+             icon,
+            // null,
+             registerChoice,
+             defaultChoice);
+                
+            
+                
+            
+               
     } 
   
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
