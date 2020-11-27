@@ -311,21 +311,22 @@ public void MainPage()
         if(e.getActionCommand().equals("login")){          
             {
         JFrame frameLogin = new JFrame("Login");//open the Login Frame
+        
 
         JPanel panelLogin = new JPanel();//Login Panel
-        panelLogin.setPreferredSize(new Dimension(200, 150));//panel login size
+        panelLogin.setPreferredSize(new Dimension(250, 150));//panel login size
         panelLogin.setBackground(Color.pink); //color background
 
         JLabel user = new JLabel("User"); 
         panelLogin.add(user);//Login panel add user label
         JTextField txtUser = new JTextField(20);
-        //txtUser.setBorder(BorderFactory.createLineBorder(Color.black));
+        txtUser.setBorder(BorderFactory.createLineBorder(Color.black));
         panelLogin.add(txtUser); //Login panel add user textfield
 
         JLabel password = new JLabel("Password");
         panelLogin.add(password);//Login panel add password label
         JTextField txtPass = new JTextField(20);
-        //txtPass.setBorder(BorderFactory.createLineBorder(Color.black));
+        txtPass.setBorder(BorderFactory.createLineBorder(Color.black));
         panelLogin.add(txtPass); //Login panel add password textfield
         
         
