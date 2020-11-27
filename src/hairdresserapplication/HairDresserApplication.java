@@ -22,7 +22,6 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
 import javax.swing.UIManager;
 
 /**
@@ -36,6 +35,8 @@ public class HairDresserApplication extends JFrame implements ActionListener {
      */
     public static void main(String[] args) {
         new HairDresserApplication();
+       
+       
        
     }
     public HairDresserApplication(){
@@ -235,7 +236,7 @@ public void MainPage()
 
 // FOOTER
     
-        JPanel footer = new JPanel(); // creating footer
+        JPanel footer = new JPanel(); // creating header
     
     
         GridLayout footerLayout = new GridLayout(1,3); // adding a grid to the header 1 row and 3 columns
@@ -289,9 +290,14 @@ public void MainPage()
         
         
        
-        JPanel footer2 = new JPanel(); // end of footer
+        JPanel footer2 = new JPanel(); // creating header
     
-
+    
+     
+        // login page
+       
+                 
+    
     
     
    this.validate();
@@ -304,65 +310,12 @@ public void MainPage()
 @Override
 
     public void actionPerformed(ActionEvent e) {
+
+//        to identify different text field
+        if(e.getActionCommand().equals("login")){  
+            new Controller();
         
-        //starts login page
-
-        // if the chosen option be login ---> gets the Login panel below
-        if(e.getActionCommand().equals("login")){          
-            {
-        JFrame frameLogin = new JFrame("Login");//open the Login Frame
-
-        JPanel panelLogin = new JPanel();//Login Panel
-        panelLogin.setPreferredSize(new Dimension(200, 150));//panel login size
-        panelLogin.setBackground(Color.pink); //color background
-
-        JLabel user = new JLabel("User"); 
-        panelLogin.add(user);//Login panel add user label
-        JTextField txtUser = new JTextField(20);
-        //txtUser.setBorder(BorderFactory.createLineBorder(Color.black));
-        panelLogin.add(txtUser); //Login panel add user textfield
-
-        JLabel password = new JLabel("Password");
-        panelLogin.add(password);//Login panel add password label
-        JTextField txtPass = new JTextField(20);
-        //txtPass.setBorder(BorderFactory.createLineBorder(Color.black));
-        panelLogin.add(txtPass); //Login panel add password textfield
-        
-        
-        
-        ImageIcon icon = new ImageIcon("image/logo.png");
-        int result = JOptionPane.showConfirmDialog(frameLogin, panelLogin,
-                "LOGIN", JOptionPane.OK_CANCEL_OPTION,
-                JOptionPane.QUESTION_MESSAGE,icon);
-
-        
-        if (result == JOptionPane.YES_OPTION) {//where it will check database user
-            System.out
-                    .println(txtUser.getText() + ",\n" + txtPass.getText());
-        } else {
-            System.out.println("Canceled");
-        }
-
     }
-            
-//            
-//            Object[] loginChoice = {"LogIn", "Cancel"};
-//                Object defaultChoice = loginChoice[0];
-//                JOptionPane.showOptionDialog(this,
-//             "User",           
-//             "LogIn",            
-//             JOptionPane.YES_NO_OPTION,
-//             JOptionPane.QUESTION_MESSAGE,
-//             icon,
-//            // null,
-//             loginChoice,
-//             defaultChoice);
-//            
-//        
-    }
-        //ends login page
-        
-        
         else if(e.getActionCommand().equals("register")){
             
             ImageIcon icon = new ImageIcon("image/logo.png");
