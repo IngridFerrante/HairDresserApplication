@@ -36,6 +36,8 @@ public class HairDresserApplication extends JFrame implements ActionListener {
     public static void main(String[] args) {
         new HairDresserApplication();
        
+       
+       
     }
     public HairDresserApplication(){
         this.MainPage();
@@ -311,7 +313,7 @@ public void MainPage()
 
 //        to identify different text field
         if(e.getActionCommand().equals("login")){  
-            
+            new Controller();
         
     }
         else if(e.getActionCommand().equals("register")){
