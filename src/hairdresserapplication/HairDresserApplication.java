@@ -311,7 +311,7 @@ public void MainPage()
 @Override
 
     public void actionPerformed(ActionEvent e) {
-<<<<<<< HEAD
+/*<<<<<<< HEAD
         
         //starts login page
 
@@ -344,7 +344,7 @@ public void MainPage()
                 "LOGIN", JOptionPane.OK_CANCEL_OPTION,
                 JOptionPane.QUESTION_MESSAGE,icon);
 =======
->>>>>>> 0850265d77069735842470ee4328c40a7b87dfdf
+>>>>>>> 0850265d77069735842470ee4328c40a7b87dfdf */
 
 //        to identify different text field
         if(e.getActionCommand().equals("login")){  
@@ -373,6 +373,8 @@ public void MainPage()
                         "Warning! This class sucks!",
                         "Terrible Warning",
                         JOptionPane.WARNING_MESSAGE);
+                    
+                   
             }       
     }
   
