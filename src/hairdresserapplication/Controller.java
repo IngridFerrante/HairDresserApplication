@@ -17,10 +17,12 @@ import javax.swing.JOptionPane;
 public class Controller implements ActionListener {
     Login view;
     Model model;
+    Register register;
     
     public Controller(){
         this.view = new Login(this);
         this.model = new Model();
+        this.register = new Register();
     }
     
 

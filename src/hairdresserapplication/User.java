@@ -10,7 +10,7 @@ package hairdresserapplication;
  * @author 35389
  */
 public class User {
-    
+    // put the DB here 
     private String userPerson;
     private String passwordPerson;
     
