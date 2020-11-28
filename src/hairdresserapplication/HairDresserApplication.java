@@ -76,11 +76,12 @@ public void MainPage()
     String[] menuApp = { "Home", "Location", "Review" };
     JComboBox menuList = new JComboBox(menuApp);
     menuList.setSelectedIndex(2);
-    leftHeader.add(menuList);
-    System.out.println(menuList.getSelectedItem());
-    
+    menuList.addActionListener(this);
+    menuList.setActionCommand("menuList");
     menuList.setBackground(Color.GRAY);
     menuList.setForeground(Color.PINK);
+    
+    leftHeader.add(menuList);
     
     // ADDING IT TO THE TOP SECTION the leftHeader to header Panel
     header.add(leftHeader);
@@ -356,21 +357,24 @@ public void MainPage()
             
             Object[] registerChoice = {"Hairdresser", "Client"};
                 Object defaultChoice = registerChoice[0];
-                JOptionPane.showOptionDialog(this,
+                int optionChoosen = JOptionPane.showOptionDialog(this,
              "Who are you ?",
              "Register",
              JOptionPane.YES_NO_OPTION,
              JOptionPane.QUESTION_MESSAGE,
              icon,
-            // null,
              registerChoice,
              defaultChoice);
                 
-            
-                
-            
-               
-    } 
+            if (optionChoosen == 0){
+                new Controller(); // put the page of hairdresser register here
+            }else{
+                    JOptionPane.showMessageDialog(this, // put the page of client register here
+                        "Warning! This class sucks!",
+                        "Terrible Warning",
+                        JOptionPane.WARNING_MESSAGE);
+            }       
+    }
   
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
