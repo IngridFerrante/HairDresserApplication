@@ -14,7 +14,7 @@ import java.awt.*;
 import java.awt.event.*; 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
   
-public class Register extends JFrame implements ActionListener { 
+public class RegisterClient extends JFrame implements ActionListener { 
   
     // Components of the Form 
     private JPanel rp; 
@@ -47,11 +47,11 @@ public class Register extends JFrame implements ActionListener {
   
     // constructor, to initialize the components 
     // with default values 
-    public Register() 
+    public RegisterClient() 
     { 
         setTitle("Registration"); 
         //setBounds(300, 90, 600, 700); 
-        setSize(600, 700); 
+        setSize(600, 700); //600,700
         setDefaultCloseOperation(EXIT_ON_CLOSE); 
         setResizable(false); 
   
@@ -152,35 +152,35 @@ public class Register extends JFrame implements ActionListener {
         title = new JLabel("Registration"); 
         title.setFont(new Font("Arial", Font.PLAIN, 30)); 
         title.setSize(300, 30); 
-        title.setLocation(220, 30); 
+        title.setLocation(300, 30); 
         rp.add(title); 
         
-        location = new JLabel("Location"); 
-        location.setFont(new Font("Arial", Font.PLAIN, 20)); 
-        location.setSize(100, 20); 
-        location.setLocation(100, 100); 
-        rp.add(location); 
-        
-        location1 = new JRadioButton("FoxRock"); 
-        location1.setFont(new Font("Arial", Font.PLAIN, 15)); 
-        location1.setSelected(true); 
-        location1.setSize(90, 20); 
-        location1.setLocation(250, 100); 
-        location1.setBackground(Color.pink);
-        rp.add(location1); 
-  
-        location2 = new JRadioButton("Ballsbridge"); 
-        location2.setFont(new Font("Arial", Font.PLAIN, 15)); 
-        location2.setSelected(false); 
-        location2.setSize(100, 20); 
-        location2.setLocation(340, 100); 
-        location2.setBackground(Color.pink);
-        rp.add(location2); 
-  
-        loc = new ButtonGroup(); 
-        loc.add(location1); 
-        loc.add(location2); 
+//        location = new JLabel("Location"); 
+//        location.setFont(new Font("Arial", Font.PLAIN, 20)); 
+//        location.setSize(100, 20); 
+//        location.setLocation(100, 100); 
+//        rp.add(location); 
+//        
+//        location1 = new JRadioButton("FoxRock"); 
+//        location1.setFont(new Font("Arial", Font.PLAIN, 15)); 
+//        location1.setSelected(true); 
+//        location1.setSize(90, 20); 
+//        location1.setLocation(250, 100); 
+//        location1.setBackground(Color.pink);
+//        rp.add(location1); 
 //  
+//        location2 = new JRadioButton("Ballsbridge"); 
+//        location2.setFont(new Font("Arial", Font.PLAIN, 15)); 
+//        location2.setSelected(false); 
+//        location2.setSize(100, 20); 
+//        location2.setLocation(320, 100); 
+//        location2.setBackground(Color.pink);
+//        rp.add(location2); 
+//  
+//        loc = new ButtonGroup(); 
+//        loc.add(location1); 
+//        loc.add(location2); 
+  
         name = new JLabel("First Name"); 
         name.setFont(new Font("Arial", Font.PLAIN, 18)); 
         name.setSize(100, 20); 
@@ -375,14 +375,14 @@ public class Register extends JFrame implements ActionListener {
                       + "Phone Number : "
                       + tphone.getText() + "\n"; 
                 
-                if (location1.isSelected()) 
-                    data1 = "Location : FoxRock"
-                            + "\n"; 
-                else
-                    data1 = "Location : Ballsbridge"
-                            + "\n"; 
+//                if (location1.isSelected()) 
+//                    data1 = "Location : FoxRock"
+//                            + "\n"; 
+//                else
+//                    data1 = "Location : Ballsbridge"
+//                            + "\n"; 
 
-                tout.setText(data + data1); 
+                //tout.setText(data + data1); 
                 tout.setEditable(false); 
                 res.setText("Registration successfully!!"); 
             } 
@@ -411,10 +411,10 @@ public class Register extends JFrame implements ActionListener {
 } 
   
 // Driver Code 
-class Registration { 
+class RegistrationClient { 
   
     public static void main(String[] args) throws Exception 
     { 
-        Register r = new Register(); 
+        RegisterClient rc = new RegisterClient(); 
     } 
 } 
