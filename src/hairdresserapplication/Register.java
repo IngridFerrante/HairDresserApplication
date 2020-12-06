@@ -271,13 +271,13 @@ public class Register extends JFrame implements ActionListener {
         reset.addActionListener(this); 
         rp.add(reset); 
   
-//        res = new JLabel(""); 
-//        res.setFont(new Font("Arial", Font.PLAIN, 20)); 
-//        res.setSize(500, 25); 
-//        res.setLocation(100, 500); 
-//        rp.add(res); 
-//        
-//        
+        res = new JLabel(""); 
+        res.setFont(new Font("Arial", Font.PLAIN, 20)); 
+        res.setSize(500, 25); 
+        res.setLocation(100, 500); 
+        rp.add(res); 
+        
+        
         // FOOTER*********************************************
     
         JPanel footer = new JPanel(); // creating header
