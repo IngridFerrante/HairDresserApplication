@@ -138,6 +138,8 @@ public void MainPage()
     //put it on the header
     header.add(rightHeader);
     
+    //ends header
+    
     // Main Area setup from here
     JPanel mainArea = new JPanel(); // creating the main panel
     BorderLayout mainLayout = new BorderLayout();
@@ -291,12 +293,8 @@ public void MainPage()
         
         
        
-        JPanel footer2 = new JPanel(); // creating header
+        JPanel footer2 = new JPanel(); // ends footer
     
-    
-     
-        // login page
-       
                  
     
     

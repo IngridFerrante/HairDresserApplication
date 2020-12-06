@@ -16,7 +16,9 @@ import javax.swing.JTextField;
  *
  * @author 35389
  */
+
 public class Login extends JFrame{
+    
     private JTextField txt1;
     private JTextField txt2;
     Controller controller;
