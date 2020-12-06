@@ -50,8 +50,8 @@ public class Register extends JFrame implements ActionListener {
     public Register() 
     { 
         setTitle("Registration"); 
-        setBounds(300, 90, 600, 700); 
-        //setSize(600, 700); //600,700
+        //setBounds(300, 90, 600, 700); 
+        setSize(600, 700); //600,700
         setDefaultCloseOperation(EXIT_ON_CLOSE); 
         setResizable(false); 
   
