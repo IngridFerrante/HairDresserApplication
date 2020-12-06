@@ -119,7 +119,7 @@ public class RegisterClient extends JFrame implements ActionListener {
     rightHeader.add(register);
     rightHeader.add(login); 
     
-    login.setBackground(Color.GRAY);
+    login.setBackground(Color.YELLOW);
     login.setForeground(Color.pink);
     register.setBackground(Color.GRAY);
     register.setForeground(Color.pink);

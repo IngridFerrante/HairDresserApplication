@@ -27,7 +27,7 @@ public class Login extends JFrame{
     {
         this.controller = controller;
         
-        // We encapsulated the building process of the w indow
+        // We encapsulated the building process of the window
         atributesSetter();
         components();
         validation();
