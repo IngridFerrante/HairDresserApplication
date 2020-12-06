@@ -7,6 +7,8 @@ package hairdresserapplication;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
@@ -17,12 +19,12 @@ import javax.swing.JOptionPane;
 public class Controller implements ActionListener {
     Login view;
     Model model;
-    Register register;
+ //   Register register;
     
     public Controller(){
         this.view = new Login(this);
         this.model = new Model();
-        this.register = new Register();
+   //     this.register = new Register();
     }
     
 
@@ -46,10 +48,9 @@ public class Controller implements ActionListener {
             
             
         }
-        
-        
-        
-        
-    }
     
+    }
 }
+    
+   
+

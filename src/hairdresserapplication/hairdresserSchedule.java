@@ -7,11 +7,8 @@ package hairdresserapplication;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.Dimension;
 import java.awt.FlowLayout;
-import java.awt.Graphics;
 import java.awt.GridLayout;
-import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.BorderFactory;
@@ -19,8 +16,8 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
+import static javax.swing.JFrame.EXIT_ON_CLOSE;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.UIManager;
 
@@ -28,35 +25,21 @@ import javax.swing.UIManager;
  *
  * @author 35389
  */
-public class HairDresserApplication extends JFrame implements ActionListener {
+ class hairdresserSchedule extends JFrame implements ActionListener {
+      JComboBox days = null;
+      JComboBox month = null;
+      JComboBox year = null;
+     JComboBox menuList = null;
+     
+     public hairdresserSchedule(){
+            this.setVisible(true);
+            this.setSize(600,700);
+            this.setTitle("Amil's hair");
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        new HairDresserApplication();
-       
-       
-       
-    }
-    
-    JComboBox menuList = null; 
-    
-    public HairDresserApplication(){
-        this.MainPage();
-    }
-    
-public void MainPage()
-{
-    //Frame
-    this.setVisible(true);
-    this.setSize(600,700);
-    this.setTitle("Amil's hair");
-       
-    BorderLayout frame = new BorderLayout();
-    this.setLayout(frame);
-    
-    // header
+            BorderLayout frame = new BorderLayout();
+            this.setLayout(frame);
+            
+            // header
     JPanel header = new JPanel(); // creating header
     
     // adding a grid to the header (1 row and 3 columns)
@@ -142,105 +125,112 @@ public void MainPage()
      
     //put it on the header
     header.add(rightHeader);
-    
-    // Main Area setup from here
+            
+            
+          
+            //main Area
     JPanel mainArea = new JPanel(); // creating the main panel
-    BorderLayout mainLayout = new BorderLayout();
-    mainArea.setLayout(mainLayout);
-    this.add(mainArea, BorderLayout.CENTER); // adding mainArea to the frame
+  
+     //adding a layout to the dropdown and button
+     FlowLayout scheduleBtn = new FlowLayout(); 
+     mainArea.setLayout(scheduleBtn);
+     mainArea.setBackground(Color.PINK);
+     
+     //adding the panel to the frame
+     this.add(mainArea, BorderLayout.CENTER);
+     
+     
+     //left hand side
+     
     
-    //create a main panel to hold panels
-    JPanel mainArea2 = new JPanel();
-    GridLayout mainBorder = new GridLayout(1,1);
-    mainArea2.setLayout(mainBorder);
-    // insert a border around the main panel and the border size
-    mainArea2.setBorder(BorderFactory.createLineBorder(Color.WHITE, 1));
-    
-        // ORGANISING RIGHT HAND SIDE -- 
-        JPanel backMainPanel = new JPanel();
-        mainArea2.add(backMainPanel);
-        backMainPanel.setBackground(Color.ORANGE);//just in case to see if is all good
-        
-        // DEVIDING MINI RIGHT SECCTION INTO TWO (TWO ROWS - ONE COLUMN)
-        GridLayout miniMainRightLayout = new GridLayout(2,1); //check this bit
-        backMainPanel.setLayout(miniMainRightLayout);
-        
-        // ORGANISING THE UPPER PART
-        JPanel topPart = new JPanel();
-        backMainPanel.add(topPart);
-        // insert a border around the leftHeader panel and the border size
-        topPart.setBorder(BorderFactory.createLineBorder(Color.pink, 5));
-        topPart.setBackground(Color.pink);
-//        JLabel p3 = new JLabel("photo and promotion");
-//        topPart.add(p3);
-        
-        // ORGANISING THE LOWER PART
-        JPanel bottonPart = new JPanel();
-        backMainPanel.add(bottonPart);
-        // insert a border around the leftHeader panel and the border size
-        bottonPart.setBackground(Color.GRAY);
-        bottonPart.setBorder(BorderFactory.createLineBorder(Color.black, 1));
-        
-        
-        JPanel p4 = new JPanel();
-        JLabel txtp4 = new JLabel("Cut");
-        p4.add(txtp4);
-        p4.setBackground(Color.white);
-        p4.setBorder(BorderFactory.createLineBorder(Color.black, 1));
-        
-        
-        JPanel p5 = new JPanel();
-        JLabel txtp5 = new JLabel("BlowDry");
-        p5.add(txtp5);
-        p5.setBackground(Color.white);
-        p5.setBorder(BorderFactory.createLineBorder(Color.black, 1));
-        
-        JPanel p6 = new JPanel();
-        JLabel txtp6 = new JLabel("Colour");
-        p6.add(txtp6);
-        p6.setBackground(Color.white);
-        p6.setBorder(BorderFactory.createLineBorder(Color.black, 1));
-        
-        JPanel p7 = new JPanel();
-        JLabel txtp7 = new JLabel("Styling");
-        p7.setBackground(Color.white);
-        p7.add(txtp7);
-        p7.setBorder(BorderFactory.createLineBorder(Color.black, 1));
-        
-        bottonPart.add(p4);
-        bottonPart.add(p5);
-        bottonPart.add(p6);
-        bottonPart.add(p7);
-        
-        mainArea.add(mainArea2, BorderLayout.CENTER);
+     JLabel txt = new JLabel("Schedule: ");
+     mainArea.add(txt);
+             
+     JPanel leftMain = new JPanel();
+     FlowLayout leftlayoutMain = new FlowLayout();
+     leftMain.setLayout(leftlayoutMain);
+     leftlayoutMain.setAlignment(FlowLayout.LEFT);
+     leftMain.setBackground(Color.PINK);
+     
+       String[]  dates 
+        = { "1", "2", "3", "4", "5", 
+            "6", "7", "8", "9", "10", 
+            "11", "12", "13", "14", "15", 
+            "16", "17", "18", "19", "20", 
+            "21", "22", "23", "24", "25", 
+            "26", "27", "28", "29", "30", 
+            "31" };
        
-        //this set close/stop the program copletetly once you close the window
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        
+       String[] months
+        = { "Jan", "feb", "Mar", "Apr", 
+            "May", "Jun", "July", "Aug", 
+            "Sup", "Oct", "Nov", "Dec" };
+       
+       String[] years
+               = {"2020","2021"};
     
-    // organising the left side
-    JPanel leftMain = new JPanel();
-    topPart.add(leftMain);
-    leftMain.setBackground(Color.PINK);
-    
-    //set photo into panel
-    JLabel photo = new JLabel();
-    photo.setIcon(new ImageIcon("image/photo.png"));
-    
-    leftMain.add(photo);
- 
-    // organising the right side
-    JPanel rightMain = new JPanel();
-    topPart.add(rightMain);
-    rightMain.setBackground(Color.PINK);
-    
-    JLabel promotion = new JLabel("Promotion goes here");
-    rightMain.add(promotion);
-    
+    days = new JComboBox(dates);
+  
+  //  days.addActionListener(this); ADD AN ACTION LISTENER LATER
+    days.setActionCommand("days");
+    days.setBackground(Color.GRAY);
+    days.setForeground(Color.PINK);
 
-        
-
-// FOOTER
+     
+    
+    leftMain.add(days);
+    
+    
+    //adding to the main panel 
+    
+    mainArea.add(leftMain);
+    
+    // center 
+    
+    JPanel centerMain = new JPanel();
+    FlowLayout centerLayout = new FlowLayout();
+    centerMain.setLayout(centerLayout);
+    centerLayout.setAlignment(FlowLayout.CENTER);
+    centerMain.setBackground(Color.PINK);
+    
+    // add the month drop down
+    
+    month = new JComboBox(months);
+   
+   // month.addActionListener(this);
+    month.setActionCommand("month");
+    month.setBackground(Color.GRAY);
+    month.setForeground(Color.PINK);
+   
+    
+   centerMain.add(month);
+   
+   //adding to the main panel 
+   mainArea.add(centerMain);
+   
+   // right side
+   JPanel rightMain = new JPanel();
+   FlowLayout rightLayought = new FlowLayout();
+   rightLayought.setAlignment(FlowLayout.RIGHT);
+   rightMain.setBackground(Color.PINK);
+   
+    year = new JComboBox(years);
+  
+  //  year.addActionListener(this);
+    year.setActionCommand("year");
+    year.setBackground(Color.GRAY);
+    year.setForeground(Color.PINK);
+    
+    rightMain.add(year); 
+    
+    //adding to the main panel 
+   mainArea.add(rightMain);
+    
+   
+   JButton okBtn = new JButton("ok");
+   mainArea.add(okBtn);
+   
+   // FOOTER
     
         JPanel footer = new JPanel(); // creating header
     
@@ -295,70 +285,27 @@ public void MainPage()
         footer.add(rightCol);
         
         
-       
-       
-    
-    
+   validate();
+   repaint();
+          
+     }
      
-        // login page
-       
-                 
-    
-    
-    
-   this.validate();
-   this.repaint();
-    
-    
-    
+     
+     
+     
+     
+     
+     
+     
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        
+    }
 }
 
-@Override
 
-    public void actionPerformed(ActionEvent e) {
-     //   to identify different text field
-        if(e.getActionCommand().equals("login")){  
-            new Controller();
-        
+class Test {
+    public static void main(String[] args) throws Exception {
+       hairdresserSchedule a = new hairdresserSchedule();
     }
-        else if(e.getActionCommand().equals("register")){
-            
-            ImageIcon icon = new ImageIcon("image/logo.png");
-            
-            Object[] registerChoice = {"Hairdresser", "Client"};
-                Object defaultChoice = registerChoice[0];
-                int optionChoosen = JOptionPane.showOptionDialog(this,
-             "Who are you ?",
-             "Register",
-             JOptionPane.YES_NO_OPTION,
-             JOptionPane.QUESTION_MESSAGE,
-             icon,
-             registerChoice,
-             defaultChoice);
-                
-            if (optionChoosen == 0){
-                new Controller(); // put the page of hairdresser register here
-            }else{
-                    new Register();
-                    
-                   
-            }       
-    }
-  
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        
-    }
-    
-//            public void actionPerformed(ActionEvent e) {
-//                if(e.getActionCommand().equals("menuList")){
-//                    System.out.println(menuList.getSelectedItem());
-//                }
-//    }
- 
- 
-
-    }
-    
-   
-            
-    
+}
