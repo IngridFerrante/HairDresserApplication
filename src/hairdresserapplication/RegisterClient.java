@@ -273,13 +273,13 @@ public class RegisterClient extends JFrame implements ActionListener {
         reset.addActionListener(this); 
         rp.add(reset); 
   
-//        tout = new JTextArea(); 
-//        tout.setFont(new Font("Arial", Font.PLAIN, 15)); 
-//        tout.setSize(300, 400); 
-//        tout.setLocation(500, 100); 
-//        tout.setLineWrap(true); 
-//        tout.setEditable(false); 
-//        rp.add(tout); 
+        tout = new JTextArea(); 
+        tout.setFont(new Font("Arial", Font.PLAIN, 15)); 
+        tout.setSize(300, 400); 
+        tout.setLocation(500, 100); 
+        tout.setLineWrap(true); 
+        tout.setEditable(false); 
+        rp.add(tout); 
   
         res = new JLabel(""); 
         res.setFont(new Font("Arial", Font.PLAIN, 20)); 
@@ -398,7 +398,6 @@ public class RegisterClient extends JFrame implements ActionListener {
             tname.setText(def); 
             tadd.setText(def);
             surname.setText(def); 
-            tadd.setText(def);
             temail.setText(def); 
             res.setText(def);
             tphone.setText(def); 

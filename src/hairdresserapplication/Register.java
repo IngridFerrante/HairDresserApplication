@@ -5,18 +5,18 @@
  */
 package hairdresserapplication;
 
-/**
- *
- * @author Kelly
- */
 import javax.swing.*; 
 import java.awt.*; 
 import java.awt.event.*; 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
+/**
+ *
+ * @author Kelly
+ */
   
 public class Register extends JFrame implements ActionListener { 
   
-    // Components of the Form 
+    // Components of the Register form 
     private JPanel rp; 
     private JLabel title; 
     private JLabel name; 
@@ -38,8 +38,8 @@ public class Register extends JFrame implements ActionListener {
     
     private JLabel add; 
     private JTextArea tadd; 
-    private JCheckBox term; 
-    private JButton reg; 
+    private JCheckBox tickconfirm; 
+    private JButton regbt; 
     private JButton reset; 
     private JTextArea tout; 
     private JLabel res; 
@@ -49,13 +49,13 @@ public class Register extends JFrame implements ActionListener {
     // with default values 
     public Register() 
     { 
-        setTitle("Registration"); 
+        setTitle("Amil's hair - Registration"); 
         //setBounds(300, 90, 600, 700); 
         setSize(600, 700); 
         setDefaultCloseOperation(EXIT_ON_CLOSE); 
         setResizable(false); 
   
-           // header
+           // header page
     JPanel header = new JPanel(); // creating header
     
     // adding a grid to the header (1 row and 3 columns)
@@ -73,8 +73,7 @@ public class Register extends JFrame implements ActionListener {
     leftLayout.setAlignment(FlowLayout.LEFT);
     leftHeader.setBackground(Color.BLACK);
     
-    //add drowndrop list
-    
+    //add drowndrop list    
     String[] menuApp = { "Home", "Location", "Review" };
     JComboBox menuList = new JComboBox(menuApp);
     menuList.setSelectedIndex(2);
@@ -87,8 +86,7 @@ public class Register extends JFrame implements ActionListener {
     
     // ADDING IT TO THE TOP SECTION the leftHeader to header Panel
     header.add(leftHeader);
-    
-    
+      
     // organizing the center hand side
     JPanel centreHeader = new JPanel();
     FlowLayout centreLayout = new FlowLayout();
@@ -102,7 +100,6 @@ public class Register extends JFrame implements ActionListener {
     //centreHeader add logo
     centreHeader.add(logo);
     
-
     //adding to the header
     header.add(centreHeader);
     
@@ -140,8 +137,9 @@ public class Register extends JFrame implements ActionListener {
     //put it on the header
     header.add(rightHeader);
     
-    //ends header
+    //ends header****************************888
         
+    //starts main register page
         JPanel rp = new JPanel(); // creating the main panel
         rp.setBackground(Color.PINK);
 
@@ -253,18 +251,18 @@ public class Register extends JFrame implements ActionListener {
         tconfpassword.setLocation(250, 275); 
         rp.add(tconfpassword); 
   
-        term = new JCheckBox("Confirm information above."); 
-        term.setFont(new Font("Arial", Font.PLAIN, 15)); 
-        term.setSize(250, 20); 
-        term.setLocation(150, 350); 
-        rp.add(term); 
+        tickconfirm = new JCheckBox("Confirm information above."); 
+        tickconfirm.setFont(new Font("Arial", Font.PLAIN, 15)); 
+        tickconfirm.setSize(250, 20); 
+        tickconfirm.setLocation(150, 350); 
+        rp.add(tickconfirm); 
   
-        reg = new JButton("Register"); 
-        reg.setFont(new Font("Arial", Font.PLAIN, 15)); 
-        reg.setSize(100, 20); 
-        reg.setLocation(150, 400); 
-        reg.addActionListener(this); 
-        rp.add(reg); 
+        regbt = new JButton("Register"); 
+        regbt.setFont(new Font("Arial", Font.PLAIN, 15)); 
+        regbt.setSize(100, 20); 
+        regbt.setLocation(150, 400); 
+        regbt.addActionListener(this); 
+        rp.add(regbt); 
   
         reset = new JButton("Reset"); 
         reset.setFont(new Font("Arial", Font.PLAIN, 15)); 
@@ -273,28 +271,14 @@ public class Register extends JFrame implements ActionListener {
         reset.addActionListener(this); 
         rp.add(reset); 
   
-//        tout = new JTextArea(); 
-//        tout.setFont(new Font("Arial", Font.PLAIN, 15)); 
-//        tout.setSize(300, 400); 
-//        tout.setLocation(500, 100); 
-//        tout.setLineWrap(true); 
-//        tout.setEditable(false); 
-//        rp.add(tout); 
-  
-        res = new JLabel(""); 
-        res.setFont(new Font("Arial", Font.PLAIN, 20)); 
-        res.setSize(500, 25); 
-        res.setLocation(100, 500); 
-        rp.add(res); 
-  
-        resadd = new JTextArea(); 
-        resadd.setFont(new Font("Arial", Font.PLAIN, 15)); 
-        resadd.setSize(200, 75); 
-        resadd.setLocation(580, 175); 
-        resadd.setLineWrap(true); 
-        rp.add(resadd); 
-        
-        // FOOTER
+//        res = new JLabel(""); 
+//        res.setFont(new Font("Arial", Font.PLAIN, 20)); 
+//        res.setSize(500, 25); 
+//        res.setLocation(100, 500); 
+//        rp.add(res); 
+//        
+//        
+        // FOOTER*********************************************
     
         JPanel footer = new JPanel(); // creating header
     
@@ -305,8 +289,7 @@ public class Register extends JFrame implements ActionListener {
         footer.setBackground(Color.BLACK);
         //add the panel to the frame
         this.add(footer, BorderLayout.PAGE_END);
-        
-        
+               
         // organising left side
         JPanel leftFooter = new JPanel();
         FlowLayout footerLeft = new FlowLayout();
@@ -352,6 +335,7 @@ public class Register extends JFrame implements ActionListener {
        
         JPanel footer2 = new JPanel(); // creating header
     
+        //footer ends*************************
   
         setVisible(true); 
     } 
@@ -361,19 +345,19 @@ public class Register extends JFrame implements ActionListener {
     // by the user and act accordingly 
     public void actionPerformed(ActionEvent e) 
     { 
-        if (e.getSource() == reg) { 
-            if (term.isSelected()) { 
+        if (e.getSource() == regbt) { 
+            if (tickconfirm.isSelected()) { 
                 String data1; 
-                String data 
-                    = 
-                        "First Name : "
-                      + tname.getText() + "\n"
-                      + "Last Name : "
-                      + tsurname.getText() + "\n"
-                      + "Email address : "
-                      + temail.getText() + "\n"   
-                      + "Phone Number : "
-                      + tphone.getText() + "\n"; 
+//                String data 
+//                    = 
+//                        "First Name : "
+//                      + tname.getText() + "\n"
+//                      + "Last Name : "
+//                      + tsurname.getText() + "\n"
+//                      + "Email address : "
+//                      + temail.getText() + "\n"   
+//                      + "Phone Number : "
+//                      + tphone.getText() + "\n"; 
                 
                 if (location1.isSelected()) 
                     data1 = "Location : FoxRock"
@@ -382,12 +366,12 @@ public class Register extends JFrame implements ActionListener {
                     data1 = "Location : Ballsbridge"
                             + "\n"; 
 
-                tout.setText(data + data1); 
-                tout.setEditable(false); 
+//                tout.setText(data + data1); 
+                //tout.setEditable(false); 
                 res.setText("Registration successfully!!"); 
             } 
             else { 
-                tout.setText(""); 
+                //tout.setText(""); 
                 resadd.setText(""); 
                 res.setText("Please confirm box"); 
             } 
@@ -402,10 +386,10 @@ public class Register extends JFrame implements ActionListener {
             temail.setText(def); 
             res.setText(def);
             tphone.setText(def); 
-            res.setText(def); 
-            tout.setText(def); 
-            term.setSelected(false); 
-            resadd.setText(def); 
+            //res.setText(def); 
+            //tout.setText(def); 
+            tickconfirm.setSelected(false); 
+            //resadd.setText(def); 
         } 
     } 
 } 

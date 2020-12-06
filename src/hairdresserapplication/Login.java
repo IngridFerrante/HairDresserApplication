@@ -19,14 +19,14 @@ import javax.swing.JTextField;
 
 public class Login extends JFrame{
     
+     // Components of the Login form 
     private JTextField txt1;
     private JTextField txt2;
     Controller controller;
     
     public Login (Controller controller)
     {
-        this.controller = controller;
-        
+        this.controller = controller;       
         // We encapsulated the building process of the w indow
         atributesSetter();
         components();
@@ -36,7 +36,7 @@ public class Login extends JFrame{
     private void atributesSetter() {
             this.setVisible(true);
             this.setSize(600,700);
-            this.setTitle("Amil's hair");
+            this.setTitle("Amil's hair - Login");
     }
     
     //organising components
@@ -46,8 +46,6 @@ public class Login extends JFrame{
         this.add(p);
         p.setBackground(Color.PINK);
         
-        
-
         txt1 = new JTextField(10);
         txt2 = new JTextField(10);
         JButton loginButton = new JButton("Login");
@@ -55,19 +53,16 @@ public class Login extends JFrame{
       
         JLabel userName = new JLabel("Name: ");
         JLabel userPassword = new JLabel("Password: ");
-        
-        
+                
         p.add(userName);
         p.add(txt1);
         p.add(userPassword);
         p.add(txt2);
         p.add(loginButton);
-        
-        
+             
     }
     
     // validation and repainting 
-
     private void validation() {
         this.validate();
         this.repaint();
@@ -77,9 +72,18 @@ public class Login extends JFrame{
     public String getUser(){
         return txt1.getText();
     }
+    
     public String getPassword(){
         return txt2.getText();
-    }
-  
-    
+    }   
 }
+
+// Driver Code 
+//class LoginUser { 
+//  
+//    public static void main(String[] args) throws Exception 
+//    { 
+//        Login lg = new Login(); 
+//       
+//    } 
+//} 

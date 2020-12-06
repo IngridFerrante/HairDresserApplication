@@ -10,20 +10,21 @@ package hairdresserapplication;
  * @author 35389
  */
 public class User {
-    // put the DB here 
-    private String userPerson;
-    private String passwordPerson;
     
-    public User(String userPerson, String passwordPerson){
-        this.userPerson = userPerson;
-        this.passwordPerson = passwordPerson;
+    private String un;
+    private String pw;
+    
+    public User(String un, String pw){
+        this.un = un;
+        this.pw = pw;
     }
 
-    public String getUser() {
-        return userPerson;
+    public String getUn() {
+        return un;
     }
 
-    public String getPassword() {
-        return passwordPerson;
+    public String getPw() {
+        return pw;
     }
+    
 }
