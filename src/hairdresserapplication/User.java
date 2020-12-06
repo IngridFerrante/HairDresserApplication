@@ -14,9 +14,9 @@ public class User {
     private String userPerson;
     private String passwordPerson;
     
-    public User(String un, String pw){
-        this.userPerson = un;
-        this.passwordPerson = pw;
+    public User(String userPerson, String passwordPerson){
+        this.userPerson = userPerson;
+        this.passwordPerson = passwordPerson;
     }
 
     public String getUser() {
