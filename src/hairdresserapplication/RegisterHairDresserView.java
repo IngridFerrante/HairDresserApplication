@@ -5,18 +5,32 @@
  */
 package hairdresserapplication;
 
-import javax.swing.*; 
-import java.awt.*; 
-import java.awt.event.*; 
-import static javax.swing.JFrame.EXIT_ON_CLOSE;
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.FlowLayout;
+import java.awt.Font;
+import java.awt.GridLayout;
+import javax.swing.BorderFactory;
+import javax.swing.ButtonGroup;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JCheckBox;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JRadioButton;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+import javax.swing.UIManager;
+
 /**
  *
- * @author Kelly
+ * @author 35389
  */
-  
-public class Register extends JFrame implements ActionListener { 
-  
-    // Components of the Register form 
+public class RegisterHairDresserView extends JFrame{
+    
+    // Components of the RegisterHairDresserController form 
     private JPanel rp; 
     private JLabel title; 
     private JLabel name; 
@@ -45,18 +59,17 @@ public class Register extends JFrame implements ActionListener {
     private JLabel res; 
     private JTextArea resadd; 
   
-    // constructor, to initialize the components 
-    // with default values 
-    public Register() 
-    { 
-        setTitle("Amil's hair - Registration"); 
-        //setBounds(300, 90, 600, 700); 
-        setSize(600, 700); 
-        setDefaultCloseOperation(EXIT_ON_CLOSE); 
-        setResizable(false); 
-  
-           // header page
-    JPanel header = new JPanel(); // creating header
+    RegisterHairDresserController registerController;
+    public RegisterHairDresserView(RegisterHairDresserController controller)
+    {
+        registerController = controller;
+        attributesSetter();
+        components();
+        validation();
+    }
+    
+     private void components(){
+         JPanel header = new JPanel(); // creating header
     
     // adding a grid to the header (1 row and 3 columns)
     GridLayout headerLayout = new GridLayout(1,3); 
@@ -77,7 +90,7 @@ public class Register extends JFrame implements ActionListener {
     String[] menuApp = { "Home", "Location", "Review" };
     JComboBox menuList = new JComboBox(menuApp);
     menuList.setSelectedIndex(2);
-    menuList.addActionListener(this);
+    menuList.addActionListener(registerController);
     menuList.setActionCommand("menuList");
     menuList.setBackground(Color.GRAY);
     menuList.setForeground(Color.PINK);
@@ -125,8 +138,8 @@ public class Register extends JFrame implements ActionListener {
     login.setActionCommand("login");
     register.setActionCommand("register");
     
-    login.addActionListener(this);
-    register.addActionListener(this);
+    login.addActionListener(registerController);
+    register.addActionListener(registerController);
     
     //adding color to the pop up panel
      UIManager.put("OptionPane.background", Color.PINK);
@@ -261,14 +274,14 @@ public class Register extends JFrame implements ActionListener {
         regbt.setFont(new Font("Arial", Font.PLAIN, 15)); 
         regbt.setSize(100, 20); 
         regbt.setLocation(150, 400); 
-        regbt.addActionListener(this); 
+        regbt.addActionListener(registerController); 
         rp.add(regbt); 
   
         reset = new JButton("Reset"); 
         reset.setFont(new Font("Arial", Font.PLAIN, 15)); 
         reset.setSize(100, 20); 
         reset.setLocation(280, 400); 
-        reset.addActionListener(this); 
+        reset.addActionListener(registerController); 
         rp.add(reset); 
   
         res = new JLabel(""); 
@@ -338,67 +351,20 @@ public class Register extends JFrame implements ActionListener {
         //footer ends*************************
   
         setVisible(true); 
-    } 
-  
-    // method actionPerformed() 
-    // to get the action performed 
-    // by the user and act accordingly 
-    public void actionPerformed(ActionEvent e) 
-    { 
-        if (e.getSource() == regbt) { 
-            if (tickconfirm.isSelected()) { 
-                String data1; 
-//                String data 
-//                    = 
-//                        "First Name : "
-//                      + tname.getText() + "\n"
-//                      + "Last Name : "
-//                      + tsurname.getText() + "\n"
-//                      + "Email address : "
-//                      + temail.getText() + "\n"   
-//                      + "Phone Number : "
-//                      + tphone.getText() + "\n"; 
-                
-                if (location1.isSelected()) 
-                    data1 = "Location : FoxRock"
-                            + "\n"; 
-                else
-                    data1 = "Location : Ballsbridge"
-                            + "\n"; 
-
-//                tout.setText(data + data1); 
-                //tout.setEditable(false); 
-                res.setText("Registration successfully!!"); 
-            } 
-            else { 
-                //tout.setText(""); 
-                resadd.setText(""); 
-                res.setText("Please confirm box"); 
-            } 
-        } 
-  
-        else if (e.getSource() == reset) { 
-            String def = ""; 
-            tname.setText(def); 
-            tadd.setText(def);
-            surname.setText(def); 
-            tadd.setText(def);
-            temail.setText(def); 
-            res.setText(def);
-            tphone.setText(def); 
-            //res.setText(def); 
-            //tout.setText(def); 
-            tickconfirm.setSelected(false); 
-            //resadd.setText(def); 
-        } 
-    } 
-} 
-  
-// Driver Code 
-class Registration { 
-  
-    public static void main(String[] args) throws Exception 
-    { 
-        Register r = new Register(); 
-    } 
-} 
+     
+     }
+    
+    // Setting attributes
+    private void attributesSetter(){
+        this.setVisible(true);
+        this.setSize(600,700);
+        this.setTitle("Amil's hair - Registration");
+        setResizable(false); 
+    }
+    
+     private void validation(){
+        this.validate();
+        this.repaint();
+    }
+    
+}
