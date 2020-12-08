@@ -35,8 +35,8 @@ public class RegisterHairDresserView extends JFrame{
     private JLabel title; 
     private JLabel name; 
     private JTextField tname; 
-    private JLabel surname;
-    private JTextField tsurname; 
+    private JLabel LastName;
+    private JTextField txtLastName; 
     private JLabel email; 
     private JTextField temail; 
     private JLabel phone; 
@@ -48,17 +48,13 @@ public class RegisterHairDresserView extends JFrame{
     private JLabel password; 
     private JTextField tpassword; 
     private JLabel confpassword; 
-    private JTextField tconfpassword; 
-    
+    private JTextField tconfpassword;   
     private JLabel add; 
     private JTextArea tadd; 
     private JCheckBox tickconfirm; 
-    private JButton regbt; 
-    private JButton reset; 
-    private JTextArea tout; 
-    private JLabel res; 
-    private JTextArea resadd; 
-  
+    private JButton RegisterButton; 
+
+    
     RegisterHairDresserController registerController;
     public RegisterHairDresserView(RegisterHairDresserController controller)
     {
@@ -162,7 +158,7 @@ public class RegisterHairDresserView extends JFrame{
   
         title = new JLabel("Registration"); 
         title.setFont(new Font("Arial", Font.PLAIN, 30)); 
-        title.setSize(300, 30); 
+        title.setSize(300, 40); 
         title.setLocation(220, 30); 
         rp.add(title); 
         
@@ -204,19 +200,19 @@ public class RegisterHairDresserView extends JFrame{
         tname.setLocation(250, 125); 
         rp.add(tname); 
         
-        surname = new JLabel("Last Name"); 
-        surname.setFont(new Font("Arial", Font.PLAIN, 18)); 
-        surname.setSize(100, 20); 
-        surname.setLocation(100, 150); 
-        rp.add(surname); 
+        LastName = new JLabel("Last Name"); 
+        LastName.setFont(new Font("Arial", Font.PLAIN, 18)); 
+        LastName.setSize(100, 20); 
+        LastName.setLocation(100, 150); 
+        rp.add(LastName); 
   
-        tsurname = new JTextField(); 
-        tsurname.setFont(new Font("Arial", Font.PLAIN, 15)); 
-        tsurname.setSize(190, 20); 
-        tsurname.setLocation(250, 150); 
-        rp.add(tsurname); 
+        txtLastName = new JTextField(); 
+        txtLastName.setFont(new Font("Arial", Font.PLAIN, 15)); 
+        txtLastName.setSize(190, 20); 
+        txtLastName.setLocation(250, 150); 
+        rp.add(txtLastName); 
         
-        email = new JLabel("Email Eddress"); 
+        email = new JLabel("Email address"); 
         email.setFont(new Font("Arial", Font.PLAIN, 18)); 
         email.setSize(150, 20); 
         email.setLocation(100, 175); 
@@ -264,38 +260,25 @@ public class RegisterHairDresserView extends JFrame{
         tconfpassword.setLocation(250, 275); 
         rp.add(tconfpassword); 
   
-        tickconfirm = new JCheckBox("Confirm information above."); 
-        tickconfirm.setFont(new Font("Arial", Font.PLAIN, 15)); 
-        tickconfirm.setSize(250, 20); 
-        tickconfirm.setLocation(150, 350); 
-        rp.add(tickconfirm); 
+        RegisterButton = new JButton("Register"); 
+        RegisterButton.setFont(new Font("Arial", Font.PLAIN, 15)); 
+        RegisterButton.setSize(100, 20); 
+        RegisterButton.setLocation(295, 320); 
+        RegisterButton.addActionListener(registerController); 
+        rp.add(RegisterButton); 
   
-        regbt = new JButton("Register"); 
-        regbt.setFont(new Font("Arial", Font.PLAIN, 15)); 
-        regbt.setSize(100, 20); 
-        regbt.setLocation(150, 400); 
-        regbt.addActionListener(registerController); 
-        rp.add(regbt); 
+//        CancelButton = new JButton("Cancel"); 
+//        CancelButton.setFont(new Font("Arial", Font.PLAIN, 15)); 
+//        CancelButton.setSize(100, 20); 
+//        CancelButton.setLocation(280, 400); 
+//        CancelButton.addActionListener(registerController); 
+//        rp.add(CancelButton); 
   
-        reset = new JButton("Reset"); 
-        reset.setFont(new Font("Arial", Font.PLAIN, 15)); 
-        reset.setSize(100, 20); 
-        reset.setLocation(280, 400); 
-        reset.addActionListener(registerController); 
-        rp.add(reset); 
-  
-        res = new JLabel(""); 
-        res.setFont(new Font("Arial", Font.PLAIN, 20)); 
-        res.setSize(500, 25); 
-        res.setLocation(100, 500); 
-        rp.add(res); 
         
         
-        // FOOTER*********************************************
-    
+        // FOOTER starts*********************************************   
         JPanel footer = new JPanel(); // creating header
-    
-    
+     
         GridLayout footerLayout = new GridLayout(1,3); // adding a grid to the header 1 row and 3 columns
         footer.setLayout(footerLayout);
         footer.setBorder(BorderFactory.createLineBorder(Color.BLACK, 10));
@@ -343,14 +326,15 @@ public class RegisterHairDresserView extends JFrame{
         rightFooter.add(rightCol);
         
         footer.add(rightCol);
-        
-        
-       
+              
         JPanel footer2 = new JPanel(); // creating header
     
         //footer ends*************************
   
+        
         setVisible(true); 
+        
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//stops running when the window is closed 
      
      }
     

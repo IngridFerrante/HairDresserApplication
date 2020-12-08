@@ -29,54 +29,39 @@ public class RegisterHairDresserController extends JFrame implements ActionListe
     // to get the action performed 
     // by the user and act accordingly 
     public void actionPerformed(ActionEvent e) 
-    { 
-//        if (e.getSource() == regbt) { 
-//            if (tickconfirm.isSelected()) { 
-//                String data1; 
-////                String data 
-////                    = 
-////                        "First Name : "
-////                      + tname.getText() + "\n"
-////                      + "Last Name : "
-////                      + tsurname.getText() + "\n"
-////                      + "Email address : "
-////                      + temail.getText() + "\n"   
-////                      + "Phone Number : "
-////                      + tphone.getText() + "\n"; 
-//                
-//                if (location1.isSelected()) 
-//                    data1 = "Location : FoxRock"
-//                            + "\n"; 
-//                else
-//                    data1 = "Location : Ballsbridge"
-//                            + "\n"; 
-//
-////                tout.setText(data + data1); 
-//                //tout.setEditable(false); 
-//                res.setText("Registration successfully!!"); 
-//            } 
-//            else { 
-//                //tout.setText(""); 
-//                resadd.setText(""); 
-//                res.setText("Please confirm box"); 
-//            } 
-//        } 
-//  
-//        else if (e.getSource() == reset) { 
-//            String def = ""; 
-//            tname.setText(def); 
-//            tadd.setText(def);
-//            surname.setText(def); 
-//            tadd.setText(def);
-//            temail.setText(def); 
-//            res.setText(def);
-//            tphone.setText(def); 
-//            //res.setText(def); 
-//            //tout.setText(def); 
-//            tickconfirm.setSelected(false); 
-//            //resadd.setText(def); 
-//        } 
-    } 
+    {
+     //   to identify different text field
+        if(e.getActionCommand().equals("login")){  
+            new LoginController();
+        
+    }
+        else if(e.getActionCommand().equals("register")){
+            
+            ImageIcon icon = new ImageIcon("image/logo.png");
+            
+            Object[] registerChoice = {"Hairdresser", "Client"};
+                Object defaultChoice = registerChoice[0];
+                int optionChoosen = JOptionPane.showOptionDialog(this,
+             "Who are you ?",
+             "Register",
+             JOptionPane.YES_NO_OPTION,
+             JOptionPane.QUESTION_MESSAGE,
+             icon,
+             registerChoice,
+             defaultChoice);
+                
+            if (optionChoosen == 0){
+                 new RegisterHairDresserController(); // put the page of hairdresser register here
+            }else{
+                    new RegisterClientController(); // call register client page
+               
+            }       
+    }
+  
+        
+    }
+    
+
 } 
   
 // Driver Code - main method to unable seeing the page individually

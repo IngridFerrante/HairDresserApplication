@@ -53,11 +53,8 @@ public class RegisterClientView extends JFrame{
     private JLabel add; 
     private JTextArea tadd; 
     private JCheckBox tickconfirm; 
-    private JButton regbt; 
-    private JButton reset; 
-    private JTextArea tout; 
-    private JLabel res; 
-    private JTextArea resadd; 
+    private JButton RegisterButton; 
+    private JButton CancelButton;  
   
     RegisterClientController registerClientController;
     public RegisterClientView(RegisterClientController controller)
@@ -162,7 +159,7 @@ public class RegisterClientView extends JFrame{
   
         title = new JLabel("Registration"); 
         title.setFont(new Font("Arial", Font.PLAIN, 30)); 
-        title.setSize(300, 30); 
+        title.setSize(300, 40); 
         title.setLocation(220, 30); 
         rp.add(title); 
         
@@ -216,7 +213,7 @@ public class RegisterClientView extends JFrame{
         TextFieldLastName.setLocation(250, 150); 
         rp.add(TextFieldLastName); 
         
-        email = new JLabel("Email Eddress"); 
+        email = new JLabel("Email address"); 
         email.setFont(new Font("Arial", Font.PLAIN, 18)); 
         email.setSize(150, 20); 
         email.setLocation(100, 175); 
@@ -264,31 +261,20 @@ public class RegisterClientView extends JFrame{
         tconfpassword.setLocation(250, 275); 
         rp.add(tconfpassword); 
   
-        tickconfirm = new JCheckBox("Confirm information above."); 
-        tickconfirm.setFont(new Font("Arial", Font.PLAIN, 15)); 
-        tickconfirm.setSize(250, 20); 
-        tickconfirm.setLocation(150, 350); 
-        rp.add(tickconfirm); 
+        RegisterButton = new JButton("Register"); 
+        RegisterButton.setFont(new Font("Arial", Font.PLAIN, 15)); 
+        RegisterButton.setSize(100, 20); 
+        RegisterButton.setLocation(295, 320);  
+        RegisterButton.addActionListener(registerClientController); 
+        rp.add(RegisterButton); 
   
-        regbt = new JButton("Register"); 
-        regbt.setFont(new Font("Arial", Font.PLAIN, 15)); 
-        regbt.setSize(100, 20); 
-        regbt.setLocation(150, 400); 
-        regbt.addActionListener(registerClientController); 
-        rp.add(regbt); 
+//        CancelButton = new JButton(""); 
+//        CancelButton.setFont(new Font("Arial", Font.PLAIN, 15)); 
+//        CancelButton.setSize(100, 20); 
+//        CancelButton.setLocation(280, 400); 
+//        CancelButton.addActionListener(registerClientController); 
+//        rp.add(CancelButton); 
   
-        reset = new JButton("Reset"); 
-        reset.setFont(new Font("Arial", Font.PLAIN, 15)); 
-        reset.setSize(100, 20); 
-        reset.setLocation(280, 400); 
-        reset.addActionListener(registerClientController); 
-        rp.add(reset); 
-  
-        res = new JLabel(""); 
-        res.setFont(new Font("Arial", Font.PLAIN, 20)); 
-        res.setSize(500, 25); 
-        res.setLocation(100, 500); 
-        rp.add(res); 
         
         
         // FOOTER*********************************************
@@ -351,6 +337,8 @@ public class RegisterClientView extends JFrame{
         //footer ends*************************
   
         setVisible(true); 
+        
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//stops running when the window is closed 
      
      }
     

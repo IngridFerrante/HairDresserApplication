@@ -8,39 +8,46 @@ package hairdresserapplication;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.FlowLayout;
+import java.awt.Font;
 import java.awt.GridLayout;
 import javax.swing.BorderFactory;
+import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JRadioButton;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
 import javax.swing.UIManager;
 
 /**
  *
- * @author Donal Ryan
+ * @author Kelly
  */
-public class HairDresserScheduleView extends JFrame {
-     JComboBox days = null;
-      JComboBox month = null;
-      JComboBox year = null;
-     JComboBox menuList = null;
-    HairDresserScheduleController hairDresserScheduleController;
+public class AppoitmentCheckClientView extends JFrame{
     
-    public HairDresserScheduleView(HairDresserScheduleController controller)
+    // Components of the RegisterHairDresserController form 
+    //private JPanel RegisterPanel; 
+    private JLabel title;  
+    private JButton YourBookButton;
+    private JButton MakeBooksButton; 
+
+    
+    AppointmentCheckClientController appoitmentCheckController;
+    public AppoitmentCheckClientView(AppointmentCheckClientController controller)
     {
-        hairDresserScheduleController = controller;
-        
+        appoitmentCheckController = controller;
         attributesSetter();
         components();
         validation();
     }
-    private void components()
-    {
-        // header
-    JPanel header = new JPanel(); // creating header
+    
+     private void components(){
+         JPanel header = new JPanel(); // creating header
     
     // adding a grid to the header (1 row and 3 columns)
     GridLayout headerLayout = new GridLayout(1,3); 
@@ -57,24 +64,20 @@ public class HairDresserScheduleView extends JFrame {
     leftLayout.setAlignment(FlowLayout.LEFT);
     leftHeader.setBackground(Color.BLACK);
     
-    //add drowndrop list
-    
+    //add drowndrop list    
     String[] menuApp = { "Home", "Location", "Review" };
-    
-     menuList = new JComboBox(menuApp);
+    JComboBox menuList = new JComboBox(menuApp);
     menuList.setSelectedIndex(2);
-    menuList.addActionListener(hairDresserScheduleController);
+    menuList.addActionListener(appoitmentCheckController);
     menuList.setActionCommand("menuList");
     menuList.setBackground(Color.GRAY);
     menuList.setForeground(Color.PINK);
     
     leftHeader.add(menuList);
-     
     
     // ADDING IT TO THE TOP SECTION the leftHeader to header Panel
     header.add(leftHeader);
-    
-    
+      
     // organizing the center hand side
     JPanel centreHeader = new JPanel();
     FlowLayout centreLayout = new FlowLayout();
@@ -88,7 +91,6 @@ public class HairDresserScheduleView extends JFrame {
     //centreHeader add logo
     centreHeader.add(logo);
     
-
     //adding to the header
     header.add(centreHeader);
     
@@ -114,8 +116,8 @@ public class HairDresserScheduleView extends JFrame {
     login.setActionCommand("login");
     register.setActionCommand("register");
     
-    login.addActionListener(hairDresserScheduleController);
-    register.addActionListener(hairDresserScheduleController);
+    login.addActionListener(appoitmentCheckController);
+    register.addActionListener(appoitmentCheckController);
     
     //adding color to the pop up panel
      UIManager.put("OptionPane.background", Color.PINK);
@@ -125,124 +127,50 @@ public class HairDresserScheduleView extends JFrame {
      
     //put it on the header
     header.add(rightHeader);
-            
-            
-          
-            //main Area
-    JPanel mainArea = new JPanel(); // creating the main panel
-  
-     //adding a layout to the dropdown and button
-     FlowLayout scheduleBtn = new FlowLayout(); 
-     mainArea.setLayout(scheduleBtn);
-     mainArea.setBackground(Color.PINK);
-     
-     //adding the panel to the frame
-     this.add(mainArea, BorderLayout.CENTER);
-     
-     
-     //left hand side
-     
     
-     JLabel txt = new JLabel("Schedule: ");
-     mainArea.add(txt);
-             
-     JPanel leftMain = new JPanel();
-     FlowLayout leftlayoutMain = new FlowLayout();
-     leftMain.setLayout(leftlayoutMain);
-     leftlayoutMain.setAlignment(FlowLayout.LEFT);
-     leftMain.setBackground(Color.PINK);
-     
-       String[]  dates 
-        = { "1", "2", "3", "4", "5", 
-            "6", "7", "8", "9", "10", 
-            "11", "12", "13", "14", "15", 
-            "16", "17", "18", "19", "20", 
-            "21", "22", "23", "24", "25", 
-            "26", "27", "28", "29", "30", 
-            "31" };
-       
-       String[] months
-        = { "Jan", "feb", "Mar", "Apr", 
-            "May", "Jun", "July", "Aug", 
-            "Sup", "Oct", "Nov", "Dec" };
-       
-       String[] years
-               = {"2020","2021"};
-    
-    days = new JComboBox(dates);
-  
-  //  days.addActionListener(this); ADD AN ACTION LISTENER LATER
-    days.setActionCommand("days");
-    days.setBackground(Color.GRAY);
-    days.setForeground(Color.PINK);
+    //ends header****************************888
+        
+    //starts main register page
+        JPanel rp = new JPanel(); // creating the main panel
+        rp.setBackground(Color.PINK);
 
-     
-    
-    leftMain.add(days);
-    
-    
-    //adding to the main panel 
-    
-    mainArea.add(leftMain);
-    
-    // center 
-    
-    JPanel centerMain = new JPanel();
-    FlowLayout centerLayout = new FlowLayout();
-    centerMain.setLayout(centerLayout);
-    centerLayout.setAlignment(FlowLayout.CENTER);
-    centerMain.setBackground(Color.PINK);
-    
-    // add the month drop down
-    
-    month = new JComboBox(months);
-   
-   // month.addActionListener(this);
-    month.setActionCommand("month");
-    month.setBackground(Color.GRAY);
-    month.setForeground(Color.PINK);
-   
-    
-   centerMain.add(month);
-   
-   //adding to the main panel 
-   mainArea.add(centerMain);
-   
-   // right side
-   JPanel rightMain = new JPanel();
-   FlowLayout rightLayought = new FlowLayout();
-   rightLayought.setAlignment(FlowLayout.RIGHT);
-   rightMain.setBackground(Color.PINK);
-   
-    year = new JComboBox(years);
+        //adding the panel to the frame
+        this.add(rp, BorderLayout.CENTER);
+        rp.setLayout(null); 
+        
+        title = new JLabel("Bookings"); 
+        title.setFont(new Font("Arial", Font.PLAIN, 30)); 
+        title.setSize(300, 40); 
+        title.setLocation(220, 30); 
+        rp.add(title); 
+
+        MakeBooksButton = new JButton("Your Books"); 
+        MakeBooksButton.setFont(new Font("Arial", Font.PLAIN, 15)); 
+        MakeBooksButton.setSize(200, 50); 
+        MakeBooksButton.setLocation(190, 150); 
+        MakeBooksButton.setBackground(Color.gray);
+        MakeBooksButton.addActionListener(appoitmentCheckController); 
+        rp.add(MakeBooksButton);         
   
-  //  year.addActionListener(this);
-    year.setActionCommand("year");
-    year.setBackground(Color.GRAY);
-    year.setForeground(Color.PINK);
-    
-    rightMain.add(year); 
-    
-    //adding to the main panel 
-   mainArea.add(rightMain);
-    
-   
-   JButton okBtn = new JButton("ok");
-   mainArea.add(okBtn);
-   
-   // FOOTER
-    
+        YourBookButton = new JButton("Make a Book"); 
+        YourBookButton.setFont(new Font("Arial", Font.PLAIN, 15)); 
+        YourBookButton.setSize(200, 50); 
+        YourBookButton.setLocation(190, 250); 
+        YourBookButton.setBackground(Color.gray);
+        YourBookButton.addActionListener(appoitmentCheckController); 
+        rp.add(YourBookButton); 
+
+        
+        // FOOTER starts*********************************************   
         JPanel footer = new JPanel(); // creating header
-    
-    
+     
         GridLayout footerLayout = new GridLayout(1,3); // adding a grid to the header 1 row and 3 columns
         footer.setLayout(footerLayout);
         footer.setBorder(BorderFactory.createLineBorder(Color.BLACK, 10));
         footer.setBackground(Color.BLACK);
         //add the panel to the frame
         this.add(footer, BorderLayout.PAGE_END);
-        
-        
+               
         // organising left side
         JPanel leftFooter = new JPanel();
         FlowLayout footerLeft = new FlowLayout();
@@ -283,26 +211,39 @@ public class HairDresserScheduleView extends JFrame {
         rightFooter.add(rightCol);
         
         footer.add(rightCol);
+              
+        JPanel footer2 = new JPanel(); // creating header
+    
+        //footer ends*************************
+  
         
+        setVisible(true); 
         
-        validate();
-        repaint();
-    }
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//stops running when the window is closed 
+     
+     }
     
     // Setting attributes
     private void attributesSetter(){
         this.setVisible(true);
         this.setSize(600,700);
-        this.setTitle("Amil's hair");
-
-        BorderLayout frame = new BorderLayout();
-        this.setLayout(frame);
+        this.setTitle("Amil's hair - Registration");
+        setResizable(false); 
     }
     
      private void validation(){
         this.validate();
         this.repaint();
-        
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//stops running when the window is closed 
     }
+    
+     
+}
+
+// Driver Code - main method to unable seeing the page individually
+class AppoitmentCheckClient { 
+  
+    public static void main(String[] args) throws Exception 
+    { 
+        AppointmentCheckClientController appoitmentController = new AppointmentCheckClientController(); 
+    } 
 }

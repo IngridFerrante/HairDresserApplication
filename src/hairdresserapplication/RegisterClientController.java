@@ -29,9 +29,36 @@ public class RegisterClientController extends JFrame implements ActionListener {
 //    // to get the action performed 
 //    // by the user and act accordingly 
     public void actionPerformed(ActionEvent e) 
-    { 
- 
-    } 
+    {
+     //   to identify different text field
+        if(e.getActionCommand().equals("login")){  
+            new LoginController();
+        
+    }
+        else if(e.getActionCommand().equals("register")){
+            
+            ImageIcon icon = new ImageIcon("image/logo.png");
+            
+            Object[] registerChoice = {"Hairdresser", "Client"};
+                Object defaultChoice = registerChoice[0];
+                int optionChoosen = JOptionPane.showOptionDialog(this,
+             "Who are you ?",
+             "Register",
+             JOptionPane.YES_NO_OPTION,
+             JOptionPane.QUESTION_MESSAGE,
+             icon,
+             registerChoice,
+             defaultChoice);
+                
+            if (optionChoosen == 0){
+                 new RegisterHairDresserController(); // put the page of hairdresser register here
+            }else{
+                    new RegisterClientController(); // call register client page
+               
+            }       
+    }
+  
+    }
 } 
   
 // Driver Code - main method to unable seeing the page individually

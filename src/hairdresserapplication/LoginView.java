@@ -5,7 +5,9 @@
  */
 package hairdresserapplication;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Font;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -20,14 +22,17 @@ import javax.swing.JTextField;
 public class LoginView extends JFrame{
     
      // Components of the LoginView form 
+    private JLabel title;
     private JLabel UserName;
-    private JTextField txt1;
-    private JTextField txt2;
-    LoginController controller;
+    private JTextField UserTxt;
+    private JLabel UserPassword;
+    private JTextField PasswordTxt;
+    private JButton loginButton;
     
+    LoginController logincontroller;   
     public LoginView (LoginController controller)
     {
-        this.controller = controller;       
+        logincontroller = controller;       
         // We encapsulated the building process of the w indow
         atributesSetter();
         components();
@@ -36,7 +41,7 @@ public class LoginView extends JFrame{
 
     private void atributesSetter() {
             this.setVisible(true);
-            this.setSize(300,200);
+            this.setSize(300,250);
             this.setTitle("Amil's hair - Login");
     }
     
@@ -44,25 +49,43 @@ public class LoginView extends JFrame{
 
     private void components() {
         JPanel p = new JPanel();
-        this.add(p);
+        this.add(p, BorderLayout.CENTER);
+        p.setLayout(null); //holds the location inside the panel
         p.setBackground(Color.PINK);
         
-        JLabel userName = new JLabel("Name: ");
-       // UserName.setSize(100, 20);
-       //configure position
-        p.add(userName);
+        title = new JLabel("Login"); 
+        title.setFont(new Font("Arial", Font.PLAIN, 18)); 
+        title.setSize(150, 20); 
+        title.setLocation(120, 18); 
+        p.add(title); 
         
-        txt1 = new JTextField(10);
-        p.add(txt1);
-      
-        JLabel userPassword = new JLabel("Password: ");
-        p.add(userPassword);
+        UserName = new JLabel("Name: ");
+        UserName.setFont(new Font("Arial", Font.PLAIN, 15)); 
+        UserName.setSize(100, 20);
+        UserName.setLocation(20, 60); //configure position
+        p.add(UserName);
         
-        txt2 = new JTextField(10);        
-        p.add(txt2);
+        UserTxt = new JTextField(10);
+        UserTxt.setFont(new Font("Arial", Font.PLAIN, 15)); 
+        UserTxt.setSize(190, 20);
+        UserTxt.setLocation(70, 60); //configure position
+        p.add(UserTxt);
+
+        UserPassword = new JLabel("Password: ");
+        UserPassword.setFont(new Font("Arial", Font.PLAIN, 15)); 
+        UserPassword.setSize(100, 20);
+        UserPassword.setLocation(20, 100); //configure position
+        p.add(UserPassword);
         
-        JButton loginButton = new JButton("Login");
-        loginButton.addActionListener(controller);
+        PasswordTxt = new JTextField(10); 
+        PasswordTxt.setSize(170, 20);
+        PasswordTxt.setLocation(90, 100); //configure position
+        p.add(PasswordTxt);
+        
+        loginButton = new JButton("Login");
+        loginButton.addActionListener(logincontroller);
+        loginButton.setSize(70, 20);
+        loginButton.setLocation(110, 160); //configure position
         p.add(loginButton);
              
     }
@@ -75,11 +98,11 @@ public class LoginView extends JFrame{
     
     //get username and password
     public String getUser(){
-        return txt1.getText();
+        return UserTxt.getText();
     }
     
     public String getPassword(){
-        return txt2.getText();
+        return PasswordTxt.getText();
     }   
 }
 
