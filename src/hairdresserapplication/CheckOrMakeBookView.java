@@ -28,7 +28,7 @@ import javax.swing.UIManager;
  *
  * @author Kelly
  */
-public class AppoitmentCheckClientView extends JFrame{
+public class CheckOrMakeBookView extends JFrame{
     
     // Components of the RegisterHairDresserController form 
     //private JPanel RegisterPanel; 
@@ -37,10 +37,10 @@ public class AppoitmentCheckClientView extends JFrame{
     private JButton MakeBooksButton; 
 
     
-    AppointmentCheckClientController appoitmentCheckController;
-    public AppoitmentCheckClientView(AppointmentCheckClientController controller)
+    CheckOrMakeBookController checkOrMakeBookController;
+    public CheckOrMakeBookView(CheckOrMakeBookController controller)
     {
-        appoitmentCheckController = controller;
+        checkOrMakeBookController = controller;
         attributesSetter();
         components();
         validation();
@@ -68,7 +68,7 @@ public class AppoitmentCheckClientView extends JFrame{
     String[] menuApp = { "Home", "Location", "Review" };
     JComboBox menuList = new JComboBox(menuApp);
     menuList.setSelectedIndex(2);
-    menuList.addActionListener(appoitmentCheckController);
+    menuList.addActionListener(checkOrMakeBookController);
     menuList.setActionCommand("menuList");
     menuList.setBackground(Color.GRAY);
     menuList.setForeground(Color.PINK);
@@ -116,8 +116,8 @@ public class AppoitmentCheckClientView extends JFrame{
     login.setActionCommand("login");
     register.setActionCommand("register");
     
-    login.addActionListener(appoitmentCheckController);
-    register.addActionListener(appoitmentCheckController);
+    login.addActionListener(checkOrMakeBookController);
+    register.addActionListener(checkOrMakeBookController);
     
     //adding color to the pop up panel
      UIManager.put("OptionPane.background", Color.PINK);
@@ -149,7 +149,7 @@ public class AppoitmentCheckClientView extends JFrame{
         MakeBooksButton.setSize(200, 50); 
         MakeBooksButton.setLocation(190, 150); 
         MakeBooksButton.setBackground(Color.gray);
-        MakeBooksButton.addActionListener(appoitmentCheckController); 
+        MakeBooksButton.addActionListener(checkOrMakeBookController); 
         rp.add(MakeBooksButton);         
   
         YourBookButton = new JButton("Make a Book"); 
@@ -157,7 +157,7 @@ public class AppoitmentCheckClientView extends JFrame{
         YourBookButton.setSize(200, 50); 
         YourBookButton.setLocation(190, 250); 
         YourBookButton.setBackground(Color.gray);
-        YourBookButton.addActionListener(appoitmentCheckController); 
+        YourBookButton.addActionListener(checkOrMakeBookController); 
         rp.add(YourBookButton); 
 
         
@@ -240,10 +240,10 @@ public class AppoitmentCheckClientView extends JFrame{
 }
 
 // Driver Code - main method to unable seeing the page individually
-class AppoitmentCheckClient { 
+class CheckOrBookClient2 { 
   
     public static void main(String[] args) throws Exception 
     { 
-        AppointmentCheckClientController appoitmentController = new AppointmentCheckClientController(); 
+        CheckOrMakeBookController checkorbookController = new CheckOrMakeBookController(); 
     } 
 }

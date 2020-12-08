@@ -15,14 +15,14 @@ import javax.swing.JOptionPane;
  *
  * @author Kelly
  */
-public class AppointmentCheckClientController extends JFrame implements ActionListener { 
+public class CheckOrMakeBookController extends JFrame implements ActionListener { 
   
-    AppoitmentCheckClientView appoitmentCheckClientView;
+    CheckOrMakeBookView checkOrMakeBookView;
     // constructor, to initialize the components 
     // with default values 
-    public AppointmentCheckClientController() 
+    public CheckOrMakeBookController() 
     { 
-        this.appoitmentCheckClientView = new AppoitmentCheckClientView (this);
+        this.checkOrMakeBookView = new CheckOrMakeBookView (this);
     
     } 
   
@@ -65,10 +65,10 @@ public class AppointmentCheckClientController extends JFrame implements ActionLi
 } 
   
 // Driver Code - main method to unable seeing the page individually
-class AppointmentCheckClient { 
+class CheckOrBookClient { 
   
     public static void main(String[] args) throws Exception 
     { 
-        AppointmentCheckClientController registerClientController = new AppointmentCheckClientController(); 
+        CheckOrMakeBookController checkorbookController = new CheckOrMakeBookController(); 
     } 
 }

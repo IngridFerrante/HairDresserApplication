@@ -20,7 +20,7 @@ import javax.swing.UIManager;
 
 /**
  *
- * @author Donal Ryan
+ * @author Kelly
  */
 public class HairDresserScheduleView extends JFrame {
      JComboBox days = null;
