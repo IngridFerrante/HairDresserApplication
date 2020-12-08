@@ -17,14 +17,15 @@ import javax.swing.JTextField;
  * @author 35389
  */
 
-public class Login extends JFrame{
+public class LoginView extends JFrame{
     
-     // Components of the Login form 
+     // Components of the LoginView form 
+    private JLabel UserName;
     private JTextField txt1;
     private JTextField txt2;
-    Controller controller;
+    LoginController controller;
     
-    public Login (Controller controller)
+    public LoginView (LoginController controller)
     {
         this.controller = controller;       
         // We encapsulated the building process of the w indow
@@ -35,7 +36,7 @@ public class Login extends JFrame{
 
     private void atributesSetter() {
             this.setVisible(true);
-            this.setSize(600,700);
+            this.setSize(300,200);
             this.setTitle("Amil's hair - Login");
     }
     
@@ -46,18 +47,22 @@ public class Login extends JFrame{
         this.add(p);
         p.setBackground(Color.PINK);
         
+        JLabel userName = new JLabel("Name: ");
+       // UserName.setSize(100, 20);
+       //configure position
+        p.add(userName);
+        
         txt1 = new JTextField(10);
-        txt2 = new JTextField(10);
+        p.add(txt1);
+      
+        JLabel userPassword = new JLabel("Password: ");
+        p.add(userPassword);
+        
+        txt2 = new JTextField(10);        
+        p.add(txt2);
+        
         JButton loginButton = new JButton("Login");
         loginButton.addActionListener(controller);
-      
-        JLabel userName = new JLabel("Name: ");
-        JLabel userPassword = new JLabel("Password: ");
-                
-        p.add(userName);
-        p.add(txt1);
-        p.add(userPassword);
-        p.add(txt2);
         p.add(loginButton);
              
     }
@@ -78,12 +83,13 @@ public class Login extends JFrame{
     }   
 }
 
-// Driver Code 
+
+//// Driver Code 
 //class LoginUser { 
 //  
 //    public static void main(String[] args) throws Exception 
 //    { 
-//        Login lg = new Login(); 
+//        LoginView lg = new LoginView(); 
 //       
 //    } 
 //} 

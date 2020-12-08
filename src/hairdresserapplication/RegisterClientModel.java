@@ -15,7 +15,7 @@ import java.sql.Statement;
  *
  * @author Kelly
  */
-public class Model {
+public class RegisterClientModel {
     
     public boolean login(User user){
         
@@ -26,7 +26,7 @@ public class Model {
             String dbServer = "jdbc:mysql://apontejaj.com:3306/kelly_2019375?useSSL=false";
             String dbUser = "kelly_2019375";
             String dbPassword = "2019375";
-            String query = "SELECT * FROM user WHERE username = '" + user.getUn() + "' AND password = '" + user.getPw() + "';";
+            String query = "INSERT INTO user ...//continue code to insert values to the databese";
 
             // Get a connection to the database
             Connection conn = DriverManager.getConnection(dbServer, dbUser, dbPassword);
@@ -66,3 +66,4 @@ public class Model {
     }
     
 }
+

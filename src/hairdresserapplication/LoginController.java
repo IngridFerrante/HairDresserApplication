@@ -10,20 +10,24 @@ import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 import javax.swing.ImageIcon;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 /**
  *
  * @author 35389
  */
-public class Controller implements ActionListener {
-    Login view;
-    Model model;
+public class LoginController extends JFrame implements ActionListener {
+  
+    LoginView view;
+    LoginModel model;
  //   Register register;
     
-    public Controller(){
-        this.view = new Login(this);
-        this.model = new Model();
+    // constructor, to initialize the components 
+    // with default values 
+    public LoginController(){
+        this.view = new LoginView(this);
+        this.model = new LoginModel();
    //     this.register = new Register();
     }
     

@@ -315,7 +315,7 @@ public void MainPage()
     public void actionPerformed(ActionEvent e) {
      //   to identify different text field
         if(e.getActionCommand().equals("login")){  
-            new Controller();
+            new LoginController();
         
     }
         else if(e.getActionCommand().equals("register")){
