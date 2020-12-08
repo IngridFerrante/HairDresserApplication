@@ -26,39 +26,21 @@ import javax.swing.UIManager;
 
 /**
  *
- * @author 35389
+ * @author Kelly
  */
-public class RegisterHairDresserView extends JFrame{
+public class CheckOrMakeBookView extends JFrame{
     
     // Components of the RegisterHairDresserController form 
-    private JPanel RegisterPanel; 
-    private JLabel title; 
-    private JLabel name; 
-    private JTextField tname; 
-    private JLabel LastName;
-    private JTextField txtLastName; 
-    private JLabel email; 
-    private JTextField temail; 
-    private JLabel phone; 
-    private JTextField tphone; 
-    private JLabel location; 
-    private JRadioButton location1; 
-    private JRadioButton location2; 
-    private ButtonGroup loc; 
-    private JLabel password; 
-    private JTextField tpassword; 
-    private JLabel confpassword; 
-    private JTextField tconfpassword;   
-    private JLabel add; 
-    private JTextArea tadd; 
-    private JCheckBox tickconfirm; 
-    private JButton RegisterButton; 
+    //private JPanel RegisterPanel; 
+    private JLabel title;  
+    private JButton YourBookButton;
+    private JButton MakeBooksButton; 
 
     
-    RegisterHairDresserController registerController;
-    public RegisterHairDresserView(RegisterHairDresserController controller)
+    CheckOrMakeBookController checkOrMakeBookController;
+    public CheckOrMakeBookView(CheckOrMakeBookController controller)
     {
-        registerController = controller;
+        checkOrMakeBookController = controller;
         attributesSetter();
         components();
         validation();
@@ -86,7 +68,7 @@ public class RegisterHairDresserView extends JFrame{
     String[] menuApp = { "Home", "Location", "Review" };
     JComboBox menuList = new JComboBox(menuApp);
     menuList.setSelectedIndex(2);
-    menuList.addActionListener(registerController);
+    menuList.addActionListener(checkOrMakeBookController);
     menuList.setActionCommand("menuList");
     menuList.setBackground(Color.GRAY);
     menuList.setForeground(Color.PINK);
@@ -134,8 +116,8 @@ public class RegisterHairDresserView extends JFrame{
     login.setActionCommand("login");
     register.setActionCommand("register");
     
-    login.addActionListener(registerController);
-    register.addActionListener(registerController);
+    login.addActionListener(checkOrMakeBookController);
+    register.addActionListener(checkOrMakeBookController);
     
     //adding color to the pop up panel
      UIManager.put("OptionPane.background", Color.PINK);
@@ -155,126 +137,29 @@ public class RegisterHairDresserView extends JFrame{
         //adding the panel to the frame
         this.add(rp, BorderLayout.CENTER);
         rp.setLayout(null); 
-  
-        title = new JLabel("Registration"); 
+        
+        title = new JLabel("Bookings"); 
         title.setFont(new Font("Arial", Font.PLAIN, 30)); 
         title.setSize(300, 40); 
         title.setLocation(220, 30); 
         rp.add(title); 
-        
-        location = new JLabel("Location"); 
-        location.setFont(new Font("Arial", Font.PLAIN, 20)); 
-        location.setSize(100, 20); 
-        location.setLocation(100, 100); 
-        rp.add(location); 
-        
-        location1 = new JRadioButton("FoxRock"); 
-        location1.setFont(new Font("Arial", Font.PLAIN, 15)); 
-        location1.setSelected(true); 
-        location1.setSize(90, 20); 
-        location1.setLocation(250, 100); 
-        location1.setBackground(Color.pink);
-        rp.add(location1); 
-  
-        location2 = new JRadioButton("Ballsbridge"); 
-        location2.setFont(new Font("Arial", Font.PLAIN, 15)); 
-        location2.setSelected(false); 
-        location2.setSize(100, 20); 
-        location2.setLocation(340, 100); 
-        location2.setBackground(Color.pink);
-        rp.add(location2); 
-  
-        loc = new ButtonGroup(); 
-        loc.add(location1); 
-        loc.add(location2); 
-//  
-        name = new JLabel("First Name"); 
-        name.setFont(new Font("Arial", Font.PLAIN, 18)); 
-        name.setSize(100, 20); 
-        name.setLocation(100, 125); 
-        rp.add(name); 
-  
-        tname = new JTextField(); 
-        tname.setFont(new Font("Arial", Font.PLAIN, 15)); 
-        tname.setSize(190, 20); 
-        tname.setLocation(250, 125); 
-        rp.add(tname); 
-        
-        LastName = new JLabel("Last Name"); 
-        LastName.setFont(new Font("Arial", Font.PLAIN, 18)); 
-        LastName.setSize(100, 20); 
-        LastName.setLocation(100, 150); 
-        rp.add(LastName); 
-  
-        txtLastName = new JTextField(); 
-        txtLastName.setFont(new Font("Arial", Font.PLAIN, 15)); 
-        txtLastName.setSize(190, 20); 
-        txtLastName.setLocation(250, 150); 
-        rp.add(txtLastName); 
-        
-        email = new JLabel("Email address"); 
-        email.setFont(new Font("Arial", Font.PLAIN, 18)); 
-        email.setSize(150, 20); 
-        email.setLocation(100, 175); 
-        rp.add(email); 
-  
-        temail = new JTextField(); 
-        temail.setFont(new Font("Arial", Font.PLAIN, 15)); 
-        temail.setSize(190, 20); 
-        temail.setLocation(250, 175); 
-        rp.add(temail); 
-  
-        phone = new JLabel("Phone number"); 
-        phone.setFont(new Font("Arial", Font.PLAIN, 18)); 
-        phone.setSize(150, 20); 
-        phone.setLocation(100, 200); 
-        rp.add(phone); 
-  
-        tphone = new JTextField(); 
-        tphone.setFont(new Font("Arial", Font.PLAIN, 15)); 
-        tphone.setSize(190, 20); 
-        tphone.setLocation(250, 200); 
-        rp.add(tphone); 
 
-        password = new JLabel("Create password"); 
-        password.setFont(new Font("Arial", Font.PLAIN, 18)); 
-        password.setSize(150, 20); 
-        password.setLocation(100, 250); 
-        rp.add(password); 
+        MakeBooksButton = new JButton("Your Books"); 
+        MakeBooksButton.setFont(new Font("Arial", Font.PLAIN, 15)); 
+        MakeBooksButton.setSize(200, 50); 
+        MakeBooksButton.setLocation(190, 150); 
+        MakeBooksButton.setBackground(Color.gray);
+        MakeBooksButton.addActionListener(checkOrMakeBookController); 
+        rp.add(MakeBooksButton);         
   
-        tpassword = new JTextField(); 
-        tpassword.setFont(new Font("Arial", Font.PLAIN, 15)); 
-        tpassword.setSize(190, 20); 
-        tpassword.setLocation(250, 250); 
-        rp.add(tpassword); 
-        
-        confpassword = new JLabel("Confirm password"); 
-        confpassword.setFont(new Font("Arial", Font.PLAIN, 18)); 
-        confpassword.setSize(150, 20); 
-        confpassword.setLocation(100, 275); 
-        rp.add(confpassword); 
-  
-        tconfpassword = new JTextField(); 
-        tconfpassword.setFont(new Font("Arial", Font.PLAIN, 15)); 
-        tconfpassword.setSize(190, 20); 
-        tconfpassword.setLocation(250, 275); 
-        rp.add(tconfpassword); 
-  
-        RegisterButton = new JButton("Register"); 
-        RegisterButton.setFont(new Font("Arial", Font.PLAIN, 15)); 
-        RegisterButton.setSize(100, 20); 
-        RegisterButton.setLocation(295, 320); 
-        RegisterButton.addActionListener(registerController); 
-        rp.add(RegisterButton); 
-  
-//        CancelButton = new JButton("Cancel"); 
-//        CancelButton.setFont(new Font("Arial", Font.PLAIN, 15)); 
-//        CancelButton.setSize(100, 20); 
-//        CancelButton.setLocation(280, 400); 
-//        CancelButton.addActionListener(registerController); 
-//        rp.add(CancelButton); 
-  
-        
+        YourBookButton = new JButton("Make a Book"); 
+        YourBookButton.setFont(new Font("Arial", Font.PLAIN, 15)); 
+        YourBookButton.setSize(200, 50); 
+        YourBookButton.setLocation(190, 250); 
+        YourBookButton.setBackground(Color.gray);
+        YourBookButton.addActionListener(checkOrMakeBookController); 
+        rp.add(YourBookButton); 
+
         
         // FOOTER starts*********************************************   
         JPanel footer = new JPanel(); // creating header
@@ -351,13 +236,14 @@ public class RegisterHairDresserView extends JFrame{
         this.repaint();
     }
     
+     
 }
 
 // Driver Code - main method to unable seeing the page individually
-class Registration2 { 
+class CheckOrBookClient2 { 
   
     public static void main(String[] args) throws Exception 
     { 
-        RegisterHairDresserController registerController = new RegisterHairDresserController(); 
+        CheckOrMakeBookController checkorbookController = new CheckOrMakeBookController(); 
     } 
 }

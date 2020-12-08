@@ -20,7 +20,7 @@ import javax.swing.UIManager;
 
 /**
  *
- * @author Donal Ryan
+ * @author Kelly
  */
 public class HairDresserScheduleView extends JFrame {
      JComboBox days = null;
@@ -302,5 +302,7 @@ public class HairDresserScheduleView extends JFrame {
      private void validation(){
         this.validate();
         this.repaint();
+        
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//stops running when the window is closed 
     }
 }
