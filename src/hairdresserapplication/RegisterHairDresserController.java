@@ -8,7 +8,7 @@ package hairdresserapplication;
 import javax.swing.*; 
 import java.awt.*; 
 import java.awt.event.*; 
-import static javax.swing.JFrame.EXIT_ON_CLOSE;
+//import static javax.swing.JFrame.EXIT_ON_CLOSE;
 /**
  *
  * @author Kelly
@@ -79,7 +79,7 @@ public class RegisterHairDresserController extends JFrame implements ActionListe
     } 
 } 
   
-// Driver Code 
+// Driver Code - main method to unable seeing the page individually
 class Registration { 
   
     public static void main(String[] args) throws Exception 

@@ -336,7 +336,7 @@ public void MainPage()
             if (optionChoosen == 0){
                  new RegisterHairDresserController(); // put the page of hairdresser register here
             }else{
-                    new RegisterClient();
+                    new RegisterClientController(); // call register client page
                
             }       
     }

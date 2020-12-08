@@ -31,7 +31,7 @@ import javax.swing.UIManager;
 public class RegisterHairDresserView extends JFrame{
     
     // Components of the RegisterHairDresserController form 
-    private JPanel rp; 
+    private JPanel RegisterPanel; 
     private JLabel title; 
     private JLabel name; 
     private JTextField tname; 
@@ -367,4 +367,13 @@ public class RegisterHairDresserView extends JFrame{
         this.repaint();
     }
     
+}
+
+// Driver Code - main method to unable seeing the page individually
+class Registration2 { 
+  
+    public static void main(String[] args) throws Exception 
+    { 
+        RegisterHairDresserController registerController = new RegisterHairDresserController(); 
+    } 
 }

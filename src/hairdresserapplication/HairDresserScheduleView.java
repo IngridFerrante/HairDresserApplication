@@ -9,37 +9,37 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
-import static javax.swing.JFrame.EXIT_ON_CLOSE;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.UIManager;
 
 /**
  *
- * @author 35389
+ * @author Donal Ryan
  */
- class hairdresserSchedule extends JFrame implements ActionListener {
-      JComboBox days = null;
+public class HairDresserScheduleView extends JFrame {
+     JComboBox days = null;
       JComboBox month = null;
       JComboBox year = null;
      JComboBox menuList = null;
-     
-     public hairdresserSchedule(){
-            this.setVisible(true);
-            this.setSize(600,700);
-            this.setTitle("Amil's hair");
-
-            BorderLayout frame = new BorderLayout();
-            this.setLayout(frame);
-            
-            // header
+    HairDresserScheduleController hairDresserScheduleController;
+    
+    public HairDresserScheduleView(HairDresserScheduleController controller)
+    {
+        hairDresserScheduleController = controller;
+        
+        attributesSetter();
+        components();
+        validation();
+    }
+    private void components()
+    {
+        // header
     JPanel header = new JPanel(); // creating header
     
     // adding a grid to the header (1 row and 3 columns)
@@ -63,7 +63,7 @@ import javax.swing.UIManager;
     
      menuList = new JComboBox(menuApp);
     menuList.setSelectedIndex(2);
-    menuList.addActionListener(this);
+    menuList.addActionListener(hairDresserScheduleController);
     menuList.setActionCommand("menuList");
     menuList.setBackground(Color.GRAY);
     menuList.setForeground(Color.PINK);
@@ -114,8 +114,8 @@ import javax.swing.UIManager;
     login.setActionCommand("login");
     register.setActionCommand("register");
     
-    login.addActionListener(this);
-    register.addActionListener(this);
+    login.addActionListener(hairDresserScheduleController);
+    register.addActionListener(hairDresserScheduleController);
     
     //adding color to the pop up panel
      UIManager.put("OptionPane.background", Color.PINK);
@@ -285,27 +285,22 @@ import javax.swing.UIManager;
         footer.add(rightCol);
         
         
-   validate();
-   repaint();
-          
-     }
-     
-     
-     
-     
-     
-     
-     
-     
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        
+        validate();
+        repaint();
     }
-}
+    
+    // Setting attributes
+    private void attributesSetter(){
+        this.setVisible(true);
+        this.setSize(600,700);
+        this.setTitle("Amil's hair");
 
-
-class Test {
-    public static void main(String[] args) throws Exception {
-       hairdresserSchedule a = new hairdresserSchedule();
+        BorderLayout frame = new BorderLayout();
+        this.setLayout(frame);
+    }
+    
+     private void validation(){
+        this.validate();
+        this.repaint();
     }
 }
