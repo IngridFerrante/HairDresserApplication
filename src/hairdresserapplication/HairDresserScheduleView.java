@@ -61,7 +61,7 @@ public class HairDresserScheduleView extends JFrame {
     
     String[] menuApp = { "Home", "Location", "Review" };
     
-     menuList = new JComboBox(menuApp);
+    menuList = new JComboBox(menuApp);
     menuList.setSelectedIndex(2);
     menuList.addActionListener(hairDresserScheduleController);
     menuList.setActionCommand("menuList");
