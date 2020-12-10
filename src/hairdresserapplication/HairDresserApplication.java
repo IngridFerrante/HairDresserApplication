@@ -78,7 +78,7 @@ public void MainPage()
     
     String[] menuApp = { "Home", "Location", "Review" };
     
-     menuList = new JComboBox(menuApp);
+    menuList = new JComboBox(menuApp);
     menuList.setSelectedIndex(2);
     menuList.addActionListener(this);
     menuList.setActionCommand("menuList");

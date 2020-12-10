@@ -11,16 +11,12 @@ import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.GridLayout;
 import javax.swing.BorderFactory;
-import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JRadioButton;
-import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.UIManager;
 
@@ -28,18 +24,24 @@ import javax.swing.UIManager;
  *
  * @author Kelly
  */
-public class CheckOrMakeBookView extends JFrame{
+public class ClientMakeBookingView extends JFrame{
     
-    // Components of the RegisterHairDresserController form  
+    // Components of the RegisterHairDresserController form 
     private JLabel title;  
-    private JButton YourBookButton;
-    private JButton MakeBooksButton; 
-
+    private JButton BookButton;
+    private JLabel FirstName;
+    private JTextField textClientFirstName; 
+    private JLabel phone;
+    private JTextField textphone; 
+    JComboBox menuLocation = null; 
+    JComboBox menuService = null; 
+    JComboBox menuDate = null; 
+    JComboBox menuHour = null;
     
-    CheckOrMakeBookController checkOrMakeBookController;
-    public CheckOrMakeBookView(CheckOrMakeBookController controller)
+    ClientMakeBookingController clientMakeBookingController;
+    public ClientMakeBookingView(ClientMakeBookingController controller)
     {
-        checkOrMakeBookController = controller;
+        clientMakeBookingController = controller;
         attributesSetter();
         components();
         validation();
@@ -67,7 +69,7 @@ public class CheckOrMakeBookView extends JFrame{
     String[] menuApp = { "Home", "Location", "Review" };
     JComboBox menuList = new JComboBox(menuApp);
     menuList.setSelectedIndex(2);
-    menuList.addActionListener(checkOrMakeBookController);
+    menuList.addActionListener(clientMakeBookingController);
     menuList.setActionCommand("menuList");
     menuList.setBackground(Color.GRAY);
     menuList.setForeground(Color.PINK);
@@ -115,8 +117,8 @@ public class CheckOrMakeBookView extends JFrame{
     login.setActionCommand("login");
     register.setActionCommand("register");
     
-    login.addActionListener(checkOrMakeBookController);
-    register.addActionListener(checkOrMakeBookController);
+    login.addActionListener(clientMakeBookingController);
+    register.addActionListener(clientMakeBookingController);
     
     //adding color to the pop up panel
      UIManager.put("OptionPane.background", Color.PINK);
@@ -129,7 +131,10 @@ public class CheckOrMakeBookView extends JFrame{
     
     //ends header****************************888
         
-    //starts main register page
+    
+    
+    
+    //starts main Make a book page page
         JPanel rp = new JPanel(); // creating the main panel
         rp.setBackground(Color.PINK);
 
@@ -137,30 +142,96 @@ public class CheckOrMakeBookView extends JFrame{
         this.add(rp, BorderLayout.CENTER);
         rp.setLayout(null); 
         
-        title = new JLabel("Bookings"); 
+        title = new JLabel("Make a Book"); 
         title.setFont(new Font("Arial", Font.PLAIN, 30)); 
         title.setSize(300, 40); 
-        title.setLocation(220, 30); 
+        title.setLocation(205, 20); 
         rp.add(title); 
 
-        MakeBooksButton = new JButton("Your Books"); 
-        MakeBooksButton.setFont(new Font("Arial", Font.PLAIN, 15)); 
-        MakeBooksButton.setSize(200, 50); 
-        MakeBooksButton.setLocation(190, 150); 
-        MakeBooksButton.setBackground(Color.gray);//set button color
-        MakeBooksButton.setForeground(Color.PINK);//set text button color
-        MakeBooksButton.addActionListener(checkOrMakeBookController); 
-        rp.add(MakeBooksButton);         
+        String[] menuLocationBook = { "Salon Location","FoxRock", "Ballsbridge" };
+        menuLocation = new JComboBox(menuLocationBook);
+        menuLocation.setSelectedIndex(0);
+        menuLocation.addActionListener(clientMakeBookingController);
+        menuLocation.setSize(200, 40); 
+        menuLocation.setLocation(190, 80);
+       // menuLocation.setActionCommand("menuLocation");
+        menuLocation.setBackground(Color.GRAY);//set button color
+        menuLocation.setForeground(Color.PINK);//set text button color
+        rp.add(menuLocation);
+        
+        String[] menuServiceBook = { "Choose a Servide","Cut", "Dry","Stylling" };
+        menuService = new JComboBox(menuServiceBook);
+        menuService.setSelectedIndex(0);
+        menuService.addActionListener(clientMakeBookingController);
+        menuService.setSize(200, 40); 
+        menuService.setLocation(190, 130);
+       // menuDate.setActionCommand("menuDate");
+        menuService.setBackground(Color.GRAY);//set button color
+        menuService.setForeground(Color.PINK);//set text button color
+        rp.add(menuService);    
+        
+        //redo this bit using datePicker
+        String[] menuDateBook = { "Choose a date","20/12/2020", "20/12/2020","20/12/2020" };
+        menuDate = new JComboBox(menuDateBook);
+        menuDate.setSelectedIndex(0);
+        menuDate.addActionListener(clientMakeBookingController);
+        menuDate.setSize(200, 40); 
+        menuDate.setLocation(190, 180);
+       // menuHour.setActionCommand("menuHour");
+        menuDate.setBackground(Color.GRAY);//set button color
+        menuDate.setForeground(Color.PINK);//set text button color
+        rp.add(menuDate);     
+        
+        //pick hour //make a loop to take a picked hour from the array
+        String[] menuHourBook = { "Choose an hour","10:00", "12:00","2:00","4:00", "6:00" };
+        menuHour = new JComboBox(menuHourBook);
+        menuHour.setSelectedIndex(0);
+        menuHour.addActionListener(clientMakeBookingController);
+        menuHour.setSize(200, 40); 
+        menuHour.setLocation(190, 230);
+        menuHour.setBackground(Color.GRAY);//set button color
+        menuHour.setForeground(Color.PINK);//set text button color
+        rp.add(menuHour); 
+        
+        FirstName = new JLabel("First Name");      
+        FirstName.setSize(200, 30); 
+        FirstName.setLocation(190, 265); 
+        FirstName.setForeground(Color.gray);      
+        rp.add(FirstName); 
+        
+        textClientFirstName = new JTextField(20);
+        //textClientFirstName.setText("first name"); 
+        textClientFirstName.setSize(200, 30); 
+        textClientFirstName.setLocation(190, 285); 
+        textClientFirstName.setBackground(Color.gray);
+        textClientFirstName.addActionListener(clientMakeBookingController); 
+        rp.add(textClientFirstName); 
+        
+        phone = new JLabel("Phone Number");
+        phone.setSize(200, 30); 
+        phone.setLocation(190, 310); 
+        phone.setForeground(Color.gray);      
+        rp.add(phone);         
   
-        YourBookButton = new JButton("Make a Book"); 
-        YourBookButton.setFont(new Font("Arial", Font.PLAIN, 15)); 
-        YourBookButton.setSize(200, 50); 
-        YourBookButton.setLocation(190, 250); 
-        YourBookButton.setBackground(Color.gray);//set button color
-        YourBookButton.setForeground(Color.PINK);//set text button color
-        YourBookButton.addActionListener(checkOrMakeBookController); 
-        rp.add(YourBookButton); 
+        textphone = new JTextField(20);
+        //textClientFirstName.setText("first name"); 
+        textphone.setSize(200, 30); 
+        textphone.setLocation(190, 330); 
+        textphone.setBackground(Color.gray);
+        textphone.addActionListener(clientMakeBookingController); 
+        rp.add(textphone); 
+        
+        BookButton = new JButton("Make a Book"); 
+        BookButton.setFont(new Font("Arial", Font.PLAIN, 15)); 
+        BookButton.setSize(200, 40); 
+        BookButton.setLocation(190, 380); 
+        BookButton.setBackground(Color.blue);
+        BookButton.addActionListener(clientMakeBookingController); 
+        rp.add(BookButton); 
 
+        
+        
+        
         
         // FOOTER starts*********************************************   
         JPanel footer = new JPanel(); // creating header
@@ -241,10 +312,11 @@ public class CheckOrMakeBookView extends JFrame{
 }
 
 // Driver Code - main method to unable seeing the page individually
-class CheckOrBookClient2 { 
+class ClientBooking { 
   
     public static void main(String[] args) throws Exception 
     { 
-        CheckOrMakeBookController checkorbookController = new CheckOrMakeBookController(); 
+        ClientMakeBookingController checkorbookController = new ClientMakeBookingController(); 
     } 
 }
+
