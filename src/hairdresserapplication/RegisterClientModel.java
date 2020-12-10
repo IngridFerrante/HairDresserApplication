@@ -17,16 +17,17 @@ import java.sql.Statement;
  */
 public class RegisterClientModel {
     
-    public boolean login(User user){
+    public boolean Registration(User registerClientView){
         
         boolean result = false;
         
         try {
 
-            String dbServer = "jdbc:mysql://apontejaj.com:3306/kelly_2019375?useSSL=false";
-            String dbUser = "kelly_2019375";
-            String dbPassword = "2019375";
-            String query = "INSERT INTO user ...//continue code to insert values to the databese";
+            String dbServer = "jdbc:mysql://apontejaj.com:3306/Ingrid_2019411?useSSL=false";
+            String dbUser = "Ingrid_2019411";
+            String dbPassword = "2019411";
+            String query = "INSERT INTO registrationClient values('" + IdEmail + "','" + FirstName + "','"  +
+                        LastName + "''" + getPassword + "'" + PhoneNumber)";
 
             // Get a connection to the database
             Connection conn = DriverManager.getConnection(dbServer, dbUser, dbPassword);

@@ -335,12 +335,15 @@ public class RegisterClientView extends JFrame{
         JPanel footer2 = new JPanel(); // creating header
     
         //footer ends*************************
-  
+        
         setVisible(true); 
         
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//stops running when the window is closed 
      
      }
+
+     
+     
     
     // Setting attributes
     private void attributesSetter(){
@@ -355,6 +358,32 @@ public class RegisterClientView extends JFrame{
         this.repaint();
     }
     
+        // Getters for name,email, phone and password
+     public String First_name()
+     {
+         return TextFieldFirstName.getText();
+     }
+     
+     public String last_Name(){
+         return TextFieldLastName.getText();
+     }
+     
+     public String email_id(){
+         return TextFieldEmail.getText();
+     }
+     
+     public String mobile_phone(){
+         return TextFieldPhoneNumber.getText();
+     } 
+     
+     public String password_user(){
+         return tpassword.getText();
+     }
+     
+    // public void setMessage(String message){ <-- set any message like welcome in after click button register
+         
+     
+     
 }// Driver Code - main method to unable seeing the page individually
 class RegistrationClient2 { 
   
