@@ -26,8 +26,9 @@ public class RegisterClientModel {
             String dbServer = "jdbc:mysql://apontejaj.com:3306/Ingrid_2019411?useSSL=false";
             String dbUser = "Ingrid_2019411";
             String dbPassword = "2019411";
-            String query = "INSERT INTO registrationClient values('" + IdEmail + "','" + FirstName + "','"  +
-                        LastName + "''" + getPassword + "'" + PhoneNumber)";
+            String query = "INSERT INTO registrationClient values";
+//                    + "('" + IdEmail + "','" + FirstName + "','"  +
+//                        LastName + "''" + getPassword + "'" + PhoneNumber + "')";
 
             // Get a connection to the database
             Connection conn = DriverManager.getConnection(dbServer, dbUser, dbPassword);
