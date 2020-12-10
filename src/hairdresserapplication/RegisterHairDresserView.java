@@ -49,9 +49,6 @@ public class RegisterHairDresserView extends JFrame{
     private JTextField tpassword; 
     private JLabel confpassword; 
     private JTextField tconfpassword;   
-    private JLabel add; 
-    private JTextArea tadd; 
-    private JCheckBox tickconfirm; 
     private JButton RegisterButton; 
 
     

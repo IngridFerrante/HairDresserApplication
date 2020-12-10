@@ -48,11 +48,7 @@ public class RegisterClientView extends JFrame{
     private JLabel password; 
     private JTextField tpassword; 
     private JLabel confpassword; 
-    private JTextField tconfpassword; 
-    
-    private JLabel add; 
-    private JTextArea tadd; 
-    private JCheckBox tickconfirm; 
+    private JTextField tconfpassword;    
     private JButton RegisterButton; 
     private JButton CancelButton;  
   

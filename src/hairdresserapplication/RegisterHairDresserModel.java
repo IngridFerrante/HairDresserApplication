@@ -23,10 +23,12 @@ public class RegisterHairDresserModel {
         
         try {
 
-            String dbServer = "jdbc:mysql://apontejaj.com:3306/kelly_2019375?useSSL=false";
-            String dbUser = "kelly_2019375";
+            String dbServer = "jdbc:mysql://apontejaj.com:3306/Kelly_2019375?useSSL=false";
+            String dbUser = "Kelly_2019375";
             String dbPassword = "2019375";
             String query = "INSERT INTO user ...//continue code to insert values to the databese";
+           //String query = "SELECT * FROM user WHERE username = '" + user.getUn() + "' AND password = '" + user.getPw() + "';";
+
 
             // Get a connection to the database
             Connection conn = DriverManager.getConnection(dbServer, dbUser, dbPassword);
@@ -66,3 +68,6 @@ public class RegisterHairDresserModel {
     }
     
 }
+
+        
+        

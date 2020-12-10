@@ -23,8 +23,8 @@ public class LoginModel {
         
         try {
 
-            String dbServer = "jdbc:mysql://apontejaj.com:3306/kelly_2019375?useSSL=false";
-            String dbUser = "kelly_2019375";
+            String dbServer = "jdbc:mysql://apontejaj.com:3306/Kelly_2019375?useSSL=false";
+            String dbUser = "Kelly_2019375";
             String dbPassword = "2019375";
             String query = "SELECT * FROM user WHERE username = '" + user.getUn() + "' AND password = '" + user.getPw() + "';";
 
