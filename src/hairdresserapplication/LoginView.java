@@ -65,7 +65,7 @@ public class LoginView extends JFrame{
         UserName.setLocation(20, 60); //configure position
         p.add(UserName);
         
-        UserTxt = new JTextField(10);
+        UserTxt = new JTextField("your email address",10);
         UserTxt.setFont(new Font("Arial", Font.PLAIN, 15)); 
         UserTxt.setSize(190, 20);
         UserTxt.setLocation(70, 60); //configure position

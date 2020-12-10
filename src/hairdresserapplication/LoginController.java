@@ -19,38 +19,36 @@ import javax.swing.JOptionPane;
  */
 public class LoginController extends JFrame implements ActionListener {
   
-    LoginView view;
-    LoginModel model;
+    LoginView loginView;
+    LoginModel loginModel;
  //   Register register;
     
     // constructor, to initialize the components 
     // with default values 
     public LoginController(){
-        this.view = new LoginView(this);
-        this.model = new LoginModel();
+        this.loginView = new LoginView(this);
+        this.loginModel = new LoginModel();
    //     this.register = new Register();
     }
     
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        String un = view.getUser();
-        String pw = view.getPassword();
+        String un = loginView.getUser();
+        String pw = loginView.getPassword();
         
         User user = new User(un, pw);
         
-        boolean result = model.login(user);
+        boolean result = loginModel.login(user);
         
         String resultMessage = "try again";
         
         if(result){ // if result true give the message and we need to put to log into the page the person from that
             resultMessage = "welcome in";
-            JOptionPane.showMessageDialog(view, resultMessage);
+            JOptionPane.showMessageDialog(loginView, resultMessage);
         }else {
           
-            JOptionPane.showMessageDialog(view, resultMessage);
-            
-            
+            JOptionPane.showMessageDialog(loginView, resultMessage);
         }
     
     }

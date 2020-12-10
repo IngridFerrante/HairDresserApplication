@@ -17,11 +17,13 @@ import java.awt.event.*;
 public class RegisterHairDresserController extends JFrame implements ActionListener { 
   
     RegisterHairDresserView registerHairDresserView;
+    RegisterHairDresserModel registerHairDresserModel;
     // constructor, to initialize the components 
     // with default values 
     public RegisterHairDresserController() 
     { 
         this.registerHairDresserView = new RegisterHairDresserView(this);
+        this.registerHairDresserModel = new RegisterHairDresserModel();
     
     } 
   
@@ -34,34 +36,26 @@ public class RegisterHairDresserController extends JFrame implements ActionListe
         if(e.getActionCommand().equals("login")){  
             new LoginController();
         
-    }
-        else if(e.getActionCommand().equals("register")){
+        }
+        else if(e.getActionCommand().equals("Register")){
+            String firstName = registerHairDresserView.getFirstName();
+            String lastName = registerHairDresserView.getLastName();
+            String email = registerHairDresserView.getEmail();
+            String phoneNr = registerHairDresserView.getPhone();
+            String password = registerHairDresserView.getPassword();
             
-            ImageIcon icon = new ImageIcon("image/logo.png");
+            User newUser = new User("", firstName, lastName,email, phoneNr, password);
             
-            Object[] registerChoice = {"Hairdresser", "Client"};
-                Object defaultChoice = registerChoice[0];
-                int optionChoosen = JOptionPane.showOptionDialog(this,
-             "Who are you ?",
-             "Register",
-             JOptionPane.YES_NO_OPTION,
-             JOptionPane.QUESTION_MESSAGE,
-             icon,
-             registerChoice,
-             defaultChoice);
-                
-            if (optionChoosen == 0){
-                 new RegisterHairDresserController(); // put the page of hairdresser register here
-            }else{
-                    new RegisterClientController(); // call register client page
-               
-            }       
+            boolean result = registerHairDresserModel.registerHairDresser(newUser);
+            
+            
+            if(result == true)
+            {
+                registerHairDresserView.setResult("Welcome " + firstName + ". You registersted successfully. You can login");
+                new LoginController();
+            }
+        }
     }
-  
-        
-    }
-    
-
 } 
   
 // Driver Code - main method to unable seeing the page individually

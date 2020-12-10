@@ -50,6 +50,7 @@ public class RegisterHairDresserView extends JFrame{
     private JLabel confpassword; 
     private JTextField tconfpassword;   
     private JButton RegisterButton; 
+    private JLabel result;
 
     
     RegisterHairDresserController registerController;
@@ -263,7 +264,12 @@ public class RegisterHairDresserView extends JFrame{
         RegisterButton.setLocation(295, 320); 
         RegisterButton.addActionListener(registerController); 
         rp.add(RegisterButton); 
-  
+            
+        result = new JLabel(""); 
+        result.setFont(new Font("Arial", Font.PLAIN, 18)); 
+        result.setSize(190, 20); 
+        result.setLocation(360, 300); 
+        rp.add(result); 
 //        CancelButton = new JButton("Cancel"); 
 //        CancelButton.setFont(new Font("Arial", Font.PLAIN, 15)); 
 //        CancelButton.setSize(100, 20); 
@@ -347,7 +353,37 @@ public class RegisterHairDresserView extends JFrame{
         this.validate();
         this.repaint();
     }
+    public String getFirstName(){
+        return tname.getText();
+    }
+    public String getLastName(){
+        return txtLastName.getText();
+    }
+    public String getEmail(){
+        return temail.getText();
+    }
+    public String getPhone(){
+        return tphone.getText();
+    }
+    public String getPassword(){
+        return tpassword.getText();
+    }
+    public String getConfPassword(){
+        return tconfpassword.getText();
+    }
     
+    public void setResult(String message)
+    {
+        result.setText(message);
+        
+        tname.setText("");
+        temail.setText("");
+        //tname.setText("");
+        //tname.setText("");
+        //tname.setText("");
+        //tname.setText("");
+        //tname.setText("");
+    }
 }
 
 // Driver Code - main method to unable seeing the page individually

@@ -93,14 +93,14 @@ public class RegisterHairDresserModel {
      
     // create an user in the database, return a string null if there are no error, otherwise return
     // the message from database
-    public String createUser(User newUser) {
+    public Boolean registerHairDresser(User newUser) {
         
-                 String sql = "INSERT INTO user1 (location, first_name, last_name, email, phone_number, password) "
+                 String sql = "INSERT INTO userHairDresser (location, first_name, last_name, email, phone_number, password) "
                      + "VALUES ('" + newUser.getLocation() + "','" + newUser.getfName() + "','" + newUser.getlName() 
-                     + "','" + newUser.getEmail() + "','" + "','" + newUser.getPhoneNumber()
+                     + "','" + newUser.getEmail() + "','" + newUser.getPhoneNumber()
                      + "','" + newUser.getPassword()+ "')";
         
-        String resultMessage = null;
+        Boolean result = false;
         
         try {
                     
@@ -110,28 +110,21 @@ public class RegisterHairDresserModel {
             // Get a statement from the connection
             Statement stmt = conn.createStatement();
 
-            stmt.executeUpdate(sql);
-
+            int i = stmt.executeUpdate(sql);
+                       
+            if(i > 0)
+            {
+                result = true;
+            }
             // Close the result set, statement and the connection
             stmt.close();
             conn.close();
-        } catch (SQLException se) {
-            // Loop through the SQL Exceptions
-            while (se != null) {
-                resultMessage = "State  : " + se.getSQLState() +
-                                "Message: " + se.getMessage() +
-                                "Error  : " + se.getErrorCode() + "\n";
-
-                se = se.getNextException();
-            }
         } catch (Exception e) {
             System.out.println(e.getMessage());
         } finally {
-       
-            return resultMessage;
-
+            return result;
         } 
-                     
+        
     }
 
     // get hairdresser name
