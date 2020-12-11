@@ -201,6 +201,7 @@ public class clientBookings extends JFrame implements ActionListener{
             newBooking.setLocation(250, 370);
             newBooking.setBackground(Color.blue);
             newBooking.setForeground(Color.gray);
+            newBooking.addActionListener(this);
             mainBooking.add(newBooking);
             
             
@@ -267,6 +268,11 @@ public class clientBookings extends JFrame implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        
+        if(e.getActionCommand().equals("Make a new Booking")){  
+            new ClientMakeBookingController();
+        
+    }
 
             setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
