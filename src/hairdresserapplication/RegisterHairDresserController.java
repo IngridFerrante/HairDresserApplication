@@ -65,4 +65,4 @@ class Registration {
     { 
         RegisterHairDresserController registerController = new RegisterHairDresserController(); 
     } 
-} 
+}

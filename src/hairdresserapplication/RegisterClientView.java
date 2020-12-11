@@ -51,6 +51,12 @@ public class RegisterClientView extends JFrame{
     private JTextField tconfpassword;    
     private JButton RegisterButton; 
     private JButton CancelButton;  
+    private JLabel name; 
+    private JTextField tname; 
+    private JTextField txtLastName; 
+    private JTextField temail; 
+    private JTextField tphone; 
+    private JLabel result;
   
     RegisterClientController registerClientController;
     public RegisterClientView(RegisterClientController controller)
@@ -353,34 +359,43 @@ public class RegisterClientView extends JFrame{
         this.validate();
         this.repaint();
     }
+       public String getFirstName(){
+        return tname.getText();
+    }
+    public String getLastName(){
+        return txtLastName.getText();
+    }
+    public String getEmail(){
+        return temail.getText();
+    }
+    public String getPhone(){
+        return tphone.getText();
+    }
+    public String getPassword(){
+        return tpassword.getText();
+    }
+    public String getConfPassword(){
+        return tconfpassword.getText();
+    }
     
-        // Getters for name,email, phone and password
-     public String First_name()
-     {
-         return TextFieldFirstName.getText();
-     }
-     
-     public String last_Name(){
-         return TextFieldLastName.getText();
-     }
-     
-     public String email_id(){
-         return TextFieldEmail.getText();
-     }
-     
-     public String mobile_phone(){
-         return TextFieldPhoneNumber.getText();
-     } 
-     
-     public String password_user(){
-         return tpassword.getText();
-     }
+    public void setResult(String message)
+    {
+        result.setText(message);
+        
+        tname.setText("");
+        temail.setText("");
+        //tname.setText("");
+        //tname.setText("");
+        //tname.setText("");
+        //tname.setText("");
+        //tname.setText("");
+    }
+}
      
     // public void setMessage(String message){ <-- set any message like welcome in after click button register
          
      
-     
-}// Driver Code - main method to unable seeing the page individually
+     // Driver Code - main method to unable seeing the page individually
 class RegistrationClient2 { 
   
     public static void main(String[] args) throws Exception 

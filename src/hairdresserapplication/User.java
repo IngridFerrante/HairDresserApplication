@@ -38,6 +38,14 @@ public class User {
         this.passwordUser = passwordUser;
     }
 
+    public User(String firstName, String lastName, String emailAddress, String phoneNumber, String passwordUser) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.emailAddress = emailAddress;
+        this.phoneNumber = phoneNumber;
+        this.passwordUser = passwordUser;
+    }
+
 //        //Register Hairdresser
 //    public User(String location, String firstName, String lastName, String emailAddress, String phoneNumber, String passwordUser) {
 //    this.location = location;

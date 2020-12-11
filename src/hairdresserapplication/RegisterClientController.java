@@ -21,14 +21,15 @@ import java.sql.Statement;
 public class RegisterClientController extends JFrame implements ActionListener { 
   
     RegisterClientView registerClientView;
-    private JButton RegisterButton;;
+    RegisterClientModel registerClientModel;
+    
    
     // constructor, to initialize the components 
     // with default values 
     public RegisterClientController() 
     { 
         this.registerClientView = new RegisterClientView(this);
-      
+       this.registerClientModel = new RegisterClientModel();
     
     } 
   
@@ -36,49 +37,34 @@ public class RegisterClientController extends JFrame implements ActionListener {
 //    // to get the action performed 
 //    // by the user and act accordingly 
 
-    @Override
+   // @Override
     public void actionPerformed(ActionEvent e) {
           
-        String FirstName = registerClientView.First_name();
-        String LastName = registerClientView.last_Name();
-        String IdEmail = registerClientView.email_id();
-        String PhoneNumber = registerClientView.mobile_phone();
-        int phoneNun = PhoneNumber.length();
-        String getPassword = registerClientView.password_user();
-         
-            if (phoneNun != 10) {
-                    JOptionPane.showMessageDialog(RegisterButton, "Enter a valid mobile number");
-                }
+        //   to identify different text field
+        if(e.getActionCommand().equals("login")){  
+            new LoginController();
         
-             try {
-            String dbServer = "jdbc:mysql://apontejaj.com:3306/Ingrid_2019411?useSSL=false";
-            String user = "Ingrid_2019411";
-            String password = "2019411";             
+        }
+        else if(e.getActionCommand().equals("Register")){
+            String firstName = registerClientView.getFirstName();
+            String lastName = registerClientView.getLastName();
+            String email = registerClientView.getEmail();
+            String phoneNr = registerClientView.getPhone();
+            String password = registerClientView.getPassword();
             
-                    String query = "INSERT INTO registrationClient values('" + FirstName + "','" + LastName + "','"  +
-                        getPassword + "','" + PhoneNumber + "')";
-                    
-                     Connection conn = DriverManager.getConnection(dbServer, user, password);
-                     
-                     // Get a statement from the connection
-                     Statement stmt = conn.createStatement();
-                     
-                     
-
-                    Statement sta = conn.createStatement();
-                    int x = sta.executeUpdate(query);
-                    if (x == 0) {
-                        JOptionPane.showMessageDialog(RegisterButton, "This is alredy exist");
-                    } else {
-                        JOptionPane.showMessageDialog(RegisterButton,
-                            "Welcome! Your account is sucessfully created");
-                    }
-                    conn.close();
-                } catch (Exception exception) {
-                    exception.printStackTrace();
-                }
+            User newUser = new User(firstName, lastName,email, phoneNr, password);
+            
+            boolean result = registerClientModel.registerClient(newUser);
+            
+            
+            if(result == true)
+            {
+                registerClientView.setResult("Welcome " + firstName + ". You registersted successfully. You can login");
+                new LoginController();
             }
+        }
     }
+} 
 
   
 // Driver Code - main method to unable seeing the page individually
