@@ -101,22 +101,22 @@ public class CheckOrMakeBookView extends JFrame{
     rightHeader.setBackground(Color.BLACK);
     
     //add button register and login
-    JButton register = new JButton("Register");
-    JButton login = new JButton("Login");
-    rightHeader.add(register);
-    rightHeader.add(login); 
+    //JButton register = new JButton("Register");
+    JButton logout = new JButton("Logout");
+    //rightHeader.add(register);
+    rightHeader.add(logout); 
     
-    login.setBackground(Color.GRAY);
-    login.setForeground(Color.pink);
-    register.setBackground(Color.GRAY);
-    register.setForeground(Color.pink);
+    logout.setBackground(Color.GRAY);
+    logout.setForeground(Color.pink);
+//    register.setBackground(Color.GRAY);
+//    register.setForeground(Color.pink);
     
     
-    login.setActionCommand("login");
-    register.setActionCommand("register");
+    logout.setActionCommand("logout");//set action to logout of the site
+    //register.setActionCommand("register");
     
-    login.addActionListener(checkOrMakeBookController);
-    register.addActionListener(checkOrMakeBookController);
+    logout.addActionListener(checkOrMakeBookController);
+    //register.addActionListener(checkOrMakeBookController);
     
     //adding color to the pop up panel
      UIManager.put("OptionPane.background", Color.PINK);

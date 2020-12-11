@@ -7,11 +7,7 @@ package hairdresserapplication;
 
 import javax.swing.*; 
 import java.awt.*; 
-import java.awt.event.*; 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.awt.event.*;
 //import static javax.swing.JFrame.EXIT_ON_CLOSE;
 /**
  *
@@ -22,25 +18,22 @@ public class RegisterClientController extends JFrame implements ActionListener {
   
     RegisterClientView registerClientView;
     RegisterClientModel registerClientModel;
-    
-   
     // constructor, to initialize the components 
     // with default values 
     public RegisterClientController() 
     { 
         this.registerClientView = new RegisterClientView(this);
-       this.registerClientModel = new RegisterClientModel();
+        this.registerClientModel = new RegisterClientModel();
     
     } 
   
-//    // method actionPerformed() 
-//    // to get the action performed 
-//    // by the user and act accordingly 
-
-   // @Override
-    public void actionPerformed(ActionEvent e) {
-          
-        //   to identify different text field
+    // method actionPerformed() 
+    // to get the action performed 
+    // by the user and act accordingly 
+    @Override
+    public void actionPerformed(ActionEvent e) 
+    {
+     //   to identify different text field
         if(e.getActionCommand().equals("login")){  
             new LoginController();
         
@@ -59,7 +52,7 @@ public class RegisterClientController extends JFrame implements ActionListener {
             
             if(result == true)
             {
-                registerClientView.setResult("Welcome " + firstName + ". You registersted successfully. You can login");
+                registerClientView.setResult("Welcome " + firstName + ". You registersted successfully. Now just login using you EMAIL and PASSWORD.");
                 new LoginController();
             }
         }

@@ -30,6 +30,7 @@ public class RegisterHairDresserController extends JFrame implements ActionListe
     // method actionPerformed() 
     // to get the action performed 
     // by the user and act accordingly 
+    @Override
     public void actionPerformed(ActionEvent e) 
     {
      //   to identify different text field
@@ -38,13 +39,14 @@ public class RegisterHairDresserController extends JFrame implements ActionListe
         
         }
         else if(e.getActionCommand().equals("Register")){
+            String location = registerHairDresserView.getLocationSalon();
             String firstName = registerHairDresserView.getFirstName();
             String lastName = registerHairDresserView.getLastName();
             String email = registerHairDresserView.getEmail();
             String phoneNr = registerHairDresserView.getPhone();
             String password = registerHairDresserView.getPassword();
             
-            User newUser = new User("", firstName, lastName,email, phoneNr, password);
+            User newUser = new User(location, firstName, lastName,email, phoneNr, password);
             
             boolean result = registerHairDresserModel.registerHairDresser(newUser);
             

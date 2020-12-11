@@ -5,6 +5,7 @@
  */
 package hairdresserapplication;
 
+
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.FlowLayout;
@@ -26,42 +27,34 @@ import javax.swing.UIManager;
 
 /**
  *
- * @author Kelly
+ * @author 35389
  */
 public class RegisterClientView extends JFrame{
     
-    // Components of the RegisterClientController form 
+    // Components of the RegisterHairDresserController form 
     private JPanel RegisterPanel; 
     private JLabel title; 
-    private JLabel FirstName; 
-    private JTextField TextFieldFirstName; 
+    private JLabel name; 
+    private JTextField tname; 
     private JLabel LastName;
-    private JTextField TextFieldLastName; 
+    private JTextField txtLastName; 
     private JLabel email; 
-    private JTextField TextFieldEmail; 
+    private JTextField temail; 
     private JLabel phone; 
-    private JTextField TextFieldPhoneNumber; 
-//    private JLabel location; 
-//    private JRadioButton location1; 
-//    private JRadioButton location2; 
-    private ButtonGroup loc; 
+    private JTextField tphone; 
+
     private JLabel password; 
     private JTextField tpassword; 
     private JLabel confpassword; 
-    private JTextField tconfpassword;    
+    private JTextField tconfpassword;   
     private JButton RegisterButton; 
-    private JButton CancelButton;  
-    private JLabel name; 
-    private JTextField tname; 
-    private JTextField txtLastName; 
-    private JTextField temail; 
-    private JTextField tphone; 
     private JLabel result;
-  
-    RegisterClientController registerClientController;
+
+    
+    RegisterClientController registerController;
     public RegisterClientView(RegisterClientController controller)
     {
-        registerClientController = controller;
+        registerController = controller;
         attributesSetter();
         components();
         validation();
@@ -89,7 +82,7 @@ public class RegisterClientView extends JFrame{
     String[] menuApp = { "Home", "Location", "Review" };
     JComboBox menuList = new JComboBox(menuApp);
     menuList.setSelectedIndex(2);
-    menuList.addActionListener(registerClientController);
+    menuList.addActionListener(registerController);
     menuList.setActionCommand("menuList");
     menuList.setBackground(Color.GRAY);
     menuList.setForeground(Color.PINK);
@@ -137,8 +130,8 @@ public class RegisterClientView extends JFrame{
     login.setActionCommand("login");
     register.setActionCommand("register");
     
-    login.addActionListener(registerClientController);
-    register.addActionListener(registerClientController);
+    login.addActionListener(registerController);
+    register.addActionListener(registerController);
     
     //adding color to the pop up panel
      UIManager.put("OptionPane.background", Color.PINK);
@@ -149,7 +142,7 @@ public class RegisterClientView extends JFrame{
     //put it on the header
     header.add(rightHeader);
     
-    //ends header****************************888
+    //ends header****************************
         
     //starts main register page
         JPanel rp = new JPanel(); // creating the main panel
@@ -165,43 +158,17 @@ public class RegisterClientView extends JFrame{
         title.setLocation(220, 30); 
         rp.add(title); 
         
-//        location = new JLabel("Location"); 
-//        location.setFont(new Font("Arial", Font.PLAIN, 20)); 
-//        location.setSize(100, 20); 
-//        location.setLocation(100, 100); 
-//        rp.add(location); 
-//        
-//        location1 = new JRadioButton("FoxRock"); 
-//        location1.setFont(new Font("Arial", Font.PLAIN, 15)); 
-//        location1.setSelected(true); 
-//        location1.setSize(90, 20); 
-//        location1.setLocation(250, 100); 
-//        location1.setBackground(Color.pink);
-//        rp.add(location1); 
-//  
-//        location2 = new JRadioButton("Ballsbridge"); 
-//        location2.setFont(new Font("Arial", Font.PLAIN, 15)); 
-//        location2.setSelected(false); 
-//        location2.setSize(100, 20); 
-//        location2.setLocation(340, 100); 
-//        location2.setBackground(Color.pink);
-//        rp.add(location2); 
-//  
-//        loc = new ButtonGroup(); 
-//        loc.add(location1); 
-//        loc.add(location2); 
-//  
-        FirstName = new JLabel("First Name"); 
-        FirstName.setFont(new Font("Arial", Font.PLAIN, 18)); 
-        FirstName.setSize(100, 20); 
-        FirstName.setLocation(100, 125); 
-        rp.add(FirstName); 
+        name = new JLabel("First Name"); 
+        name.setFont(new Font("Arial", Font.PLAIN, 18)); 
+        name.setSize(100, 20); 
+        name.setLocation(100, 125); 
+        rp.add(name); 
   
-        TextFieldFirstName = new JTextField(); 
-        TextFieldFirstName.setFont(new Font("Arial", Font.PLAIN, 15)); 
-        TextFieldFirstName.setSize(190, 20); 
-        TextFieldFirstName.setLocation(250, 125); 
-        rp.add(TextFieldFirstName); 
+        tname = new JTextField(); 
+        tname.setFont(new Font("Arial", Font.PLAIN, 15)); 
+        tname.setSize(190, 20); 
+        tname.setLocation(250, 125); 
+        rp.add(tname); 
         
         LastName = new JLabel("Last Name"); 
         LastName.setFont(new Font("Arial", Font.PLAIN, 18)); 
@@ -209,11 +176,11 @@ public class RegisterClientView extends JFrame{
         LastName.setLocation(100, 150); 
         rp.add(LastName); 
   
-        TextFieldLastName = new JTextField(); 
-        TextFieldLastName.setFont(new Font("Arial", Font.PLAIN, 15)); 
-        TextFieldLastName.setSize(190, 20); 
-        TextFieldLastName.setLocation(250, 150); 
-        rp.add(TextFieldLastName); 
+        txtLastName = new JTextField(); 
+        txtLastName.setFont(new Font("Arial", Font.PLAIN, 15)); 
+        txtLastName.setSize(190, 20); 
+        txtLastName.setLocation(250, 150); 
+        rp.add(txtLastName); 
         
         email = new JLabel("Email address"); 
         email.setFont(new Font("Arial", Font.PLAIN, 18)); 
@@ -221,11 +188,11 @@ public class RegisterClientView extends JFrame{
         email.setLocation(100, 175); 
         rp.add(email); 
   
-        TextFieldEmail = new JTextField(); 
-        TextFieldEmail.setFont(new Font("Arial", Font.PLAIN, 15)); 
-        TextFieldEmail.setSize(190, 20); 
-        TextFieldEmail.setLocation(250, 175); 
-        rp.add(TextFieldEmail); 
+        temail = new JTextField(); 
+        temail.setFont(new Font("Arial", Font.PLAIN, 15)); 
+        temail.setSize(190, 20); 
+        temail.setLocation(250, 175); 
+        rp.add(temail); 
   
         phone = new JLabel("Phone number"); 
         phone.setFont(new Font("Arial", Font.PLAIN, 18)); 
@@ -233,11 +200,11 @@ public class RegisterClientView extends JFrame{
         phone.setLocation(100, 200); 
         rp.add(phone); 
   
-        TextFieldPhoneNumber = new JTextField(); 
-        TextFieldPhoneNumber.setFont(new Font("Arial", Font.PLAIN, 15)); 
-        TextFieldPhoneNumber.setSize(190, 20); 
-        TextFieldPhoneNumber.setLocation(250, 200); 
-        rp.add(TextFieldPhoneNumber); 
+        tphone = new JTextField(); 
+        tphone.setFont(new Font("Arial", Font.PLAIN, 15)); 
+        tphone.setSize(190, 20); 
+        tphone.setLocation(250, 200); 
+        rp.add(tphone); 
 
         password = new JLabel("Create password"); 
         password.setFont(new Font("Arial", Font.PLAIN, 18)); 
@@ -266,24 +233,28 @@ public class RegisterClientView extends JFrame{
         RegisterButton = new JButton("Register"); 
         RegisterButton.setFont(new Font("Arial", Font.PLAIN, 15)); 
         RegisterButton.setSize(100, 20); 
-        RegisterButton.setLocation(295, 320);  
-        RegisterButton.addActionListener(registerClientController); 
+        RegisterButton.setLocation(295, 320); 
+        RegisterButton.addActionListener(registerController); 
         rp.add(RegisterButton); 
-  
-//        CancelButton = new JButton(""); 
+            
+        result = new JLabel(""); 
+        result.setFont(new Font("Arial", Font.PLAIN, 12)); 
+        result.setSize(500, 20); 
+        result.setLocation(10, 360); 
+        rp.add(result); 
+        
+//        CancelButton = new JButton("Cancel"); 
 //        CancelButton.setFont(new Font("Arial", Font.PLAIN, 15)); 
 //        CancelButton.setSize(100, 20); 
 //        CancelButton.setLocation(280, 400); 
-//        CancelButton.addActionListener(registerClientController); 
+//        CancelButton.addActionListener(registerController); 
 //        rp.add(CancelButton); 
   
         
         
-        // FOOTER*********************************************
-    
+        // FOOTER starts*********************************************   
         JPanel footer = new JPanel(); // creating header
-    
-    
+     
         GridLayout footerLayout = new GridLayout(1,3); // adding a grid to the header 1 row and 3 columns
         footer.setLayout(footerLayout);
         footer.setBorder(BorderFactory.createLineBorder(Color.BLACK, 10));
@@ -331,21 +302,17 @@ public class RegisterClientView extends JFrame{
         rightFooter.add(rightCol);
         
         footer.add(rightCol);
-        
-        
-       
+              
         JPanel footer2 = new JPanel(); // creating header
     
         //footer ends*************************
+  
         
         setVisible(true); 
         
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//stops running when the window is closed 
      
      }
-
-     
-     
     
     // Setting attributes
     private void attributesSetter(){
@@ -359,7 +326,7 @@ public class RegisterClientView extends JFrame{
         this.validate();
         this.repaint();
     }
-       public String getFirstName(){
+    public String getFirstName(){
         return tname.getText();
     }
     public String getLastName(){
@@ -383,18 +350,13 @@ public class RegisterClientView extends JFrame{
         result.setText(message);
         
         tname.setText("");
+        txtLastName.setText("");
         temail.setText("");
-        //tname.setText("");
-        //tname.setText("");
-        //tname.setText("");
-        //tname.setText("");
-        //tname.setText("");
+        tphone.setText("");
+        tpassword.setText("");
+        tconfpassword.setText("");
     }
-}
-     
-    // public void setMessage(String message){ <-- set any message like welcome in after click button register
-         
-     
+} 
      // Driver Code - main method to unable seeing the page individually
 class RegistrationClient2 { 
   

@@ -38,8 +38,8 @@ public class User {
         this.passwordUser = passwordUser;
     }
 
-    public User(String firstName, String lastName, String emailAddress, String phoneNumber, String passwordUser) {
-        this.firstName = firstName;
+    public User(String firstName1, String lastName, String emailAddress, String phoneNumber, String passwordUser) {
+        this.firstName = firstName1;
         this.lastName = lastName;
         this.emailAddress = emailAddress;
         this.phoneNumber = phoneNumber;

@@ -12,6 +12,7 @@ import java.awt.Font;
 import java.awt.GridLayout;
 import javax.swing.BorderFactory;
 import javax.swing.ButtonGroup;
+import javax.swing.ButtonModel;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
@@ -51,7 +52,6 @@ public class RegisterHairDresserView extends JFrame{
     private JTextField tconfpassword;   
     private JButton RegisterButton; 
     private JLabel result;
-
     
     RegisterHairDresserController registerController;
     public RegisterHairDresserView(RegisterHairDresserController controller)
@@ -182,9 +182,20 @@ public class RegisterHairDresserView extends JFrame{
         location2.setBackground(Color.pink);
         rp.add(location2); 
   
+        //buttonGroup permit just one selection
         loc = new ButtonGroup(); 
         loc.add(location1); 
         loc.add(location2); 
+        
+//        String  selection = null;
+//        
+//            if(location1.isSelected()){
+//                selection="FoxRock";
+//            }
+//            if(location2.isSelected()){
+//                selection="Ballsbridge";
+//            }
+//            System.out.println(selection);
 //  
         name = new JLabel("First Name"); 
         name.setFont(new Font("Arial", Font.PLAIN, 18)); 
@@ -266,10 +277,10 @@ public class RegisterHairDresserView extends JFrame{
         rp.add(RegisterButton); 
             
         result = new JLabel(""); 
-        result.setFont(new Font("Arial", Font.PLAIN, 18)); 
-        result.setSize(190, 20); 
-        result.setLocation(360, 300); 
-        rp.add(result); 
+        result.setFont(new Font("Arial", Font.PLAIN, 12)); 
+        result.setSize(500, 20); 
+        result.setLocation(10, 360); 
+        rp.add(result);  
 //        CancelButton = new JButton("Cancel"); 
 //        CancelButton.setFont(new Font("Arial", Font.PLAIN, 15)); 
 //        CancelButton.setSize(100, 20); 
@@ -353,6 +364,9 @@ public class RegisterHairDresserView extends JFrame{
         this.validate();
         this.repaint();
     }
+    public String getLocationSalon(){
+        return loc.getSelection().getActionCommand();
+    }  
     public String getFirstName(){
         return tname.getText();
     }
@@ -377,12 +391,11 @@ public class RegisterHairDresserView extends JFrame{
         result.setText(message);
         
         tname.setText("");
+        txtLastName.setText("");
         temail.setText("");
-        //tname.setText("");
-        //tname.setText("");
-        //tname.setText("");
-        //tname.setText("");
-        //tname.setText("");
+        tphone.setText("");
+        tpassword.setText("");
+        tconfpassword.setText("");
     }
 }
 
