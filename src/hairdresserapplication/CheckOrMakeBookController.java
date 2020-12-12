@@ -30,7 +30,13 @@ public class CheckOrMakeBookController extends JFrame implements ActionListener 
 
     public void actionPerformed(ActionEvent e) 
     {
-
+        if(e.getActionCommand().equals("Make a Book")){  
+            new ClientMakeBookingController();
+        
+    } else {  
+            new clientBookings();
+        
+    }
     }
 } 
   

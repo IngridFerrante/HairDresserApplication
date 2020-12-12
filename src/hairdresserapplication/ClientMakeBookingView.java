@@ -195,7 +195,7 @@ public class ClientMakeBookingView extends JFrame{
         menuHour.setForeground(Color.PINK);//set text button color
         rp.add(menuHour); 
         
-        FirstName = new JLabel("First Name");      
+        FirstName = new JLabel("Client Name: ");      
         FirstName.setSize(200, 30); 
         FirstName.setLocation(190, 265); 
         FirstName.setForeground(Color.gray);      
@@ -209,7 +209,7 @@ public class ClientMakeBookingView extends JFrame{
         textClientFirstName.addActionListener(clientMakeBookingController); 
         rp.add(textClientFirstName); 
         
-        phone = new JLabel("Phone Number");
+        phone = new JLabel("Client Phone Number: ");
         phone.setSize(200, 30); 
         phone.setLocation(190, 310); 
         phone.setForeground(Color.gray);      
