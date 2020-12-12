@@ -5,10 +5,11 @@
  */
 package hairdresserapplication;
 
-import View.reviewPageView;
+import view.ReviewPageView;
 import controller.LoginController;
 import controller.RegisterClientController;
 import controller.RegisterHairDresserController;
+import controller.ReviewPageController;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -352,7 +353,7 @@ public void MainPage()
         new testLocationView();
         
     }else if(e.getActionCommand().equals("Review")){
-        new reviewPageView();
+        new ReviewPageController();
         
     }
         
