@@ -15,13 +15,13 @@ import javax.swing.JFrame;
  */
 public class ClientAndHairdresserMakeBookingController extends JFrame implements ActionListener { 
   
-    ClientMakeBookingView clientMakeBookingView;
+    ClientAndHairdresserMakeBookingView clientMakeBookingView;
     ClientAndHairdresserMakeBookingModel clientMakeBookingModel;
     // constructor, to initialize the components 
     // with default values 
     public ClientAndHairdresserMakeBookingController() 
     { 
-        this.clientMakeBookingView = new ClientMakeBookingView (this);
+        this.clientMakeBookingView = new ClientAndHairdresserMakeBookingView (this);
         this.clientMakeBookingModel = new ClientAndHairdresserMakeBookingModel();
     } 
   

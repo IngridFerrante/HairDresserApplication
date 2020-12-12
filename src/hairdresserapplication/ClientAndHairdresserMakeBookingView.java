@@ -24,7 +24,7 @@ import javax.swing.UIManager;
  *
  * @author Kelly
  */
-public class ClientMakeBookingView extends JFrame{
+public class ClientAndHairdresserMakeBookingView extends JFrame{
     
     // Components of the RegisterHairDresserController form 
     private JLabel title;  
@@ -41,7 +41,7 @@ public class ClientMakeBookingView extends JFrame{
     
     
     ClientAndHairdresserMakeBookingController clientMakeBookingController;
-    public ClientMakeBookingView(ClientAndHairdresserMakeBookingController controller)
+    public ClientAndHairdresserMakeBookingView(ClientAndHairdresserMakeBookingController controller)
     {
         clientMakeBookingController = controller;
         attributesSetter();
