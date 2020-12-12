@@ -3,8 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package hairdresserapplication;
+package view;
 
+
+import controller.RegisterClientController;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.FlowLayout;
@@ -12,7 +14,6 @@ import java.awt.Font;
 import java.awt.GridLayout;
 import javax.swing.BorderFactory;
 import javax.swing.ButtonGroup;
-import javax.swing.ButtonModel;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
@@ -29,7 +30,7 @@ import javax.swing.UIManager;
  *
  * @author 35389
  */
-public class RegisterHairDresserView extends JFrame{
+public class RegisterClientView extends JFrame{
     
     // Components of the RegisterHairDresserController form 
     private JPanel RegisterPanel; 
@@ -42,19 +43,17 @@ public class RegisterHairDresserView extends JFrame{
     private JTextField temail; 
     private JLabel phone; 
     private JTextField tphone; 
-    private JLabel location; 
-    private JRadioButton location1; 
-    private JRadioButton location2; 
-    private ButtonGroup loc; 
+
     private JLabel password; 
     private JTextField tpassword; 
     private JLabel confpassword; 
     private JTextField tconfpassword;   
     private JButton RegisterButton; 
     private JLabel result;
+
     
-    RegisterHairDresserController registerController;
-    public RegisterHairDresserView(RegisterHairDresserController controller)
+    RegisterClientController registerController;
+    public RegisterClientView(RegisterClientController controller)
     {
         registerController = controller;
         attributesSetter();
@@ -144,7 +143,7 @@ public class RegisterHairDresserView extends JFrame{
     //put it on the header
     header.add(rightHeader);
     
-    //ends header****************************888
+    //ends header****************************
         
     //starts main register page
         JPanel rp = new JPanel(); // creating the main panel
@@ -160,43 +159,6 @@ public class RegisterHairDresserView extends JFrame{
         title.setLocation(220, 30); 
         rp.add(title); 
         
-        location = new JLabel("Location"); 
-        location.setFont(new Font("Arial", Font.PLAIN, 20)); 
-        location.setSize(100, 20); 
-        location.setLocation(100, 100); 
-        rp.add(location); 
-        
-        location1 = new JRadioButton("FoxRock"); 
-        location1.setFont(new Font("Arial", Font.PLAIN, 15)); 
-        location1.setSelected(true); 
-        location1.setSize(90, 20); 
-        location1.setLocation(250, 100); 
-        location1.setBackground(Color.pink);
-        rp.add(location1); 
-  
-        location2 = new JRadioButton("Ballsbridge"); 
-        location2.setFont(new Font("Arial", Font.PLAIN, 15)); 
-        location2.setSelected(false); 
-        location2.setSize(100, 20); 
-        location2.setLocation(340, 100); 
-        location2.setBackground(Color.pink);
-        rp.add(location2); 
-  
-        //buttonGroup permit just one selection
-        loc = new ButtonGroup(); 
-        loc.add(location1); 
-        loc.add(location2); 
-        
-//        String  selection = null;
-//        
-//            if(location1.isSelected()){
-//                selection="FoxRock";
-//            }
-//            if(location2.isSelected()){
-//                selection="Ballsbridge";
-//            }
-//            System.out.println(selection);
-//  
         name = new JLabel("First Name"); 
         name.setFont(new Font("Arial", Font.PLAIN, 18)); 
         name.setSize(100, 20); 
@@ -280,7 +242,8 @@ public class RegisterHairDresserView extends JFrame{
         result.setFont(new Font("Arial", Font.PLAIN, 12)); 
         result.setSize(500, 20); 
         result.setLocation(10, 360); 
-        rp.add(result);  
+        rp.add(result); 
+        
 //        CancelButton = new JButton("Cancel"); 
 //        CancelButton.setFont(new Font("Arial", Font.PLAIN, 15)); 
 //        CancelButton.setSize(100, 20); 
@@ -364,9 +327,6 @@ public class RegisterHairDresserView extends JFrame{
         this.validate();
         this.repaint();
     }
-    public String getLocationSalon(){
-        return loc.getSelection().getActionCommand();
-    }  
     public String getFirstName(){
         return tname.getText();
     }
@@ -397,13 +357,13 @@ public class RegisterHairDresserView extends JFrame{
         tpassword.setText("");
         tconfpassword.setText("");
     }
-}
-
-// Driver Code - main method to unable seeing the page individually
-class Registration2 { 
+} 
+     // Driver Code - main method to unable seeing the page individually
+class RegistrationClient2 { 
   
     public static void main(String[] args) throws Exception 
     { 
-        RegisterHairDresserController registerController = new RegisterHairDresserController(); 
+        RegisterClientController registerClientController = new RegisterClientController(); 
     } 
-}
+} 
+

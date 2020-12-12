@@ -3,40 +3,41 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package hairdresserapplication;
+package model;
 
+import controller.ClientAndHairdresserMakeBookingController;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
-//import java.util.List;
 
 /**
  *
  * @author Kelly
  */
-public class RegisterHairDresserModel {   
+public class ClientAndHairdresserMakeBookingModel {   
     // link to the database
-    private String dbServer = "jdbc:mysql://apontejaj.com:3306/Kelly_2019375?useSSL=false";
+    private String dbServer = "jdbc:mysql://apontejaj.com:3306/Ingrid_2019411?useSSL=false";
     // user to query DB to insert, delete and update
-    private String user = "Kelly_2019375";
-    private String password = "2019375";
+    private String user = "Ingrid_2019411";
+    private String password = "2019411";
     
-    public RegisterHairDresserModel() {
+    public ClientAndHairdresserMakeBookingModel() {
         
     }
      
     // create an user in the database, return a string null if there are no error, otherwise return
     // the message from database
-    public Boolean registerHairDresser(User newUser) {
+    public Boolean bookingClient(bookAppoitment booking) {
         
-                 String sql = "INSERT INTO userHairDresser (location, first_name, last_name, email, phone_number, password) "
-                     + "VALUES ('" + newUser.getLocation() + "','" + newUser.getfName() + "','" + newUser.getlName() 
-                     + "','" + newUser.getEmail() + "','" + newUser.getPhoneNumber()
-                     + "','" + newUser.getPassword()+"')";
+        //java.sql.Date date = java.sql.Date.valueOf(booking.getDate());
+        //java.sql.Time time = java.sql.Time.valueOf(booking.getTime());
         
+        String sql = "INSERT INTO bookingAppointment (location, service, date, time,first_name, phone_number) "
+                     + "VALUES ('" + booking.getNearByLocation() + "','" + booking.getlService() 
+                     + "','" + booking.getDate() + "','" + booking.getTime()+ "','" + booking.getClientFirstName()
+                     + "','" + booking.getClientPhoneNumber()+ "')";
+        
+      
         Boolean result = false;
         
         try {
@@ -63,13 +64,15 @@ public class RegisterHairDresserModel {
         } 
         
     }
+    
 }
+       
         
 // Driver Code - main method to unable seeing the page individually
-class Registration1 { 
+class Booking { 
   
     public static void main(String[] args) throws Exception 
     { 
-        RegisterHairDresserController registermodel = new RegisterHairDresserController(); 
+        ClientAndHairdresserMakeBookingController bookingmodel = new ClientAndHairdresserMakeBookingController(); 
     } 
 }

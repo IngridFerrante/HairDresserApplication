@@ -3,11 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package hairdresserapplication;
+package view;
 
+import controller.HairDresserChecksScheduleController;
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.awt.Font;
 import java.awt.GridLayout;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
@@ -16,30 +19,36 @@ import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.ListSelectionModel;
 import javax.swing.UIManager;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 
 /**
  *
- * @author Kelly
+ * @author 35389
  */
-public class HairDresserScheduleView extends JFrame {
-     JComboBox days = null;
-      JComboBox month = null;
-      JComboBox year = null;
-     JComboBox menuList = null;
-    HairDresserScheduleController hairDresserScheduleController;
-    
-    public HairDresserScheduleView(HairDresserScheduleController controller)
-    {
-        hairDresserScheduleController = controller;
-        
-        attributesSetter();
-        components();
-        validation();
-    }
-    private void components()
-    {
-        // header
+public class HairDresserChecksScheduleView extends JFrame{
+          JComboBox days = null;
+          JComboBox month = null;
+          JComboBox year = null;
+          JComboBox menuList = null;
+          
+          HairDresserChecksScheduleController hairDresserChecksController;
+
+public HairDresserChecksScheduleView(HairDresserChecksScheduleController controller)
+{
+    hairDresserChecksController = controller;    
+    attributesSetter();
+    components();
+    validation();    
+}
+
+private void components()
+{
+     // header
     JPanel header = new JPanel(); // creating header
     
     // adding a grid to the header (1 row and 3 columns)
@@ -61,9 +70,9 @@ public class HairDresserScheduleView extends JFrame {
     
     String[] menuApp = { "Home", "Location", "Review" };
     
-    menuList = new JComboBox(menuApp);
+     menuList = new JComboBox(menuApp);
     menuList.setSelectedIndex(2);
-    menuList.addActionListener(hairDresserScheduleController);
+    menuList.addActionListener(hairDresserChecksController);
     menuList.setActionCommand("menuList");
     menuList.setBackground(Color.GRAY);
     menuList.setForeground(Color.PINK);
@@ -114,8 +123,8 @@ public class HairDresserScheduleView extends JFrame {
     login.setActionCommand("login");
     register.setActionCommand("register");
     
-    login.addActionListener(hairDresserScheduleController);
-    register.addActionListener(hairDresserScheduleController);
+    login.addActionListener(hairDresserChecksController);
+    register.addActionListener(hairDresserChecksController);
     
     //adding color to the pop up panel
      UIManager.put("OptionPane.background", Color.PINK);
@@ -125,112 +134,76 @@ public class HairDresserScheduleView extends JFrame {
      
     //put it on the header
     header.add(rightHeader);
+            // main panel
+            JPanel mainScheduleChecks = new JPanel();
+            mainScheduleChecks.setBackground(Color.PINK);
+            
+            this.add(mainScheduleChecks, BorderLayout.CENTER);
+            mainScheduleChecks.setLayout(null);
             
             
-          
-            //main Area
-    JPanel mainArea = new JPanel(); // creating the main panel
-  
-     //adding a layout to the dropdown and button
-     FlowLayout scheduleBtn = new FlowLayout(); 
-     mainArea.setLayout(scheduleBtn);
-     mainArea.setBackground(Color.PINK);
-     
-     //adding the panel to the frame
-     this.add(mainArea, BorderLayout.CENTER);
-     
-     
-     //left hand side
-     
-    
-     JLabel txt = new JLabel("Schedule: ");
-     mainArea.add(txt);
-             
-     JPanel leftMain = new JPanel();
-     FlowLayout leftlayoutMain = new FlowLayout();
-     leftMain.setLayout(leftlayoutMain);
-     leftlayoutMain.setAlignment(FlowLayout.LEFT);
-     leftMain.setBackground(Color.PINK);
-     
-       String[]  dates 
-        = { "1", "2", "3", "4", "5", 
-            "6", "7", "8", "9", "10", 
-            "11", "12", "13", "14", "15", 
-            "16", "17", "18", "19", "20", 
-            "21", "22", "23", "24", "25", 
-            "26", "27", "28", "29", "30", 
-            "31" };
-       
-       String[] months
-        = { "Jan", "feb", "Mar", "Apr", 
-            "May", "Jun", "July", "Aug", 
-            "Sup", "Oct", "Nov", "Dec" };
-       
-       String[] years
-               = {"2020","2021"};
-    
-    days = new JComboBox(dates);
-  
-  //  days.addActionListener(this); ADD AN ACTION LISTENER LATER
-    days.setActionCommand("days");
-    days.setBackground(Color.GRAY);
-    days.setForeground(Color.PINK);
-
-     
-    
-    leftMain.add(days);
-    
-    
-    //adding to the main panel 
-    
-    mainArea.add(leftMain);
-    
-    // center 
-    
-    JPanel centerMain = new JPanel();
-    FlowLayout centerLayout = new FlowLayout();
-    centerMain.setLayout(centerLayout);
-    centerLayout.setAlignment(FlowLayout.CENTER);
-    centerMain.setBackground(Color.PINK);
-    
-    // add the month drop down
-    
-    month = new JComboBox(months);
+             // adding a flowLayout 
+        FlowLayout checksLayout = new FlowLayout(); 
+            mainScheduleChecks.setLayout(checksLayout);
    
-   // month.addActionListener(this);
-    month.setActionCommand("month");
-    month.setBackground(Color.GRAY);
-    month.setForeground(Color.PINK);
-   
-    
-   centerMain.add(month);
-   
-   //adding to the main panel 
-   mainArea.add(centerMain);
-   
-   // right side
-   JPanel rightMain = new JPanel();
-   FlowLayout rightLayought = new FlowLayout();
-   rightLayought.setAlignment(FlowLayout.RIGHT);
-   rightMain.setBackground(Color.PINK);
-   
-    year = new JComboBox(years);
-  
-  //  year.addActionListener(this);
-    year.setActionCommand("year");
-    year.setBackground(Color.GRAY);
-    year.setForeground(Color.PINK);
-    
-    rightMain.add(year); 
-    
-    //adding to the main panel 
-   mainArea.add(rightMain);
-    
-   
-   JButton okBtn = new JButton("ok");
-   mainArea.add(okBtn);
-   
-   // FOOTER
+            
+            //column titles
+            String[] columnNames = {"name", "service","time"};
+            
+            //data to introduce to the Table
+            Object[][] data ={ // take from DATABASE here
+                {"Ingrid","Blow out","11:00"},
+                {"juliana","cut", "11:30"},
+            
+            };
+                               
+            JLabel txtSchedule = new JLabel("Your Schedule: ");
+            txtSchedule.setLocation(300, 120);
+            txtSchedule.setFont(new Font("Arial", Font.PLAIN, 30)); 
+            mainScheduleChecks.add(txtSchedule);
+            
+            JTable table = new JTable(data, columnNames);
+            table.setPreferredScrollableViewportSize(new Dimension(500,50));
+            table.setFillsViewportHeight(true);
+            table.setLocation(300, 380);
+            table.setSize(300, 30);
+            
+            JScrollPane scrollPane = new JScrollPane(table);
+            mainScheduleChecks.add(scrollPane);
+            
+            //make the table be clickable 
+            ListSelectionModel model=table.getSelectionModel();
+            model.addListSelectionListener(new ListSelectionListener(){
+           
+                @Override
+            public void valueChanged(ListSelectionEvent e) {
+                // if not model is selection empty
+                if(! model.isSelectionEmpty()){
+                    
+                    // get selected row
+                    int selectedRow=model.getMinSelectionIndex();
+                    // and do: 
+                    System.out.println("selected" + selectedRow);
+                }
+            }
+            
+    });
+            
+           JButton cancelSchedule = new JButton("Cancel Selected Booking");
+           cancelSchedule.setSize(300, 40);
+           cancelSchedule.setLocation(300, 400);
+           cancelSchedule.setBackground(Color.red);
+           cancelSchedule.setForeground(Color.white);
+           mainScheduleChecks.add(cancelSchedule);
+            
+           JButton makeSchedule = new JButton("Make a new Booking");
+           makeSchedule.setSize(300, 40);
+           makeSchedule.setLocation(300, 450);
+           makeSchedule.setBackground(Color.blue);
+           makeSchedule.setForeground(Color.white);
+           mainScheduleChecks.add(makeSchedule);
+           
+                // FOOTER
     
         JPanel footer = new JPanel(); // creating header
     
@@ -284,25 +257,20 @@ public class HairDresserScheduleView extends JFrame {
         
         footer.add(rightCol);
         
-        
-        validate();
-        repaint();
-    }
-    
-    // Setting attributes
-    private void attributesSetter(){
-        this.setVisible(true);
+            validate();
+            repaint();
+}
+
+public void attributesSetter(){ 
+      this.setVisible(true);
         this.setSize(600,700);
         this.setTitle("Amil's hair");
 
         BorderLayout frame = new BorderLayout();
         this.setLayout(frame);
-    }
-    
-     private void validation(){
+}
+   private void validation(){
         this.validate();
         this.repaint();
-        
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//stops running when the window is closed 
     }
 }

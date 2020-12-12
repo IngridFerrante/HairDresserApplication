@@ -5,6 +5,10 @@
  */
 package hairdresserapplication;
 
+import controller.LoginController;
+import controller.RegisterClientController;
+import controller.RegisterHairDresserController;
+
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package hairdresserapplication;
+package model;
 
 import java.time.LocalTime;
 
@@ -11,7 +11,7 @@ import java.time.LocalTime;
  *
  * @author Kelly
  */
-public class Slot {
+public class bookAppoitment {
    
    
     private String nearbylocation;
@@ -23,7 +23,7 @@ public class Slot {
   
 
            //booking client and hairdresser
-    public Slot(String nearbylocation, String service, String date, String time, String clientFirstname, String clientPhonenumber) {
+    public bookAppoitment(String nearbylocation, String service, String date, String time, String clientFirstname, String clientPhonenumber) {
     this.nearbylocation = nearbylocation;
     this.service = service;
     this.date = date;
@@ -32,14 +32,14 @@ public class Slot {
     this.clientPhonenumber = clientPhonenumber;
     }
 
-//    public Slot(int id, User location,LocalTime date, LocalTime time, Boolean available) {
+//    public bookAppoitment(int id, User location,LocalTime date, LocalTime time, Boolean available) {
 //    this.location = location;
 //    this.date = date;
 //    this.time = time;
 //    this.available = available;
 //    }
 //
-//    public Slot(User location,LocalTime date, LocalTime time, Boolean available) {
+//    public bookAppoitment(User location,LocalTime date, LocalTime time, Boolean available) {
 //    this.location = location;
 //    this.date = date;
 //    this.time = time;

@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package hairdresserapplication;
+package view;
 
-
+import controller.RegisterHairDresserController;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.FlowLayout;
@@ -13,6 +13,7 @@ import java.awt.Font;
 import java.awt.GridLayout;
 import javax.swing.BorderFactory;
 import javax.swing.ButtonGroup;
+import javax.swing.ButtonModel;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
@@ -29,7 +30,7 @@ import javax.swing.UIManager;
  *
  * @author 35389
  */
-public class RegisterClientView extends JFrame{
+public class RegisterHairDresserView extends JFrame{
     
     // Components of the RegisterHairDresserController form 
     private JPanel RegisterPanel; 
@@ -42,17 +43,20 @@ public class RegisterClientView extends JFrame{
     private JTextField temail; 
     private JLabel phone; 
     private JTextField tphone; 
-
+    private JLabel location; 
+//    private JRadioButton location1; 
+//    private JRadioButton location2; 
+//    private ButtonGroup loc; 
     private JLabel password; 
     private JTextField tpassword; 
     private JLabel confpassword; 
     private JTextField tconfpassword;   
     private JButton RegisterButton; 
     private JLabel result;
-
+    JComboBox menuLocation = null; 
     
-    RegisterClientController registerController;
-    public RegisterClientView(RegisterClientController controller)
+    RegisterHairDresserController registerController;
+    public RegisterHairDresserView(RegisterHairDresserController controller)
     {
         registerController = controller;
         attributesSetter();
@@ -142,7 +146,7 @@ public class RegisterClientView extends JFrame{
     //put it on the header
     header.add(rightHeader);
     
-    //ends header****************************
+    //ends header****************************888
         
     //starts main register page
         JPanel rp = new JPanel(); // creating the main panel
@@ -157,6 +161,42 @@ public class RegisterClientView extends JFrame{
         title.setSize(300, 40); 
         title.setLocation(220, 30); 
         rp.add(title); 
+        
+        location = new JLabel("Location"); 
+        location.setFont(new Font("Arial", Font.PLAIN, 18)); 
+        location.setSize(100, 20); 
+        location.setLocation(100, 100); 
+        rp.add(location); 
+        
+        String[] menuLocationBook = { "Salon Location","FoxRock", "Ballsbridge" };
+        menuLocation = new JComboBox(menuLocationBook);
+        menuLocation.setSelectedIndex(0);
+        menuLocation.addActionListener(registerController);
+        menuLocation.setSize(190, 20); 
+        menuLocation.setLocation(250, 100);
+        rp.add(menuLocation);
+        
+        
+//        location1 = new JRadioButton("FoxRock"); 
+//        location1.setFont(new Font("Arial", Font.PLAIN, 15)); 
+//        location1.setSelected(true); 
+//        location1.setSize(90, 20); 
+//        location1.setLocation(250, 100); 
+//        location1.setBackground(Color.pink);
+//        rp.add(location1); 
+//  
+//        location2 = new JRadioButton("Ballsbridge"); 
+//        location2.setFont(new Font("Arial", Font.PLAIN, 15)); 
+//        location2.setSelected(false); 
+//        location2.setSize(100, 20); 
+//        location2.setLocation(340, 100); 
+//        location2.setBackground(Color.pink);
+//        rp.add(location2); 
+//  
+//        //buttonGroup permit just one selection
+//        loc = new ButtonGroup(); 
+//        loc.add(location1); 
+//        loc.add(location2); 
         
         name = new JLabel("First Name"); 
         name.setFont(new Font("Arial", Font.PLAIN, 18)); 
@@ -241,16 +281,8 @@ public class RegisterClientView extends JFrame{
         result.setFont(new Font("Arial", Font.PLAIN, 12)); 
         result.setSize(500, 20); 
         result.setLocation(10, 360); 
-        rp.add(result); 
-        
-//        CancelButton = new JButton("Cancel"); 
-//        CancelButton.setFont(new Font("Arial", Font.PLAIN, 15)); 
-//        CancelButton.setSize(100, 20); 
-//        CancelButton.setLocation(280, 400); 
-//        CancelButton.addActionListener(registerController); 
-//        rp.add(CancelButton); 
-  
-        
+        rp.add(result);  
+          
         
         // FOOTER starts*********************************************   
         JPanel footer = new JPanel(); // creating header
@@ -326,6 +358,9 @@ public class RegisterClientView extends JFrame{
         this.validate();
         this.repaint();
     }
+    public String getLocationSalon(){
+        return (String) menuLocation.getSelectedItem();
+    }  
     public String getFirstName(){
         return tname.getText();
     }
@@ -356,13 +391,13 @@ public class RegisterClientView extends JFrame{
         tpassword.setText("");
         tconfpassword.setText("");
     }
-} 
-     // Driver Code - main method to unable seeing the page individually
-class RegistrationClient2 { 
+}
+
+// Driver Code - main method to unable seeing the page individually
+class Registration2 { 
   
     public static void main(String[] args) throws Exception 
     { 
-        RegisterClientController registerClientController = new RegisterClientController(); 
+        RegisterHairDresserController registerController = new RegisterHairDresserController(); 
     } 
-} 
-
+}

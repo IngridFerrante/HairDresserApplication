@@ -3,52 +3,46 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package hairdresserapplication;
+package view;
 
+import controller.ClientAndHairdresserMakeBookingController;
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JTable;
-import javax.swing.ListSelectionModel;
+import javax.swing.JTextField;
 import javax.swing.UIManager;
-import javax.swing.event.ListSelectionEvent;
-import javax.swing.event.ListSelectionListener;
 
 /**
  *
  * @author 35389
  */
-public class HairDresserChecksView extends JFrame{
+public class clientCheckBookingsView extends JFrame implements ActionListener{
           JComboBox days = null;
           JComboBox month = null;
           JComboBox year = null;
           JComboBox menuList = null;
-          
-          HairDresserChecksController hairDresserChecksController;
-
-public HairDresserChecksView(HairDresserChecksController controller)
-{
-    hairDresserChecksController = controller;
     
-    attributesSetter();
-    components();
-    validation();    
-}
+    public clientCheckBookingsView(){
+           this.setVisible(true);
+            this.setSize(600,700);
+            this.setTitle("Amil's hair");
 
-private void components()
-{
-     // header
+            BorderLayout frame = new BorderLayout();
+            this.setLayout(frame);
+            
+             // header
     JPanel header = new JPanel(); // creating header
     
     // adding a grid to the header (1 row and 3 columns)
@@ -72,7 +66,7 @@ private void components()
     
      menuList = new JComboBox(menuApp);
     menuList.setSelectedIndex(2);
-    menuList.addActionListener(hairDresserChecksController);
+    menuList.addActionListener(this);
     menuList.setActionCommand("menuList");
     menuList.setBackground(Color.GRAY);
     menuList.setForeground(Color.PINK);
@@ -123,8 +117,8 @@ private void components()
     login.setActionCommand("login");
     register.setActionCommand("register");
     
-    login.addActionListener(hairDresserChecksController);
-    register.addActionListener(hairDresserChecksController);
+    login.addActionListener(this);
+    register.addActionListener(this);
     
     //adding color to the pop up panel
      UIManager.put("OptionPane.background", Color.PINK);
@@ -134,76 +128,85 @@ private void components()
      
     //put it on the header
     header.add(rightHeader);
-            // main panel
-            JPanel mainScheduleChecks = new JPanel();
-            mainScheduleChecks.setBackground(Color.PINK);
             
-            this.add(mainScheduleChecks, BorderLayout.CENTER);
-            mainScheduleChecks.setLayout(null);
+            // creating the main panel 
+            JPanel mainBooking = new JPanel();
+            mainBooking.setBackground(Color.PINK);
+            
+            this.add(mainBooking, BorderLayout.CENTER);
+            mainBooking.setLayout(null);
+            
+            JLabel bookingTitle = new JLabel("Your bookings: "); 
+            bookingTitle.setFont(new Font("Arial", Font.PLAIN, 25)); 
+            bookingTitle.setSize(200, 30); 
+            bookingTitle.setLocation(150, 30);
+            mainBooking.add(bookingTitle);
             
             
-             // adding a flowLayout 
-        FlowLayout checksLayout = new FlowLayout(); 
-            mainScheduleChecks.setLayout(checksLayout);
-   
+            //first check box and font box; 
             
-            //column titles
-            String[] columnNames = {"name", "service","time"};
+            JCheckBox checkBooking = new JCheckBox();
+            checkBooking.setSelected(false);
+            checkBooking.setSize(45,45);
+            checkBooking.setLocation(200, 120);
+            checkBooking.setBackground(Color.PINK);
+            mainBooking.add(checkBooking);
             
-            //data to introduce to the Table
-            Object[][] data ={ // take from DATABASE here
-                {"Ingrid","Blow out","11:00"},
-                {"juliana","cut", "11:30"},
+            JTextField booking1 = new JTextField();
+            booking1.setSize(190, 40);
+            booking1.setLocation(250, 120);
+            mainBooking.add(booking1);
             
-            };
-                               
-            JLabel txtSchedule = new JLabel("Your Schedule: ");
-            txtSchedule.setLocation(300, 120);
-            txtSchedule.setFont(new Font("Arial", Font.PLAIN, 30)); 
-            mainScheduleChecks.add(txtSchedule);
+            // second check box and font box; 
             
-            JTable table = new JTable(data, columnNames);
-            table.setPreferredScrollableViewportSize(new Dimension(500,50));
-            table.setFillsViewportHeight(true);
-            table.setLocation(300, 380);
-            table.setSize(300, 30);
+            JCheckBox checkBooking2 = new JCheckBox();
+            checkBooking2.setSelected(false);
+            checkBooking2.setSize(45,45);
+            checkBooking2.setLocation(200, 180);
+            checkBooking2.setBackground(Color.PINK);
+            mainBooking.add(checkBooking2);
             
-            JScrollPane scrollPane = new JScrollPane(table);
-            mainScheduleChecks.add(scrollPane);
+            JTextField booking2 = new JTextField();
+            booking2.setSize(190, 40);
+            booking2.setLocation(250, 180);
+            mainBooking.add(booking2);
             
-            //make the table be clickable 
-            ListSelectionModel model=table.getSelectionModel();
-            model.addListSelectionListener(new ListSelectionListener(){
-           
-                @Override
-            public void valueChanged(ListSelectionEvent e) {
-                // if not model is selection empty
-                if(! model.isSelectionEmpty()){
-                    
-                    // get selected row
-                    int selectedRow=model.getMinSelectionIndex();
-                    // and do: 
-                    System.out.println("selected" + selectedRow);
-                }
-            }
+            // third check box and font box; 
             
-    });
+            JCheckBox checkBooking3 = new JCheckBox();
+            checkBooking3.setSelected(false);
+            checkBooking3.setSize(45,45);
+            checkBooking3.setLocation(200, 250);
+            checkBooking3.setBackground(Color.PINK);
+            mainBooking.add(checkBooking3);
             
-           JButton cancelSchedule = new JButton("Cancel Selected Booking");
-           cancelSchedule.setSize(300, 40);
-           cancelSchedule.setLocation(300, 400);
-           cancelSchedule.setBackground(Color.red);
-           cancelSchedule.setForeground(Color.white);
-           mainScheduleChecks.add(cancelSchedule);
+            JTextField booking3 = new JTextField();
+            booking3.setSize(190, 40);
+            booking3.setLocation(250, 250);
+            mainBooking.add(booking3);
             
-           JButton makeSchedule = new JButton("Make a new Booking");
-           makeSchedule.setSize(300, 40);
-           makeSchedule.setLocation(300, 450);
-           makeSchedule.setBackground(Color.blue);
-           makeSchedule.setForeground(Color.white);
-           mainScheduleChecks.add(makeSchedule);
-           
-                // FOOTER
+            // adding button to cancel selected books
+            
+            JButton cancelBooking = new JButton("Cancel selected Books"); 
+            cancelBooking.setSize(180,40);
+            cancelBooking.setLocation(250, 310);
+            cancelBooking.setBackground(Color.red);
+            cancelBooking.setForeground(Color.gray);
+            // add an action listener to when click the button get the options selected
+            mainBooking.add(cancelBooking);
+            
+            // adding a new button to make a new booking
+            
+            JButton newBooking = new JButton("Make a new Booking"); 
+            newBooking.setSize(180,40);
+            newBooking.setLocation(250, 370);
+            newBooking.setBackground(Color.blue);
+            newBooking.setForeground(Color.gray);
+            newBooking.addActionListener(this);
+            mainBooking.add(newBooking);
+            
+            
+            // FOOTER
     
         JPanel footer = new JPanel(); // creating header
     
@@ -256,21 +259,33 @@ private void components()
         rightFooter.add(rightCol);
         
         footer.add(rightCol);
-        
+            
+            
             validate();
             repaint();
+            
+    }
+    
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        
+        if(e.getActionCommand().equals("Make a new Booking")){  
+            new ClientAndHairdresserMakeBookingController();
+        
+    }
+
+            setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }
+    
+    
+    
 }
 
-public void attributesSetter(){ 
-      this.setVisible(true);
-        this.setSize(600,700);
-        this.setTitle("Amil's hair");
 
-        BorderLayout frame = new BorderLayout();
-        this.setLayout(frame);
-}
-   private void validation(){
-        this.validate();
-        this.repaint();
+
+class Test2 {
+    public static void main(String[] args) throws Exception {
+       clientCheckBookingsView b = new clientCheckBookingsView();
     }
 }

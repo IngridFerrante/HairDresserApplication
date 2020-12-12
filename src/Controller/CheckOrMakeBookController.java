@@ -3,8 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package hairdresserapplication;
+package controller;
 
+import view.CheckOrMakeBookView;
+import controller.ClientAndHairdresserMakeBookingController;
+
+import view.clientCheckBookingsView;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
@@ -34,7 +38,7 @@ public class CheckOrMakeBookController extends JFrame implements ActionListener 
             new ClientAndHairdresserMakeBookingController();
         
     } else {  
-            new clientBookings();
+            new clientCheckBookingsView();
         
     }
     }

@@ -3,45 +3,45 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package hairdresserapplication;
+package view;
 
+import controller.HairDresserChecksDateScheduleController;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.FlowLayout;
-import java.awt.Font;
 import java.awt.GridLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
 import javax.swing.UIManager;
 
 /**
  *
- * @author 35389
+ * @author Kelly
  */
-public class clientBookings extends JFrame implements ActionListener{
-          JComboBox days = null;
-          JComboBox month = null;
-          JComboBox year = null;
-          JComboBox menuList = null;
+public class HairDresserChecksDateScheduleView extends JFrame {
+     // Components of the dateSchedule form 
+    JComboBox days = null;
+    JComboBox month = null;
+    JComboBox year = null;
+    JComboBox menuList = null;
     
-    public clientBookings(){
-           this.setVisible(true);
-            this.setSize(600,700);
-            this.setTitle("Amil's hair");
-
-            BorderLayout frame = new BorderLayout();
-            this.setLayout(frame);
-            
-             // header
+    HairDresserChecksDateScheduleController hairDresserScheduleController;
+    
+    public HairDresserChecksDateScheduleView(HairDresserChecksDateScheduleController controller)
+    {
+        hairDresserScheduleController = controller;    
+        attributesSetter();
+        components();
+        validation();
+    }
+    private void components()
+    {
+        // header
     JPanel header = new JPanel(); // creating header
     
     // adding a grid to the header (1 row and 3 columns)
@@ -63,9 +63,9 @@ public class clientBookings extends JFrame implements ActionListener{
     
     String[] menuApp = { "Home", "Location", "Review" };
     
-     menuList = new JComboBox(menuApp);
+    menuList = new JComboBox(menuApp);
     menuList.setSelectedIndex(2);
-    menuList.addActionListener(this);
+    menuList.addActionListener(hairDresserScheduleController);
     menuList.setActionCommand("menuList");
     menuList.setBackground(Color.GRAY);
     menuList.setForeground(Color.PINK);
@@ -116,8 +116,8 @@ public class clientBookings extends JFrame implements ActionListener{
     login.setActionCommand("login");
     register.setActionCommand("register");
     
-    login.addActionListener(this);
-    register.addActionListener(this);
+    login.addActionListener(hairDresserScheduleController);
+    register.addActionListener(hairDresserScheduleController);
     
     //adding color to the pop up panel
      UIManager.put("OptionPane.background", Color.PINK);
@@ -128,84 +128,111 @@ public class clientBookings extends JFrame implements ActionListener{
     //put it on the header
     header.add(rightHeader);
             
-            // creating the main panel 
-            JPanel mainBooking = new JPanel();
-            mainBooking.setBackground(Color.PINK);
             
-            this.add(mainBooking, BorderLayout.CENTER);
-            mainBooking.setLayout(null);
-            
-            JLabel bookingTitle = new JLabel("Your bookings: "); 
-            bookingTitle.setFont(new Font("Arial", Font.PLAIN, 25)); 
-            bookingTitle.setSize(200, 30); 
-            bookingTitle.setLocation(150, 30);
-            mainBooking.add(bookingTitle);
-            
-            
-            //first check box and font box; 
-            
-            JCheckBox checkBooking = new JCheckBox();
-            checkBooking.setSelected(false);
-            checkBooking.setSize(45,45);
-            checkBooking.setLocation(200, 120);
-            checkBooking.setBackground(Color.PINK);
-            mainBooking.add(checkBooking);
-            
-            JTextField booking1 = new JTextField();
-            booking1.setSize(190, 40);
-            booking1.setLocation(250, 120);
-            mainBooking.add(booking1);
-            
-            // second check box and font box; 
-            
-            JCheckBox checkBooking2 = new JCheckBox();
-            checkBooking2.setSelected(false);
-            checkBooking2.setSize(45,45);
-            checkBooking2.setLocation(200, 180);
-            checkBooking2.setBackground(Color.PINK);
-            mainBooking.add(checkBooking2);
-            
-            JTextField booking2 = new JTextField();
-            booking2.setSize(190, 40);
-            booking2.setLocation(250, 180);
-            mainBooking.add(booking2);
-            
-            // third check box and font box; 
-            
-            JCheckBox checkBooking3 = new JCheckBox();
-            checkBooking3.setSelected(false);
-            checkBooking3.setSize(45,45);
-            checkBooking3.setLocation(200, 250);
-            checkBooking3.setBackground(Color.PINK);
-            mainBooking.add(checkBooking3);
-            
-            JTextField booking3 = new JTextField();
-            booking3.setSize(190, 40);
-            booking3.setLocation(250, 250);
-            mainBooking.add(booking3);
-            
-            // adding button to cancel selected books
-            
-            JButton cancelBooking = new JButton("Cancel selected Books"); 
-            cancelBooking.setSize(180,40);
-            cancelBooking.setLocation(250, 310);
-            cancelBooking.setBackground(Color.red);
-            cancelBooking.setForeground(Color.gray);
-            // add an action listener to when click the button get the options selected
-            mainBooking.add(cancelBooking);
-            
-            // adding a new button to make a new booking
-            
-            JButton newBooking = new JButton("Make a new Booking"); 
-            newBooking.setSize(180,40);
-            newBooking.setLocation(250, 370);
-            newBooking.setBackground(Color.blue);
-            newBooking.setForeground(Color.gray);
-            newBooking.addActionListener(this);
-            mainBooking.add(newBooking);
-            
-            
-            // FOOTER
+          
+            //main Area
+    JPanel mainArea = new JPanel(); // creating the main panel
+  
+     //adding a layout to the dropdown and button
+     FlowLayout scheduleBtn = new FlowLayout(); 
+     mainArea.setLayout(scheduleBtn);
+     mainArea.setBackground(Color.PINK);
+     
+     //adding the panel to the frame
+     this.add(mainArea, BorderLayout.CENTER);
+     
+     
+     //left hand side
+     
+    
+     JLabel txt = new JLabel("Schedule: ");
+     mainArea.add(txt);
+             
+     JPanel leftMain = new JPanel();
+     FlowLayout leftlayoutMain = new FlowLayout();
+     leftMain.setLayout(leftlayoutMain);
+     leftlayoutMain.setAlignment(FlowLayout.LEFT);
+     leftMain.setBackground(Color.PINK);
+     
+       String[]  dates 
+        = { "1", "2", "3", "4", "5", 
+            "6", "7", "8", "9", "10", 
+            "11", "12", "13", "14", "15", 
+            "16", "17", "18", "19", "20", 
+            "21", "22", "23", "24", "25", 
+            "26", "27", "28", "29", "30", 
+            "31" };
+       
+       String[] months
+        = { "Jan", "feb", "Mar", "Apr", 
+            "May", "Jun", "July", "Aug", 
+            "Sup", "Oct", "Nov", "Dec" };
+       
+       String[] years
+               = {"2020","2021"};
+    
+    days = new JComboBox(dates);
+  
+  //  days.addActionListener(this); ADD AN ACTION LISTENER LATER
+    days.setActionCommand("days");
+    days.setBackground(Color.GRAY);
+    days.setForeground(Color.PINK);
+
+     
+    
+    leftMain.add(days);
+    
+    
+    //adding to the main panel 
+    
+    mainArea.add(leftMain);
+    
+    // center 
+    
+    JPanel centerMain = new JPanel();
+    FlowLayout centerLayout = new FlowLayout();
+    centerMain.setLayout(centerLayout);
+    centerLayout.setAlignment(FlowLayout.CENTER);
+    centerMain.setBackground(Color.PINK);
+    
+    // add the month drop down
+    
+    month = new JComboBox(months);
+   
+   // month.addActionListener(this);
+    month.setActionCommand("month");
+    month.setBackground(Color.GRAY);
+    month.setForeground(Color.PINK);
+   
+    
+   centerMain.add(month);
+   
+   //adding to the main panel 
+   mainArea.add(centerMain);
+   
+   // right side
+   JPanel rightMain = new JPanel();
+   FlowLayout rightLayought = new FlowLayout();
+   rightLayought.setAlignment(FlowLayout.RIGHT);
+   rightMain.setBackground(Color.PINK);
+   
+    year = new JComboBox(years);
+  
+  //  year.addActionListener(this);
+    year.setActionCommand("year");
+    year.setBackground(Color.GRAY);
+    year.setForeground(Color.PINK);
+    
+    rightMain.add(year); 
+    
+    //adding to the main panel 
+   mainArea.add(rightMain);
+    
+   
+   JButton okBtn = new JButton("ok");
+   mainArea.add(okBtn);
+   
+   // FOOTER
     
         JPanel footer = new JPanel(); // creating header
     
@@ -258,33 +285,32 @@ public class clientBookings extends JFrame implements ActionListener{
         rightFooter.add(rightCol);
         
         footer.add(rightCol);
-            
-            
-            validate();
-            repaint();
-            
-    }
-    
-
-    @Override
-    public void actionPerformed(ActionEvent e) {
         
-        if(e.getActionCommand().equals("Make a new Booking")){  
-            new ClientAndHairdresserMakeBookingController();
         
+        validate();
+        repaint();
     }
+    
+    // Setting attributes
+    private void attributesSetter(){
+        this.setVisible(true);
+        this.setSize(600,700);
+        this.setTitle("Amil's hair");
 
-            setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        BorderLayout frame = new BorderLayout();
+        this.setLayout(frame);
     }
     
-    
-    
+     private void validation(){
+        this.validate();
+        this.repaint();
+        
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//stops running when the window is closed 
+    }
 }
 
-
-
-class Test2 {
+class dateSchedule {
     public static void main(String[] args) throws Exception {
-       clientBookings b = new clientBookings();
+       HairDresserChecksDateScheduleController a = new HairDresserChecksDateScheduleController();
     }
 }

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package hairdresserapplication;
+package view;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -21,9 +21,9 @@ import javax.swing.JPanel;
  *
  * @author 35389
  */
-public class testLocation extends JFrame implements ActionListener{
+public class testLocationView extends JFrame implements ActionListener{
     
-    public testLocation(){
+    public testLocationView(){
            this.setVisible(true);
             this.setSize(600,700);
             this.setTitle("Amil's hair");
@@ -73,6 +73,6 @@ public class testLocation extends JFrame implements ActionListener{
 
 class Test4 {
     public static void main(String[] args) throws Exception {
-       testLocation c = new testLocation();
+       testLocationView c = new testLocationView();
     }
 }

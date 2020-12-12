@@ -3,11 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package hairdresserapplication;
+package controller;
 
+import controller.LoginController;
+import view.RegisterClientView;
 import javax.swing.*; 
 import java.awt.*; 
 import java.awt.event.*;
+import model.RegisterClientModel;
+import model.User;
 //import static javax.swing.JFrame.EXIT_ON_CLOSE;
 /**
  *

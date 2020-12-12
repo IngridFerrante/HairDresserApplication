@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package hairdresserapplication;
+package controller;
 
+import view.HairDresserChecksDateScheduleView;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.FlowLayout;
@@ -25,13 +26,13 @@ import javax.swing.UIManager;
  *
  * @author 35389
  */
- class HairDresserScheduleController extends JFrame implements ActionListener {
+ public class HairDresserChecksDateScheduleController extends JFrame implements ActionListener {
      
-     HairDresserScheduleView hairDressScheduleView;
+     HairDresserChecksDateScheduleView hairDressScheduleView;
      
-     public HairDresserScheduleController(){
+     public HairDresserChecksDateScheduleController(){
 
-            this.hairDressScheduleView = new HairDresserScheduleView(this);
+            this.hairDressScheduleView = new HairDresserChecksDateScheduleView(this);
      }
      
     @Override
@@ -43,6 +44,6 @@ import javax.swing.UIManager;
 
 class Test {
     public static void main(String[] args) throws Exception {
-       HairDresserScheduleController a = new HairDresserScheduleController();
+       HairDresserChecksDateScheduleController a = new HairDresserChecksDateScheduleController();
     }
 }

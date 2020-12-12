@@ -3,7 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package hairdresserapplication;
+package view;
+
+import controller.ClientAndHairdresserMakeBookingController;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -26,7 +28,7 @@ import javax.swing.UIManager;
  */
 public class ClientAndHairdresserMakeBookingView extends JFrame{
     
-    // Components of the RegisterHairDresserController form 
+    // Components of the clientandHAirdresserMakeBooking form 
     private JLabel title;  
     private JButton BookButton;
     private JLabel FirstName;
@@ -50,7 +52,9 @@ public class ClientAndHairdresserMakeBookingView extends JFrame{
     }
     
      private void components(){
-         JPanel header = new JPanel(); // creating header
+         // header    
+         
+    JPanel header = new JPanel(); // creating header
     
     // adding a grid to the header (1 row and 3 columns)
     GridLayout headerLayout = new GridLayout(1,3); 
@@ -315,7 +319,6 @@ public class ClientAndHairdresserMakeBookingView extends JFrame{
     }
     
     public String getNearByLocation(){
-        //return menuLocation.getActionCommand();
         return (String) menuLocation.getSelectedItem();
     }
     public String getlService(){

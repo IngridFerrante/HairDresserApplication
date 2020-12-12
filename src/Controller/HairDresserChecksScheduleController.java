@@ -3,34 +3,35 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package hairdresserapplication;
+package controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JFrame;
+import view.HairDresserChecksScheduleView;
 
 /**
  *
  * @author 35389
  */
-public class HairDresserChecksController extends JFrame implements ActionListener {
+public class HairDresserChecksScheduleController extends JFrame implements ActionListener {
 
-    HairDresserChecksView hairDresserChecksView;
+    HairDresserChecksScheduleView hairDresserChecksView;
     
-    public HairDresserChecksController(){
-        this.hairDresserChecksView = new HairDresserChecksView(this);
+    public HairDresserChecksScheduleController(){
+        this.hairDresserChecksView = new HairDresserChecksScheduleView(this);
     }
     
     
     @Override
     public void actionPerformed(ActionEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
     }
     
 }
 
 class Test3 {
     public static void main(String[] args) throws Exception {
-       HairDresserChecksController check = new HairDresserChecksController();
+       HairDresserChecksScheduleController check = new HairDresserChecksScheduleController();
     }
 }
