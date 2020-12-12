@@ -23,7 +23,7 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.UIManager;
-import model.bookAppoitment;
+import model.BookAppointment;
 
 /**
  *
@@ -52,7 +52,7 @@ import model.bookAppoitment;
            String month = hairDressScheduleView.getMonth();
            String year = hairDressScheduleView.getYear();
            
-           bookAppoitment schedule = new bookAppoitment(day, month, year);
+           BookAppointment schedule = new BookAppointment(day, month, year);
            
            boolean result = hairDresserChecksDateScheduleModel.scheduleHairdresser(schedule);
             

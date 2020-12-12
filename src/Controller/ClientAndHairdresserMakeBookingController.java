@@ -6,7 +6,7 @@
 package controller;
 
 import hairdresserapplication.HairDresserApplication;
-import model.bookAppoitment;
+import model.BookAppointment;
 import model.ClientAndHairdresserMakeBookingModel;
 import view.ClientAndHairdresserMakeBookingView;
 
@@ -44,12 +44,14 @@ public class ClientAndHairdresserMakeBookingController extends JFrame implements
         else if(e.getActionCommand().equals("Make a Book")){
             String nearbylocation = clientandhairdresserMakeBookingView.getNearByLocation();
             String service = clientandhairdresserMakeBookingView.getlService();
-            String date = clientandhairdresserMakeBookingView.getDate();
+            String day = clientandhairdresserMakeBookingView.getDay();
+            String month = clientandhairdresserMakeBookingView.getMonth();
+            String year = clientandhairdresserMakeBookingView.getYear();
             String time = clientandhairdresserMakeBookingView.getTime();
             String clientFirstname = clientandhairdresserMakeBookingView.getClientFirstName();
             String clientPhonenumber = clientandhairdresserMakeBookingView.getClientPhoneNumber();
             
-            bookAppoitment booking = new bookAppoitment(nearbylocation, service, date, time, clientFirstname, clientPhonenumber);
+            BookAppointment booking = new BookAppointment(nearbylocation, service, day, month, year, time, clientFirstname, clientPhonenumber);
             
             boolean result = clientandhairdresserMakeBookingModel.bookingClient(booking);
             

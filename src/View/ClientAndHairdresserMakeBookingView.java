@@ -177,7 +177,7 @@ public class ClientAndHairdresserMakeBookingView extends JFrame{
         rp.add(menuService);    
         
         //redo this bit using datePicker
-       String[]  dates 
+       String[]  day 
         = { "1", "2", "3", "4", "5", 
             "6", "7", "8", "9", "10", 
             "11", "12", "13", "14", "15", 
@@ -186,16 +186,16 @@ public class ClientAndHairdresserMakeBookingView extends JFrame{
             "26", "27", "28", "29", "30", 
             "31" };
        
-       String[] months
+       String[] month
         = { "Jan", "feb", "Mar", "Apr", 
             "May", "Jun", "July", "Aug", 
             "Sup", "Oct", "Nov", "Dec" };
        
-       String[] years
+       String[] year
                = {"2020","2021"};
         
         
-        menuDate = new JComboBox(dates);
+        menuDate = new JComboBox(day);
         menuDate.addActionListener(clientMakeBookingController);
         menuDate.setSize(60, 40); 
         menuDate.setLocation(190, 180);
@@ -204,7 +204,7 @@ public class ClientAndHairdresserMakeBookingView extends JFrame{
         menuDate.setForeground(Color.PINK);//set text button color
         rp.add(menuDate);
         
-        menuDate = new JComboBox(months);
+        menuDate = new JComboBox(month);
         menuDate.addActionListener(clientMakeBookingController);
         menuDate.setSize(60, 40); 
         menuDate.setLocation(250, 180);
@@ -213,7 +213,7 @@ public class ClientAndHairdresserMakeBookingView extends JFrame{
         menuDate.setForeground(Color.PINK);//set text button color
         rp.add(menuDate);
         
-        menuDate = new JComboBox(years);
+        menuDate = new JComboBox(year);
         menuDate.addActionListener(clientMakeBookingController);
         menuDate.setSize(80, 40); 
         menuDate.setLocation(310, 180);
@@ -358,7 +358,13 @@ public class ClientAndHairdresserMakeBookingView extends JFrame{
     public String getlService(){
         return (String) menuService.getSelectedItem();     
     }
-    public String getDate(){
+    public String getDay(){
+        return (String) menuDate.getSelectedItem();
+    }
+    public String getMonth(){
+        return (String) menuDate.getSelectedItem();
+    }
+    public String getYear(){
         return (String) menuDate.getSelectedItem();
     }
     public String getTime(){

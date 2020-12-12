@@ -3,11 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package View;
+package view;
 
-import Controller.reviewPageController;
+import controller.ReviewPageController;
 import controller.CheckOrMakeBookController;
 import hairdresserapplication.reviewPage;
+
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.FlowLayout;
@@ -30,19 +31,21 @@ import javax.swing.UIManager;
  *
  * @author 35389
  */
-public class reviewPageView extends JFrame implements ActionListener {
+public class ReviewPageView extends JFrame implements ActionListener {
           JComboBox days = null;
           JComboBox month = null;
           JComboBox year = null;
           JComboBox menuList = null;
           private JLabel cName;
+          private JTextField customerName;
           private JTextArea writeReview;
+          
           private JLabel result;
           
-    reviewPageController ReviewPageController;
-
-
-    public reviewPageView(reviewPageController controller)
+          
+    ReviewPageController ReviewPageController;
+   
+    public ReviewPageView(ReviewPageController controller)
     {
         ReviewPageController = controller;
         attributesSetter();
@@ -50,9 +53,6 @@ public class reviewPageView extends JFrame implements ActionListener {
         validation();
     }
 
-    public reviewPageView() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
     
     private void components(){
         // header
@@ -77,7 +77,7 @@ public class reviewPageView extends JFrame implements ActionListener {
     
     String[] menuApp = { "Home", "Location", "Review" };
     
-     menuList = new JComboBox(menuApp);
+    menuList = new JComboBox(menuApp);
     menuList.setSelectedIndex(2);
     menuList.addActionListener(this);
     menuList.setActionCommand("menuList");
@@ -161,14 +161,14 @@ public class reviewPageView extends JFrame implements ActionListener {
             cName.setLocation(150, 60);
             mainReview.add(cName);
             
-           JTextField customerName = new JTextField();
+           customerName = new JTextField();
            customerName.setSize(300, 30);
            customerName.setLocation(150, 85);
            customerName.setBackground(Color.GRAY);
            customerName.setForeground(Color.white);
            mainReview.add(customerName);
            
-            JTextArea writeReview = new JTextArea("My experience: ", 50, 50);
+            writeReview = new JTextArea("My experience: ", 50, 50);
             writeReview.setSize(300, 200); 
             writeReview.setLocation(150, 140);
             writeReview.setBackground(Color.GRAY);
@@ -262,7 +262,7 @@ public class reviewPageView extends JFrame implements ActionListener {
         }
          
          public String getCustomerName(){
-             return cName.getText();
+             return customerName.getText();
          }
          
          public String getReview(){
@@ -276,8 +276,9 @@ public class reviewPageView extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
     
 }
 
@@ -286,6 +287,6 @@ class reviewPageView2 {
   
     public static void main(String[] args) throws Exception 
     { 
-        reviewPageController review = new reviewPageController(); 
+        ReviewPageController review = new ReviewPageController(); 
     } 
 }

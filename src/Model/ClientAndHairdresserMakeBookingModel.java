@@ -6,6 +6,7 @@
 package model;
 
 import controller.ClientAndHairdresserMakeBookingController;
+import controller.ReviewPageController;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.Statement;
@@ -27,14 +28,14 @@ public class ClientAndHairdresserMakeBookingModel {
      
     // create an user in the database, return a string null if there are no error, otherwise return
     // the message from database
-    public Boolean bookingClient(bookAppoitment booking) {
+    public Boolean bookingClient(BookAppointment booking) {
         
         //java.sql.Date date = java.sql.Date.valueOf(booking.getDate());
         //java.sql.Time time = java.sql.Time.valueOf(booking.getTime());
         
-        String sql = "INSERT INTO bookingAppointment (location, service, date, time,first_name, phone_number) "
+        String sql = "INSERT INTO bookingAppointment (location, service, day, month, year, time, first_name, phone_number) "
                      + "VALUES ('" + booking.getNearByLocation() + "','" + booking.getlService() 
-                     + "','" + booking.getDate() + "','" + booking.getTime()+ "','" + booking.getClientFirstName()
+                     + "','" + booking.getDay() + "','" + booking.getMonth() + "','" + booking.getYear() + "','" + booking.getTime()+ "','" + booking.getClientFirstName()
                      + "','" + booking.getClientPhoneNumber()+ "')";
         
       
@@ -68,11 +69,10 @@ public class ClientAndHairdresserMakeBookingModel {
 }
        
         
-// Driver Code - main method to unable seeing the page individually
-class Booking { 
+class reviewPageView3 { 
   
     public static void main(String[] args) throws Exception 
     { 
-        ClientAndHairdresserMakeBookingController bookingmodel = new ClientAndHairdresserMakeBookingController(); 
-    } 
+        ReviewPageController review = new ReviewPageController(); 
+    }
 }

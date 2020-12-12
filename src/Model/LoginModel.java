@@ -18,6 +18,7 @@ import model.User;
  */
 public class LoginModel {
     
+    
     public boolean login(User user){
         
         boolean result = false;
@@ -28,7 +29,7 @@ public class LoginModel {
             String dbUser = "Kelly_2019375";
             String dbPassword = "2019375";
             String query = "SELECT * FROM userHairDresser WHERE email = '" + user.getUn() + "' AND password = '" + user.getPw() + "'";
-
+             //String query = "Select * from customerReviews";
             // Get a connection to the database
             Connection conn = DriverManager.getConnection(dbServer, dbUser, dbPassword);
 

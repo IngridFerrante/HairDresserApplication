@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package Model;
-
+import model.BookAppointment;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.Statement;
@@ -24,12 +24,12 @@ public class HairDresserChecksDateScheduleModel {
         
     }
     
-    public Boolean scheduleHairdresser(bookAppoitment schedule){
+    public Boolean scheduleHairdresser(BookAppointment schedule){
                 
-        String sql = "INSERT INTO bookingAppointment (location, service, date, time,first_name, phone_number) "
-                     + "VALUES ('" + schedule.getDay() + "','" + schedule.getMonth() 
-                     + "','" +  schedule.getYear()+ "')";
-        
+//        String sql = "INSERT INTO bookingAppointment (location, service, date, time,first_name, phone_number) "
+//                     + "VALUES ('" + schedule.getDay() + "','" + schedule.getMonth() 
+//                     + "','" +  schedule.getYear()+ "')";
+        String sql = "Insert";
        Boolean result = false;
         
         try {
