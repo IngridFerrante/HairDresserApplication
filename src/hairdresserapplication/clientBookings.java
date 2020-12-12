@@ -270,7 +270,7 @@ public class clientBookings extends JFrame implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         
         if(e.getActionCommand().equals("Make a new Booking")){  
-            new ClientMakeBookingController();
+            new ClientAndHairdresserMakeBookingController();
         
     }
 
