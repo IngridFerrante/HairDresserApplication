@@ -5,7 +5,6 @@
  */
 package hairdresserapplication;
 
-import view.ReviewPageView;
 import controller.LoginController;
 import controller.RegisterClientController;
 import controller.RegisterHairDresserController;
