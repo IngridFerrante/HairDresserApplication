@@ -5,6 +5,8 @@
  */
 package controller;
 
+import Model.HairDresserChecksDateScheduleModel;
+import hairdresserapplication.HairDresserApplication;
 import view.HairDresserChecksDateScheduleView;
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -21,6 +23,7 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.UIManager;
+import model.bookAppoitment;
 
 /**
  *
@@ -29,14 +32,39 @@ import javax.swing.UIManager;
  public class HairDresserChecksDateScheduleController extends JFrame implements ActionListener {
      
      HairDresserChecksDateScheduleView hairDressScheduleView;
+     HairDresserChecksDateScheduleModel hairDresserChecksDateScheduleModel;
      
      public HairDresserChecksDateScheduleController(){
 
             this.hairDressScheduleView = new HairDresserChecksDateScheduleView(this);
-     }
+            this.hairDresserChecksDateScheduleModel = new HairDresserChecksDateScheduleModel();
+      }
+     
      
     @Override
     public void actionPerformed(ActionEvent e) {
+         //   to identify different text field
+        if(e.getActionCommand().equals("logout")){  
+            new HairDresserApplication();
+        
+        }else if(e.getActionCommand().equals("ok")){
+           String day = hairDressScheduleView.getDay();
+           String month = hairDressScheduleView.getMonth();
+           String year = hairDressScheduleView.getYear();
+           
+           bookAppoitment booking = new bookAppoitment(day, month, year);
+           
+           boolean result = hairDresserChecksDateScheduleModel.scheduleHairdresser(booking);
+            
+            
+            if(result == true)
+            {
+              
+                hairDressScheduleView.setResult("Booking for was successfully created.");
+                
+            }
+           
+        }
         
     }
 }

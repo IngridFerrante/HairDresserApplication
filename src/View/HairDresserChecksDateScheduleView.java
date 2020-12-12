@@ -9,6 +9,7 @@ import controller.HairDresserChecksDateScheduleController;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.FlowLayout;
+import java.awt.Font;
 import java.awt.GridLayout;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
@@ -29,6 +30,7 @@ public class HairDresserChecksDateScheduleView extends JFrame {
     JComboBox month = null;
     JComboBox year = null;
     JComboBox menuList = null;
+    private JLabel result;
     
     HairDresserChecksDateScheduleController hairDresserScheduleController;
     
@@ -232,6 +234,12 @@ public class HairDresserChecksDateScheduleView extends JFrame {
    JButton okBtn = new JButton("ok");
    mainArea.add(okBtn);
    
+        result = new JLabel(""); 
+        result.setFont(new Font("Arial", Font.PLAIN, 12)); 
+        result.setSize(500, 20); 
+        result.setLocation(10, 360); 
+        mainArea.add(result);
+   
    // FOOTER
     
         JPanel footer = new JPanel(); // creating header
@@ -306,6 +314,20 @@ public class HairDresserChecksDateScheduleView extends JFrame {
         this.repaint();
         
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//stops running when the window is closed 
+    }
+     
+     public String getDay(){
+         return (String) days.getSelectedItem();
+     }
+     public String getMonth(){
+         return (String) month.getSelectedItem();
+     }
+     public String getYear(){
+         return (String) year.getSelectedItem();
+     }
+     public void setResult(String message)
+    {
+        result.setText(message);
     }
 }
 

@@ -20,6 +20,10 @@ public class bookAppoitment {
     private String time;
     private String clientFirstname;
     private String clientPhonenumber;
+    
+        private String day; 
+        private String month;
+        private String year;
   
 
            //booking client and hairdresser
@@ -71,5 +75,29 @@ public class bookAppoitment {
         return clientPhonenumber;
 }    
 
+    // hairDresser Schedule page Model below: 
     
+   // public class hairdresserSchedule {
+//        private String day; 
+//        private String month;
+//        private String year;
+        
+        
+        public bookAppoitment(String day, String month, String year){
+                this.day = day;
+                this.month = month; 
+                this.year = year;
+            }
+  
+        String getDay(){
+            return day;
+        }
+        String getMonth(){
+            return month;
+        }
+        String getYear(){
+            return year;
+        }
+        
 }
+    
