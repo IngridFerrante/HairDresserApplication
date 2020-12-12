@@ -26,7 +26,8 @@ public ReviewPageModel(){
 }
 
 public Boolean reviewClient(customerReviews reviews){
-    String sql = "INSERT INTO customerReviews (location, service, date, time,first_name, phone_number) "
+    
+    String sql = "INSERT INTO customerReviews (customerName, review)"
                      + "VALUES ('" + reviews.getCustomerName() + "','" + reviews.getReview()+ "')";
         
       

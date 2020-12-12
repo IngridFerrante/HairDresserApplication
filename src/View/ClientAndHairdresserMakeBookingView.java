@@ -165,7 +165,7 @@ public class ClientAndHairdresserMakeBookingView extends JFrame{
         menuLocation.setForeground(Color.PINK);//set text button color
         rp.add(menuLocation);
         
-        String[] menuServiceBook = { "Choose a Servide","Cut", "Dry","Stylling" };
+        String[] menuServiceBook = { "Choose a Service","Cut", "Dry","Stylling" };
         menuService = new JComboBox(menuServiceBook);
         menuService.setSelectedIndex(0);
         menuService.addActionListener(clientMakeBookingController);
@@ -177,16 +177,50 @@ public class ClientAndHairdresserMakeBookingView extends JFrame{
         rp.add(menuService);    
         
         //redo this bit using datePicker
-        String[] menuDateBook = { "Choose a date","20/12/2020", "20/12/2020","20/12/2020" };
-        menuDate = new JComboBox(menuDateBook);
-        menuDate.setSelectedIndex(0);
+       String[]  dates 
+        = { "1", "2", "3", "4", "5", 
+            "6", "7", "8", "9", "10", 
+            "11", "12", "13", "14", "15", 
+            "16", "17", "18", "19", "20", 
+            "21", "22", "23", "24", "25", 
+            "26", "27", "28", "29", "30", 
+            "31" };
+       
+       String[] months
+        = { "Jan", "feb", "Mar", "Apr", 
+            "May", "Jun", "July", "Aug", 
+            "Sup", "Oct", "Nov", "Dec" };
+       
+       String[] years
+               = {"2020","2021"};
+        
+        
+        menuDate = new JComboBox(dates);
         menuDate.addActionListener(clientMakeBookingController);
-        menuDate.setSize(200, 40); 
+        menuDate.setSize(60, 40); 
         menuDate.setLocation(190, 180);
        // menuHour.setActionCommand("menuHour");
         menuDate.setBackground(Color.GRAY);//set button color
         menuDate.setForeground(Color.PINK);//set text button color
-        rp.add(menuDate);     
+        rp.add(menuDate);
+        
+        menuDate = new JComboBox(months);
+        menuDate.addActionListener(clientMakeBookingController);
+        menuDate.setSize(60, 40); 
+        menuDate.setLocation(250, 180);
+       // menuHour.setActionCommand("menuHour");
+        menuDate.setBackground(Color.GRAY);//set button color
+        menuDate.setForeground(Color.PINK);//set text button color
+        rp.add(menuDate);
+        
+        menuDate = new JComboBox(years);
+        menuDate.addActionListener(clientMakeBookingController);
+        menuDate.setSize(80, 40); 
+        menuDate.setLocation(310, 180);
+       // menuHour.setActionCommand("menuHour");
+        menuDate.setBackground(Color.GRAY);//set button color
+        menuDate.setForeground(Color.PINK);//set text button color
+        rp.add(menuDate);
         
         //pick hour //make a loop to take a picked hour from the array
         String[] menuHourBook = { "Choose an hour","10:00", "12:00","2:00","4:00", "6:00" };
