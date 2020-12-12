@@ -319,13 +319,13 @@ public class ClientAndHairdresserMakeBookingView extends JFrame{
         return (String) menuLocation.getSelectedItem();
     }
     public String getlService(){
-        return menuService.getActionCommand();     
+        return (String) menuService.getSelectedItem();     
     }
     public String getDate(){
-        return menuDate.getActionCommand();
+        return (String) menuDate.getSelectedItem();
     }
     public String getTime(){
-        return menuHour.getActionCommand();
+        return (String) menuHour.getSelectedItem();
     }
     public String getClientFirstName(){
         return FirstName.getText();
