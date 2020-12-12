@@ -5,6 +5,7 @@
  */
 package hairdresserapplication;
 
+import View.reviewPageView;
 import controller.LoginController;
 import controller.RegisterClientController;
 import controller.RegisterHairDresserController;
@@ -27,6 +28,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.UIManager;
+import view.testLocationView;
 
 /**
  *
@@ -343,11 +345,18 @@ public void MainPage()
                     new RegisterClientController(); // call register client page
                
             }       
-    }
-  
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }else if(e.getActionCommand().equals("Home")){
+        new HairDresserApplication();
+        
+    }else if(e.getActionCommand().equals("Location")){
+        new testLocationView();
+        
+    }else if(e.getActionCommand().equals("Review")){
+        new reviewPageView();
         
     }
+        
+         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     
 //            public void actionPerformed(ActionEvent e) {
 //                if(e.getActionCommand().equals("menuList")){
@@ -356,7 +365,7 @@ public void MainPage()
 //    }
  
  
-
+    }
     }
     
    

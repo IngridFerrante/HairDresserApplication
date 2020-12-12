@@ -35,6 +35,9 @@ public class reviewPageView extends JFrame implements ActionListener {
           JComboBox month = null;
           JComboBox year = null;
           JComboBox menuList = null;
+          private JLabel cName;
+          private JTextArea writeReview;
+          private JLabel result;
           
     reviewPageController ReviewPageController;
 
@@ -45,6 +48,10 @@ public class reviewPageView extends JFrame implements ActionListener {
         attributesSetter();
         components();
         validation();
+    }
+
+    public reviewPageView() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     private void components(){
@@ -177,6 +184,12 @@ public class reviewPageView extends JFrame implements ActionListener {
             sendReview.addActionListener(ReviewPageController);
             mainReview.add(sendReview);
             
+            result = new JLabel(""); 
+            result.setFont(new Font("Arial", Font.PLAIN, 12)); 
+            result.setSize(500, 20); 
+            result.setLocation(10, 360); 
+            mainReview.add(result);
+            
               // FOOTER
     
         JPanel footer = new JPanel(); // creating header
@@ -247,6 +260,19 @@ public class reviewPageView extends JFrame implements ActionListener {
         this.validate();
         this.repaint();
         }
+         
+         public String getCustomerName(){
+             return cName.getText();
+         }
+         
+         public String getReview(){
+             return writeReview.getText();
+         }
+         
+     public void setResult(String message)
+    {
+        result.setText(message);
+    }
 
     @Override
     public void actionPerformed(ActionEvent e) {
