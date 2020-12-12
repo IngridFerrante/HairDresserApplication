@@ -24,12 +24,11 @@ public class HairDresserChecksDateScheduleModel {
         
     }
     
-    public Boolean scheduleHairdresser(bookAppoitment booking){
+    public Boolean scheduleHairdresser(bookAppoitment schedule){
                 
         String sql = "INSERT INTO bookingAppointment (location, service, date, time,first_name, phone_number) "
-                     + "VALUES ('" + booking.getNearByLocation() + "','" + booking.getlService() 
-                     + "','" + booking.getDate() + "','" + booking.getTime()+ "','" + booking.getClientFirstName()
-                     + "','" + booking.getClientPhoneNumber()+ "')";
+                     + "VALUES ('" + schedule.getDay() + "','" + schedule.getMonth() 
+                     + "','" +  schedule.getYear()+ "')";
         
        Boolean result = false;
         

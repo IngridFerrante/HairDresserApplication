@@ -35,6 +35,12 @@ public class bookAppoitment {
     this.clientFirstname = clientFirstname;
     this.clientPhonenumber = clientPhonenumber;
     }
+    
+     public bookAppoitment(String day, String month, String year){
+                this.day = day;
+                this.month = month; 
+                this.year = year;
+            }
 
 //    public bookAppoitment(int id, User location,LocalTime date, LocalTime time, Boolean available) {
 //    this.location = location;
@@ -83,11 +89,7 @@ public class bookAppoitment {
 //        private String year;
         
         
-        public bookAppoitment(String day, String month, String year){
-                this.day = day;
-                this.month = month; 
-                this.year = year;
-            }
+       
   
         String getDay(){
             return day;

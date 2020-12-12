@@ -232,6 +232,7 @@ public class HairDresserChecksDateScheduleView extends JFrame {
     
    
    JButton okBtn = new JButton("ok");
+   okBtn.addActionListener(hairDresserScheduleController); 
    mainArea.add(okBtn);
    
         result = new JLabel(""); 

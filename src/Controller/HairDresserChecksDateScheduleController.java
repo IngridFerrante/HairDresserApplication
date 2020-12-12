@@ -52,9 +52,9 @@ import model.bookAppoitment;
            String month = hairDressScheduleView.getMonth();
            String year = hairDressScheduleView.getYear();
            
-           bookAppoitment booking = new bookAppoitment(day, month, year);
+           bookAppoitment schedule = new bookAppoitment(day, month, year);
            
-           boolean result = hairDresserChecksDateScheduleModel.scheduleHairdresser(booking);
+           boolean result = hairDresserChecksDateScheduleModel.scheduleHairdresser(schedule);
             
             
             if(result == true)
