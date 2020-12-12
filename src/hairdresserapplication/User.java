@@ -10,9 +10,7 @@ package hairdresserapplication;
  * @author 35389
  */
 public class User {
-
-
-    
+   
     private String un;
     private String pw;
     
@@ -22,6 +20,7 @@ public class User {
     private String emailAddress;
     private String phoneNumber;
     private String passwordUser;
+  
     
     public User(String un, String pw){
         this.un = un;
@@ -46,6 +45,7 @@ public class User {
         this.passwordUser = passwordUser;
     }
 
+    
 //        //Register Hairdresser
 //    public User(String location, String firstName, String lastName, String emailAddress, String phoneNumber, String passwordUser) {
 //    this.location = location;
@@ -57,6 +57,7 @@ public class User {
 //    
 //    }
 
+    //to get login information 
     public String getUn() {
         return un;
     }
@@ -66,7 +67,7 @@ public class User {
     }
     
     
-
+//to get registration information 
     String getLocation() {
         return location;
    }
@@ -90,6 +91,6 @@ public class User {
     String getPassword() {
         return passwordUser;
 }
-
-
+ 
+    
 }

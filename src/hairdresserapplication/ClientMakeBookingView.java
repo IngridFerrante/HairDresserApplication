@@ -33,13 +33,15 @@ public class ClientMakeBookingView extends JFrame{
     private JTextField textClientFirstName; 
     private JLabel phone;
     private JTextField textphone; 
+    private JLabel result;
     JComboBox menuLocation = null; 
     JComboBox menuService = null; 
     JComboBox menuDate = null; 
     JComboBox menuHour = null;
     
-    ClientMakeBookingController clientMakeBookingController;
-    public ClientMakeBookingView(ClientMakeBookingController controller)
+    
+    ClientAndHairdresserMakeBookingController clientMakeBookingController;
+    public ClientMakeBookingView(ClientAndHairdresserMakeBookingController controller)
     {
         clientMakeBookingController = controller;
         attributesSetter();
@@ -102,23 +104,23 @@ public class ClientMakeBookingView extends JFrame{
     rightLayout.setAlignment(FlowLayout.RIGHT);
     rightHeader.setBackground(Color.BLACK);
     
-    //add button register and login
-    JButton register = new JButton("Register");
-    JButton login = new JButton("Login");
-    rightHeader.add(register);
-    rightHeader.add(login); 
+    //add button register and logout
+    //JButton register = new JButton("Register");
+    JButton logout = new JButton("Logout");
+    //rightHeader.add(register);
+    rightHeader.add(logout); 
     
-    login.setBackground(Color.GRAY);
-    login.setForeground(Color.pink);
-    register.setBackground(Color.GRAY);
-    register.setForeground(Color.pink);
+    logout.setBackground(Color.GRAY);
+    logout.setForeground(Color.pink);
+    //register.setBackground(Color.GRAY);
+    //register.setForeground(Color.pink);
     
     
-    login.setActionCommand("login");
-    register.setActionCommand("register");
+    logout.setActionCommand("logout");
+    //register.setActionCommand("register");
     
-    login.addActionListener(clientMakeBookingController);
-    register.addActionListener(clientMakeBookingController);
+    logout.addActionListener(clientMakeBookingController);
+    //register.addActionListener(clientMakeBookingController);
     
     //adding color to the pop up panel
      UIManager.put("OptionPane.background", Color.PINK);
@@ -229,7 +231,11 @@ public class ClientMakeBookingView extends JFrame{
         BookButton.addActionListener(clientMakeBookingController); 
         rp.add(BookButton); 
 
-        
+        result = new JLabel(""); 
+        result.setFont(new Font("Arial", Font.PLAIN, 12)); 
+        result.setSize(500, 20); 
+        result.setLocation(10, 360); 
+        rp.add(result);
         
         
         
@@ -308,7 +314,30 @@ public class ClientMakeBookingView extends JFrame{
         this.repaint();
     }
     
-     
+    public String getNearByLocation(){
+        //return menuLocation.getActionCommand();
+        return (String) menuLocation.getSelectedItem();
+    }
+    public String getlService(){
+        return menuService.getActionCommand();
+    }
+    public String getDate(){
+        return menuDate.getActionCommand();
+    }
+    public String getTime(){
+        return menuHour.getActionCommand();
+    }
+    public String getClientFirstName(){
+        return FirstName.getText();
+    }
+    public String getClientPhoneNumber(){
+        return textphone.getText();
+    }
+
+     public void setResult(String message)
+    {
+        result.setText(message);
+    }
 }
 
 // Driver Code - main method to unable seeing the page individually
@@ -316,7 +345,7 @@ class ClientBooking {
   
     public static void main(String[] args) throws Exception 
     { 
-        ClientMakeBookingController checkorbookController = new ClientMakeBookingController(); 
+        ClientAndHairdresserMakeBookingController checkorbookController = new ClientAndHairdresserMakeBookingController(); 
     } 
 }
 
