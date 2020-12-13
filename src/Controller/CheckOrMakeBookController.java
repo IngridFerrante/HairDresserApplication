@@ -23,8 +23,7 @@ import javax.swing.JOptionPane;
 public class CheckOrMakeBookController extends JFrame implements ActionListener { 
   
     CheckOrMakeBookView checkOrMakeBookView;
-    // constructor, to initialize the components 
-    // with default values 
+     
     public CheckOrMakeBookController() 
     { 
         this.checkOrMakeBookView = new CheckOrMakeBookView (this);

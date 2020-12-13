@@ -40,7 +40,6 @@ public class RegisterHairDresserController extends JFrame implements ActionListe
      //   to identify different text field
         if(e.getActionCommand().equals("login")){  
             new LoginController();
-        
         }
         else if(e.getActionCommand().equals("Register")){
             String location = registerHairDresserView.getLocationSalon();
@@ -49,16 +48,23 @@ public class RegisterHairDresserController extends JFrame implements ActionListe
             String email = registerHairDresserView.getEmail();
             String phoneNr = registerHairDresserView.getPhone();
             String password = registerHairDresserView.getPassword();
+            String confPassword = registerHairDresserView.getConfPassword();
             
-            User newUser = new User(location, firstName, lastName,email, phoneNr, password);
+            User newUser = new User(location, firstName, lastName,email, phoneNr, password, confPassword );
             
-            boolean result = registerHairDresserModel.registerHairDresser(newUser);
-            
-            
-            if(result == true)
+            if(newUser.isValid())
             {
-                registerHairDresserView.setResult("Welcome " + firstName + ". You registersted successfully. You can login");
-                new LoginController();
+                boolean result = registerHairDresserModel.registerHairDresser(newUser);
+
+                if(result == true)
+                {
+                    registerHairDresserView.setResult("Welcome " + firstName + ". You registersted successfully. You can login");
+                    new LoginController();
+                }
+            }
+            else
+            {
+                registerHairDresserView.setBadInput("Fields cannot be empty. The password must be less than 20 and must match.");
             }
         }else if(e.getActionCommand().equals("   Review    ")){  
             new Controller.ReviewReadController();

@@ -50,23 +50,29 @@ public class RegisterClientController extends JFrame implements ActionListener {
             String email = registerClientView.getEmail();
             String phoneNr = registerClientView.getPhone();
             String password = registerClientView.getPassword();
+            String confPassword = registerClientView.getConfPassword();
             
-            User newUser = new User(firstName, lastName,email, phoneNr, password);
+            User newUser = new User(firstName, lastName,email, phoneNr, password, confPassword);
             
-            boolean result = registerClientModel.registerClient(newUser);
-            
-            
-            if(result == true)
+            if(newUser.isValid())
             {
-                registerClientView.setResult("Welcome " + firstName + ". You registersted successfully. Now just login using you EMAIL and PASSWORD.");
-                new LoginClientController();
+                boolean result = registerClientModel.registerClient(newUser);
+                if(result == true)
+                {
+                    registerClientView.setResult("Welcome " + firstName + ". You registersted successfully. Now just login using you EMAIL and PASSWORD.");
+                    new LoginClientController();
+                }
+            }
+            else
+            {
+                registerClientView.setBadInput("Empty fields not allowed. The password must be less than 20 and must match.");
             }
         }else if(e.getActionCommand().equals("Review")){  
             new Controller.ReviewReadController();
-    }    else if(e.getActionCommand().equals("Location")){  
+        }    
+        else if(e.getActionCommand().equals("Location")){  
             new Controller.LocationController();
-            
-    }
+        }
     }
 } 
 

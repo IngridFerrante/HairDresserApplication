@@ -20,6 +20,7 @@ public class User {
     private String emailAddress;
     private String phoneNumber;
     private String passwordUser;
+    private String confPasswordUser;
   
     
     public User(String un, String pw){
@@ -28,23 +29,53 @@ public class User {
     }
     
     //Register Hairdresser
-    public User(String location, String firstName, String lastName, String emailAddress, String phoneNumber, String passwordUser) {
+    public User(String location, String firstName, String lastName, String emailAddress, 
+            String phoneNumber, String passwordUser, String confPasswordUser) {
         this.location = location;
         this.firstName = firstName;
         this.lastName = lastName;
         this.emailAddress = emailAddress;
         this.phoneNumber = phoneNumber;
         this.passwordUser = passwordUser;
+        this.confPasswordUser = confPasswordUser;
     }
 
-    public User(String firstName1, String lastName, String emailAddress, String phoneNumber, String passwordUser) {
+    public User(String firstName1, String lastName, String emailAddress, String phoneNumber, 
+            String passwordUser, String confPasswordUser) {
         this.firstName = firstName1;
         this.lastName = lastName;
         this.emailAddress = emailAddress;
         this.phoneNumber = phoneNumber;
         this.passwordUser = passwordUser;
+        this.confPasswordUser = confPasswordUser;
     }
-
+    
+    
+    public Boolean isValid()
+    {
+        // Check for empty
+        if(this.firstName.length() == 0 || this.lastName.length() == 0 || this.emailAddress.length() == 0
+                || this.phoneNumber.length() == 0)
+        {
+            return false;
+        }
+        
+        if(!this.passwordUser.equals(this.confPasswordUser))
+        {
+            return false;
+        }
+        // Check Password is valid
+        if(this.passwordUser.length() == 0 && this.confPasswordUser.length() == 0)
+        {
+            return false;
+        }
+        
+        if(this.passwordUser.length() >= 20 &&  this.confPasswordUser.length() >= 20)
+        {
+            return false;
+        }
+        return true;
+    }
     
 //        //Register Hairdresser
 //    public User(String location, String firstName, String lastName, String emailAddress, String phoneNumber, String passwordUser) {

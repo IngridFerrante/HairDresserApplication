@@ -369,7 +369,12 @@ public class RegisterClientView extends JFrame{
         tconfpassword.setText("");
     }
     
-    
+    public void setBadInput(String message)
+    {
+        result.setText(message);
+        tpassword.setText("");
+        tconfpassword.setText("");
+    }
 } 
      // Driver Code - main method to unable seeing the page individually
 class RegistrationClient2 { 

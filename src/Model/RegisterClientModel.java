@@ -35,10 +35,10 @@ public class RegisterClientModel {
     // the message from database
     public Boolean registerClient(User newUser) {
         
-                 String sql = "INSERT INTO userClient (first_name, last_name, email, phone_number, password) "
-                     + "VALUES ('" + newUser.getfName() + "','" + newUser.getlName() 
-                     + "','" + newUser.getEmail() + "','" + newUser.getPhoneNumber()
-                     + "','" + newUser.getPassword()+ "')";
+        String sql = "INSERT INTO userClient (first_name, last_name, email, phone_number, password) "
+            + "VALUES ('" + newUser.getfName() + "','" + newUser.getlName() 
+            + "','" + newUser.getEmail() + "','" + newUser.getPhoneNumber()
+            + "','" + newUser.getPassword()+ "')";
         
         Boolean result = false;
         
