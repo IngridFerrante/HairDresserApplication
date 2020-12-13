@@ -25,11 +25,8 @@ public class HairDresserChecksDateScheduleModel {
     }
     
     public Boolean scheduleHairdresser(BookAppointment schedule){
-                
-//        String sql = "INSERT INTO bookingAppointment (location, service, date, time,first_name, phone_number) "
-//                     + "VALUES ('" + schedule.getDay() + "','" + schedule.getMonth() 
-//                     + "','" +  schedule.getYear()+ "')";
-        String sql = "Insert";
+
+        String sql = "SELECT * FROM bookingAppointment";
        Boolean result = false;
         
         try {
@@ -40,7 +37,7 @@ public class HairDresserChecksDateScheduleModel {
             // Get a statement from the connection
             Statement stmt = conn.createStatement();
 
-            int i = stmt.executeUpdate(sql);
+            int i = stmt.executeUpdate("SELECT * FROM bookingAppointment");
                        
             if(i > 0)
             {

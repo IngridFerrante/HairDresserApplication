@@ -44,7 +44,7 @@ import model.BookAppointment;
      
     @Override
     public void actionPerformed(ActionEvent e) {
-         //   to identify different text field
+       // getting action command to the buttons
         if(e.getActionCommand().equals("logout")){  
             new HairDresserApplication();
         
@@ -75,7 +75,7 @@ import model.BookAppointment;
     }
 }
 
-
+// method to test the page individuality
 class Test {
     public static void main(String[] args) throws Exception {
        HairDresserChecksDateScheduleController a = new HairDresserChecksDateScheduleController();
