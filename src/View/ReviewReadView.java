@@ -68,17 +68,28 @@ public class ReviewReadView extends JFrame implements ActionListener{
     leftHeader.setBackground(Color.BLACK);
     
 
-    JButton reviewButton = new JButton("Review");
+    JButton reviewButton = new JButton("   Review    ");
     reviewButton.addActionListener(reviewReadController);
     reviewButton.setBackground(Color.gray);
     reviewButton.setForeground(Color.PINK);
     
     leftHeader.add(reviewButton);
     
-    JButton locationButton = new JButton("Location");
-    locationButton.addActionListener(reviewReadController);
+    JButton locationButton = new JButton("    Location    ");
+    locationButton.addActionListener(reviewReadController); // verify that later
     locationButton.setBackground(Color.gray);
     locationButton.setForeground(Color.PINK);
+    
+    
+    leftHeader.add(locationButton);
+    
+    JButton homePage = new JButton("   Home    ");
+    homePage.setBackground(Color.gray);
+    homePage.setForeground(Color.PINK);
+    homePage.addActionListener(reviewReadController);
+    
+    
+    leftHeader.add(homePage);
     
     
     leftHeader.add(locationButton);
@@ -113,22 +124,28 @@ public class ReviewReadView extends JFrame implements ActionListener{
     rightHeader.setBackground(Color.BLACK);
     
     //add button register and login
-    JButton register = new JButton("Register");
-    JButton login = new JButton("Login");
+        JButton register = new JButton("Register");
+    JButton LoginHairdresser = new JButton("Hairdresser Login");
+    JButton LoginClient = new JButton("Client Login");
     rightHeader.add(register);
-    rightHeader.add(login); 
+    rightHeader.add(LoginHairdresser); 
+    rightHeader.add(LoginClient); 
     
-    login.setBackground(Color.GRAY);
-    login.setForeground(Color.pink);
+    LoginHairdresser.setBackground(Color.GRAY);
+    LoginHairdresser.setForeground(Color.pink);
+    LoginClient.setBackground(Color.GRAY);
+    LoginClient.setForeground(Color.pink);
     register.setBackground(Color.GRAY);
     register.setForeground(Color.pink);
     
-    
-    login.setActionCommand("login");
+    //add button login
+    LoginHairdresser.setActionCommand("loginHairdresser");
+    LoginClient.setActionCommand("loginClient");
     register.setActionCommand("register");
     
-    login.addActionListener(this);
-    register.addActionListener(this);
+    LoginHairdresser.addActionListener(reviewReadController);
+    LoginClient.addActionListener(reviewReadController);
+    register.addActionListener(reviewReadController);
     
     //adding color to the pop up panel
      UIManager.put("OptionPane.background", Color.PINK);
@@ -157,6 +174,14 @@ public class ReviewReadView extends JFrame implements ActionListener{
             result.setSize(500, 20); 
             result.setLocation(10, 360); 
             mainReview.add(result);
+            
+            JButton addReview = new JButton("Add a Review"); 
+            addReview.setBackground(Color.gray);
+            addReview.setForeground(Color.PINK);
+            addReview.setSize(150, 30);
+            addReview.setLocation(400, 30);
+            addReview.addActionListener(reviewReadController);
+            mainReview.add(addReview);
             
             // put the reviews here! 
             
@@ -217,6 +242,7 @@ public class ReviewReadView extends JFrame implements ActionListener{
                 setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//stops running when the window is closed 
 
     }
+    
     
     private void attributesSetter(){
         this.setVisible(true);

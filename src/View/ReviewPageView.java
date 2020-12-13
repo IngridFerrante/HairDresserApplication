@@ -42,11 +42,11 @@ public class ReviewPageView extends JFrame implements ActionListener {
           private JLabel result;
           
           
-    ReviewPageController ReviewPageController;
+    ReviewPageController reviewPageController;
    
     public ReviewPageView(ReviewPageController controller)
     {
-        ReviewPageController = controller;
+        reviewPageController = controller;
         attributesSetter();
         components();
         validation();
@@ -73,17 +73,28 @@ public class ReviewPageView extends JFrame implements ActionListener {
     leftHeader.setBackground(Color.BLACK);
     
 
-    JButton reviewButton = new JButton("Review");
-    reviewButton.addActionListener(ReviewPageController);
+    JButton reviewButton = new JButton("   Review    ");
+    reviewButton.addActionListener(reviewPageController);
     reviewButton.setBackground(Color.gray);
     reviewButton.setForeground(Color.PINK);
     
     leftHeader.add(reviewButton);
     
-    JButton locationButton = new JButton("Location");
-    locationButton.addActionListener(ReviewPageController);
+    JButton locationButton = new JButton("    Location    ");
+    locationButton.addActionListener(reviewPageController); // verify that later
     locationButton.setBackground(Color.gray);
     locationButton.setForeground(Color.PINK);
+    
+    
+    leftHeader.add(locationButton);
+    
+    JButton homePage = new JButton("   Home    ");
+    homePage.setBackground(Color.gray);
+    homePage.setForeground(Color.PINK);
+    homePage.addActionListener(reviewPageController);
+    
+    
+    leftHeader.add(homePage);
     
     
     leftHeader.add(locationButton);
@@ -117,23 +128,29 @@ public class ReviewPageView extends JFrame implements ActionListener {
     rightLayout.setAlignment(FlowLayout.RIGHT);
     rightHeader.setBackground(Color.BLACK);
     
-    //add button register and login
+        //add button register and loginHairdresser
     JButton register = new JButton("Register");
-    JButton login = new JButton("Login");
+    JButton LoginHairdresser = new JButton("Hairdresser Login");
+    JButton LoginClient = new JButton("Client Login");
     rightHeader.add(register);
-    rightHeader.add(login); 
+    rightHeader.add(LoginHairdresser); 
+    rightHeader.add(LoginClient); 
     
-    login.setBackground(Color.GRAY);
-    login.setForeground(Color.pink);
+    LoginHairdresser.setBackground(Color.GRAY);
+    LoginHairdresser.setForeground(Color.pink);
+    LoginClient.setBackground(Color.GRAY);
+    LoginClient.setForeground(Color.pink);
     register.setBackground(Color.GRAY);
     register.setForeground(Color.pink);
     
-    
-    login.setActionCommand("login");
+    //add button login
+    LoginHairdresser.setActionCommand("loginHairdresser");
+    LoginClient.setActionCommand("loginClient");
     register.setActionCommand("register");
     
-    login.addActionListener(this);
-    register.addActionListener(this);
+    LoginHairdresser.addActionListener(reviewPageController);
+    LoginClient.addActionListener(reviewPageController);
+    register.addActionListener(reviewPageController);
     
     //adding color to the pop up panel
      UIManager.put("OptionPane.background", Color.PINK);
@@ -183,7 +200,7 @@ public class ReviewPageView extends JFrame implements ActionListener {
             sendReview.setLocation(300, 350);
             sendReview.setBackground(Color.blue);
             sendReview.setForeground(Color.white);
-            sendReview.addActionListener(ReviewPageController);
+            sendReview.addActionListener(reviewPageController);
             mainReview.add(sendReview);
             
             result = new JLabel(""); 

@@ -106,9 +106,6 @@ ClientCheckBookingsController clientCheckBookingController;
     login.setBackground(Color.GRAY);
     login.setForeground(Color.pink);  
     
-    login.setActionCommand("logout");
-  
-    
     login.addActionListener(clientCheckBookingController);
     
     //adding color to the pop up panel

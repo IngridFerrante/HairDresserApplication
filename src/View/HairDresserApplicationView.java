@@ -68,22 +68,30 @@ public class HairDresserApplicationView extends JFrame {
     leftLayout.setAlignment(FlowLayout.LEFT);
     leftHeader.setBackground(Color.BLACK);
     
-    //add drowndrop list
+    //add buttons
     
-    JButton reviewButton = new JButton("Review");
+    JButton reviewButton = new JButton("   Review    ");
     reviewButton.addActionListener(hairDresserApplicationController);
     reviewButton.setBackground(Color.gray);
     reviewButton.setForeground(Color.PINK);
     
     leftHeader.add(reviewButton);
     
-    JButton locationButton = new JButton("Location");
-    locationButton.addActionListener(hairDresserApplicationController);
+    JButton locationButton = new JButton("    Location    ");
+    locationButton.addActionListener(hairDresserApplicationController); // verify that later
     locationButton.setBackground(Color.gray);
     locationButton.setForeground(Color.PINK);
     
     
     leftHeader.add(locationButton);
+    
+    JButton homePage = new JButton("   Home    ");
+    homePage.setBackground(Color.gray);
+    homePage.setForeground(Color.PINK);
+    homePage.addActionListener(hairDresserApplicationController);
+    
+    
+    leftHeader.add(homePage);
      
     
     // ADDING IT TO THE TOP SECTION the leftHeader to header Panel

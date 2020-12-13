@@ -28,6 +28,8 @@ public class HairDresserChecksScheduleController extends JFrame implements Actio
         if(e.getActionCommand().equals("Back")){  
             new controller.CheckOrMakeBookController(); // <CHANGE TO YOUR BOOKS HAIRDRESSER
         
+    }else if(e.getActionCommand().equals("Logout")){  
+            new Controller.HairDresserApplicationController();
     }
     }
     

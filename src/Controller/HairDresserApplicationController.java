@@ -55,14 +55,19 @@ public class HairDresserApplicationController extends JFrame implements ActionLi
             if (optionChoosen == 0){
                  new controller.RegisterHairDresserController(); // put the page of hairdresser register here
             }else{
-                    new controller.RegisterClientController(); // call register client page
-                    
-               
-            }       
-    }else if(e.getActionCommand().equals("menuList")){
-         String home = hairDresserApplicationView.getLocationSalon();
-            System.out.println(home);
-         
+                    new controller.RegisterClientController(); // call register client page       
+            }
+             
+             
+    }else if(e.getActionCommand().equals("   Review    ")){  
+            new ReviewReadController();
+            
+    } else if(e.getActionCommand().equals("    Location    ")){  
+            new Controller.LocationController();
+            
+    }else if(e.getActionCommand().equals("   Home    ")){  
+            new HairDresserApplicationController();
+            
     }
         
          setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

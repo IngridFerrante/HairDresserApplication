@@ -67,20 +67,28 @@ public class LocationView extends JFrame implements ActionListener{
     leftHeader.setBackground(Color.BLACK);
     
 
-    JButton reviewButton = new JButton("Review");
- //   reviewButton.addActionListener(locationController);
+    JButton reviewButton = new JButton("   Review    ");
+    reviewButton.addActionListener(locationController);
     reviewButton.setBackground(Color.gray);
     reviewButton.setForeground(Color.PINK);
     
     leftHeader.add(reviewButton);
     
-    JButton locationButton = new JButton("Location");
-   //locationButton.addActionListener((locationController); // verify that later
+    JButton locationButton = new JButton("    Location    ");
+    locationButton.addActionListener(locationController); // verify that later
     locationButton.setBackground(Color.gray);
     locationButton.setForeground(Color.PINK);
     
     
     leftHeader.add(locationButton);
+    
+    JButton homePage = new JButton("   Home    ");
+    homePage.setBackground(Color.gray);
+    homePage.setForeground(Color.PINK);
+    homePage.addActionListener(locationController);
+    
+    
+    leftHeader.add(homePage);
     
     // ADDING IT TO THE TOP SECTION the leftHeader to header Panel
     header.add(leftHeader);
@@ -112,21 +120,27 @@ public class LocationView extends JFrame implements ActionListener{
     
     //add button register and login
     JButton register = new JButton("Register");
-    JButton login = new JButton("Login");
+    JButton LoginHairdresser = new JButton("Hairdresser Login");
+    JButton LoginClient = new JButton("Client Login");
     rightHeader.add(register);
-    rightHeader.add(login); 
+    rightHeader.add(LoginHairdresser); 
+    rightHeader.add(LoginClient); 
     
-    login.setBackground(Color.GRAY);
-    login.setForeground(Color.pink);
+    LoginHairdresser.setBackground(Color.GRAY);
+    LoginHairdresser.setForeground(Color.pink);
+    LoginClient.setBackground(Color.GRAY);
+    LoginClient.setForeground(Color.pink);
     register.setBackground(Color.GRAY);
     register.setForeground(Color.pink);
     
-    
-    login.setActionCommand("login");
+    //add button login
+    LoginHairdresser.setActionCommand("loginHairdresser");
+    LoginClient.setActionCommand("loginClient");
     register.setActionCommand("register");
     
-    login.addActionListener(this);
-    register.addActionListener(this);
+    LoginHairdresser.addActionListener(locationController);
+    LoginClient.addActionListener(locationController);
+    register.addActionListener(locationController);
     
     //adding color to the pop up panel
      UIManager.put("OptionPane.background", Color.PINK);

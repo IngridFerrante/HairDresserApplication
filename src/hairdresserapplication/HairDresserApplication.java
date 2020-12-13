@@ -42,6 +42,7 @@ public class HairDresserApplication {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        //main page
         new HairDresserApplicationController();
 
     }

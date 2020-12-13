@@ -35,18 +35,19 @@ public class CheckOrMakeBookController extends JFrame implements ActionListener 
     @Override
     public void actionPerformed(ActionEvent e) 
     {
+        // if click the button link to the page
         if(e.getActionCommand().equals("Make a Book")){  
             new ClientAndHairdresserMakeBookingController();
         
     } else if(e.getActionCommand().equals("Your Books")){
              new ClientCheckBookingsController();
         
-    }else if(e.getActionCommand().equals("Location")){  
-            new Controller.LocationController();
-            
-    }else if(e.getActionCommand().equals("Location")){  
-            new ReviewReadController();
     }
+    else if(e.getActionCommand().equals("Logout")){  
+            new Controller.HairDresserApplicationController();
+    }
+        
+        
 } 
 }
 // Driver Code - main method to unable seeing the page individually

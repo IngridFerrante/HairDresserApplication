@@ -61,7 +61,12 @@ public class RegisterClientController extends JFrame implements ActionListener {
                 registerClientView.setResult("Welcome " + firstName + ". You registersted successfully. Now just login using you EMAIL and PASSWORD.");
                 new LoginClientController();
             }
-        }
+        }else if(e.getActionCommand().equals("Review")){  
+            new Controller.ReviewReadController();
+    }    else if(e.getActionCommand().equals("Location")){  
+            new Controller.LocationController();
+            
+    }
     }
 } 
 

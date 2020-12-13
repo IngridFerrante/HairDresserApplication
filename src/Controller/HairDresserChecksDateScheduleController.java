@@ -68,8 +68,10 @@ import model.BookAppointment;
         }else if(e.getActionCommand().equals("Back")){  
             new controller.CheckOrMakeBookController();
         
+    }else if(e.getActionCommand().equals("Logout")){  
+            new Controller.HairDresserApplicationController();
     }
-        
+     
     }
 }
 

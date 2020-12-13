@@ -60,7 +60,16 @@ public class RegisterHairDresserController extends JFrame implements ActionListe
                 registerHairDresserView.setResult("Welcome " + firstName + ". You registersted successfully. You can login");
                 new LoginController();
             }
-        }
+        }else if(e.getActionCommand().equals("   Review    ")){  
+            new Controller.ReviewReadController();
+            
+    } else if(e.getActionCommand().equals("    Location    ")){  
+            new Controller.LocationController();
+            
+    }else if(e.getActionCommand().equals("   Home    ")){  
+            new Controller.HairDresserApplicationController();
+            
+    }
     }
 } 
   

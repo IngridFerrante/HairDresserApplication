@@ -103,23 +103,16 @@ private void components()
     rightLayout.setAlignment(FlowLayout.RIGHT);
     rightHeader.setBackground(Color.BLACK);
     
-    //add button register and login
-    JButton register = new JButton("Register");
-    JButton login = new JButton("Login");
-    rightHeader.add(register);
-    rightHeader.add(login); 
+    //add button register and logout
+
+    JButton logout = new JButton("Logout");
+    rightHeader.add(logout); 
     
-    login.setBackground(Color.GRAY);
-    login.setForeground(Color.pink);
-    register.setBackground(Color.GRAY);
-    register.setForeground(Color.pink);
+    logout.setBackground(Color.GRAY);
+    logout.setForeground(Color.pink);
+  
     
-    
-    login.setActionCommand("login");
-    register.setActionCommand("register");
-    
-    login.addActionListener(hairDresserChecksController);
-    register.addActionListener(hairDresserChecksController);
+    logout.addActionListener(hairDresserChecksController);
     
     //adding color to the pop up panel
      UIManager.put("OptionPane.background", Color.PINK);
@@ -190,13 +183,7 @@ private void components()
            cancelSchedule.setBackground(Color.red);
            cancelSchedule.setForeground(Color.white);
            mainScheduleChecks.add(cancelSchedule);
-            
-           JButton makeSchedule = new JButton("Make a new Booking");
-           makeSchedule.setSize(300, 40);
-           makeSchedule.setLocation(300, 450);
-           makeSchedule.setBackground(Color.blue);
-           makeSchedule.setForeground(Color.white);
-           mainScheduleChecks.add(makeSchedule);
+   
            
                 // FOOTER
     

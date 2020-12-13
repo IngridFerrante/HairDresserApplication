@@ -33,6 +33,12 @@ public class ClientCheckBookingsController extends JFrame implements ActionListe
     }else if(e.getActionCommand().equals("Back")){  
             new controller.CheckOrMakeBookController();
         
+    }else if(e.getActionCommand().equals("Logout")){  
+            new Controller.HairDresserApplicationController();
+    
+    }else if(e.getActionCommand().equals("Make a new Booking")){  
+            new controller.ClientAndHairdresserMakeBookingController();
+        
     }
 
             setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

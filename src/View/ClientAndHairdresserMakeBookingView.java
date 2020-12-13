@@ -137,8 +137,7 @@ public class ClientAndHairdresserMakeBookingView extends JFrame{
     //register.setForeground(Color.pink);
     
     
-    logout.setActionCommand("logout");
-    //register.setActionCommand("register");
+
     
     logout.addActionListener(clientMakeBookingController);
     //register.addActionListener(clientMakeBookingController);

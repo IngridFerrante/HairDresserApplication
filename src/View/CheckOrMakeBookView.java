@@ -64,20 +64,7 @@ public class CheckOrMakeBookView extends JFrame{
     leftLayout.setAlignment(FlowLayout.LEFT);
     leftHeader.setBackground(Color.BLACK);
     
-   JButton reviewButton = new JButton("Review");
-    reviewButton.addActionListener(checkOrMakeBookController);
-    reviewButton.setBackground(Color.gray);
-    reviewButton.setForeground(Color.PINK);
     
-    leftHeader.add(reviewButton);
-    
-    JButton locationButton = new JButton("Location");
-    locationButton.addActionListener(checkOrMakeBookController);
-    locationButton.setBackground(Color.gray);
-    locationButton.setForeground(Color.PINK);
-    
-    
-    leftHeader.add(locationButton);
     
     // ADDING IT TO THE TOP SECTION the leftHeader to header Panel
     header.add(leftHeader);
@@ -108,6 +95,7 @@ public class CheckOrMakeBookView extends JFrame{
     //add button register and login
     //JButton register = new JButton("Register");
     JButton logout = new JButton("Logout");
+    
     //rightHeader.add(register);
     rightHeader.add(logout); 
     
@@ -115,12 +103,12 @@ public class CheckOrMakeBookView extends JFrame{
     logout.setForeground(Color.pink);
 //    register.setBackground(Color.GRAY);
 //    register.setForeground(Color.pink);
+    logout.addActionListener(checkOrMakeBookController);
     
-    
-    logout.setActionCommand("logout");//set action to logout of the site
+   // logout.setActionCommand("logout");//set action to logout of the site
     //register.setActionCommand("register");
     
-    logout.addActionListener(checkOrMakeBookController);
+    
     //register.addActionListener(checkOrMakeBookController);
     
     //adding color to the pop up panel

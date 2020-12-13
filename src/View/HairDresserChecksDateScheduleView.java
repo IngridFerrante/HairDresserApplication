@@ -61,20 +61,6 @@ public class HairDresserChecksDateScheduleView extends JFrame {
     leftLayout.setAlignment(FlowLayout.LEFT);
     leftHeader.setBackground(Color.BLACK);
     
-     JButton reviewButton = new JButton("Review");
-    reviewButton.addActionListener(hairDresserScheduleController);
-    reviewButton.setBackground(Color.gray);
-    reviewButton.setForeground(Color.PINK);
-    
-    leftHeader.add(reviewButton);
-    
-    JButton locationButton = new JButton("Location");
-    locationButton.addActionListener(hairDresserScheduleController);
-    locationButton.setBackground(Color.gray);
-    locationButton.setForeground(Color.PINK);
-    
-    
-    leftHeader.add(locationButton);
      
     
     // ADDING IT TO THE TOP SECTION the leftHeader to header Panel
@@ -112,11 +98,11 @@ public class HairDresserChecksDateScheduleView extends JFrame {
     
     logout.setBackground(Color.GRAY);
     logout.setForeground(Color.pink);
-    
-    
-    logout.setActionCommand("logout");
-    
     logout.addActionListener(hairDresserScheduleController);
+    
+   // logout.setActionCommand("logout");
+    
+   
     
     //adding color to the pop up panel
      UIManager.put("OptionPane.background", Color.PINK);
