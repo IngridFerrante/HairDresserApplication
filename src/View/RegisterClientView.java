@@ -79,6 +79,7 @@ public class RegisterClientView extends JFrame{
     leftLayout.setAlignment(FlowLayout.LEFT);
     leftHeader.setBackground(Color.BLACK);
     
+        //add button
     JButton reviewButton = new JButton("   Review    ");
     reviewButton.addActionListener(registerController);
     reviewButton.setBackground(Color.gray);
@@ -86,6 +87,7 @@ public class RegisterClientView extends JFrame{
     
     leftHeader.add(reviewButton);
     
+    //add button
     JButton locationButton = new JButton("    Location    ");
     locationButton.addActionListener(registerController); // verify that later
     locationButton.setBackground(Color.gray);
@@ -93,7 +95,7 @@ public class RegisterClientView extends JFrame{
     
     
     leftHeader.add(locationButton);
-    
+        //add button
     JButton homePage = new JButton("   Home    ");
     homePage.setBackground(Color.gray);
     homePage.setForeground(Color.PINK);
@@ -133,6 +135,7 @@ public class RegisterClientView extends JFrame{
     rightHeader.add(register);
     rightHeader.add(login); 
     
+   
     login.setBackground(Color.GRAY);
     login.setForeground(Color.pink);
     register.setBackground(Color.GRAY);
@@ -164,6 +167,7 @@ public class RegisterClientView extends JFrame{
         this.add(rp, BorderLayout.CENTER);
         rp.setLayout(null); 
   
+        //titles and texfield to put the requirement below: 
         title = new JLabel("Registration"); 
         title.setFont(new Font("Arial", Font.PLAIN, 30)); 
         title.setSize(300, 40); 
@@ -255,15 +259,7 @@ public class RegisterClientView extends JFrame{
         result.setLocation(10, 360); 
         rp.add(result); 
         
-//        CancelButton = new JButton("Cancel"); 
-//        CancelButton.setFont(new Font("Arial", Font.PLAIN, 15)); 
-//        CancelButton.setSize(100, 20); 
-//        CancelButton.setLocation(280, 400); 
-//        CancelButton.addActionListener(registerController); 
-//        rp.add(CancelButton); 
-  
-        
-        
+
         // FOOTER starts*********************************************   
         JPanel footer = new JPanel(); // creating header
      
@@ -334,10 +330,13 @@ public class RegisterClientView extends JFrame{
         setResizable(false); 
     }
     
+    
      private void validation(){
         this.validate();
         this.repaint();
     }
+     
+     //getters
     public String getFirstName(){
         return tname.getText();
     }
@@ -359,6 +358,7 @@ public class RegisterClientView extends JFrame{
     
     public void setResult(String message)
     {
+        //set the result message
         result.setText(message);
         
         tname.setText("");

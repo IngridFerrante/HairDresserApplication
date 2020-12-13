@@ -31,6 +31,7 @@ import javax.swing.UIManager;
  * @author 35389
  */
 public class ReviewPageView extends JFrame implements ActionListener {
+    //components ReviewPageView 
           JComboBox days = null;
           JComboBox month = null;
           JComboBox year = null;
@@ -72,7 +73,7 @@ public class ReviewPageView extends JFrame implements ActionListener {
     leftLayout.setAlignment(FlowLayout.LEFT);
     leftHeader.setBackground(Color.BLACK);
     
-
+    // adding button to the header left side
     JButton reviewButton = new JButton("   Review    ");
     reviewButton.addActionListener(reviewPageController);
     reviewButton.setBackground(Color.gray);
@@ -168,18 +169,21 @@ public class ReviewPageView extends JFrame implements ActionListener {
             this.add(mainReview, BorderLayout.CENTER);
             mainReview.setLayout(null);
             
+            //add title
             JLabel reviewTitle = new JLabel("How was the service ? "); 
             reviewTitle.setFont(new Font("Arial", Font.PLAIN, 25)); 
             reviewTitle.setSize(300, 25); 
             reviewTitle.setLocation(150, 20);
             mainReview.add(reviewTitle);
             
+            //neme title
             JLabel cName = new JLabel("Name: ");
             cName.setFont(new Font("Arial", Font.PLAIN, 18)); 
             cName.setSize(300, 30);
             cName.setLocation(150, 60);
             mainReview.add(cName);
             
+            //textfield to put the name
            customerName = new JTextField();
            customerName.setSize(300, 30);
            customerName.setLocation(150, 85);
@@ -187,6 +191,7 @@ public class ReviewPageView extends JFrame implements ActionListener {
            customerName.setForeground(Color.white);
            mainReview.add(customerName);
            
+           //textArea to write a review
             writeReview = new JTextArea("My experience: ", 50, 50);
             writeReview.setSize(300, 200); 
             writeReview.setLocation(150, 140);
