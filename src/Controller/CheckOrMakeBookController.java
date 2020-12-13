@@ -37,8 +37,8 @@ public class CheckOrMakeBookController extends JFrame implements ActionListener 
         if(e.getActionCommand().equals("Make a Book")){  
             new ClientAndHairdresserMakeBookingController();
         
-    } else if(e.getActionCommand().equals("Home")){
-        new HairDresserApplicationController();
+    } else if(e.getActionCommand().equals("Your Books")){
+        new clientCheckBookingsView();
         
     }else{
         
