@@ -61,8 +61,11 @@ public class ClientAndHairdresserMakeBookingController extends JFrame implements
               
                 clientandhairdresserMakeBookingView.setResult("Booking for" + clientFirstname + " was successfully created.");
                 
-            } 
-        }
+            }  
+        }else if(e.getActionCommand().equals("Back")){  
+            new controller.CheckOrMakeBookController();
+        
+    }  
         
         } 
         

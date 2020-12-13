@@ -62,6 +62,12 @@ ClientCheckBookingsController clientCheckBookingController;
     leftLayout.setAlignment(FlowLayout.LEFT);
     leftHeader.setBackground(Color.BLACK);
     
+    JButton backButton = new JButton("Back");
+    backButton.addActionListener(clientCheckBookingController);
+    backButton.setBackground(Color.gray);
+    backButton.setForeground(Color.PINK);
+    
+    leftHeader.add(backButton);
      
     
     // ADDING IT TO THE TOP SECTION the leftHeader to header Panel

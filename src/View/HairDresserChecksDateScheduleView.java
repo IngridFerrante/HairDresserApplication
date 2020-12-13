@@ -63,16 +63,12 @@ public class HairDresserChecksDateScheduleView extends JFrame {
     
     //add drowndrop list
     
-    String[] menuApp = { "Home", "Location", "Review" };
+    JButton backButton = new JButton("Back");
+    backButton.addActionListener(hairDresserScheduleController);
+    backButton.setBackground(Color.gray);
+    backButton.setForeground(Color.PINK);
     
-    menuList = new JComboBox(menuApp);
-    menuList.setSelectedIndex(2);
-    menuList.addActionListener(hairDresserScheduleController);
-    menuList.setActionCommand("menuList");
-    menuList.setBackground(Color.GRAY);
-    menuList.setForeground(Color.PINK);
-    
-    leftHeader.add(menuList);
+    leftHeader.add(backButton);
      
     
     // ADDING IT TO THE TOP SECTION the leftHeader to header Panel
