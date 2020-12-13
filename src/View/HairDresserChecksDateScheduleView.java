@@ -61,7 +61,7 @@ public class HairDresserChecksDateScheduleView extends JFrame {
     leftLayout.setAlignment(FlowLayout.LEFT);
     leftHeader.setBackground(Color.BLACK);
     
-    //add drowndrop list
+    //back button
     
     JButton backButton = new JButton("Back");
     backButton.addActionListener(hairDresserScheduleController);

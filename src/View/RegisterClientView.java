@@ -357,6 +357,8 @@ public class RegisterClientView extends JFrame{
         tpassword.setText("");
         tconfpassword.setText("");
     }
+    
+    
 } 
      // Driver Code - main method to unable seeing the page individually
 class RegistrationClient2 { 

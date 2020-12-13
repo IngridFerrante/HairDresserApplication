@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package hairdresserapplication;
+package Model;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -25,9 +25,9 @@ public class LoginModel {
         
         try {
 
-            String dbServer = "jdbc:mysql://apontejaj.com:3306/Kelly_2019375?useSSL=false";
-            String dbUser = "Kelly_2019375";
-            String dbPassword = "2019375";
+            String dbServer = "jdbc:mysql://apontejaj.com:3306/Ingrid_2019411?useSSL=false";
+            String dbUser = "Ingrid_2019411";
+            String dbPassword = "2019411";
             String query = "SELECT * FROM userHairDresser WHERE email = '" + user.getUn() + "' AND password = '" + user.getPw() + "'";
              //String query = "Select * from customerReviews";
             // Get a connection to the database

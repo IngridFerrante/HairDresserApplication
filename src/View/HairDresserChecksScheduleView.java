@@ -66,19 +66,13 @@ private void components()
     leftHeader.setLayout(leftLayout);
     leftLayout.setAlignment(FlowLayout.LEFT);
     leftHeader.setBackground(Color.BLACK);
+
+    JButton backButton = new JButton("Back");
+    backButton.addActionListener(hairDresserChecksController);
+    backButton.setBackground(Color.gray);
+    backButton.setForeground(Color.PINK);
     
-    //add drowndrop list
-    
-    String[] menuApp = { "Home", "Location", "Review" };
-    
-     menuList = new JComboBox(menuApp);
-    menuList.setSelectedIndex(2);
-    menuList.addActionListener(hairDresserChecksController);
-    menuList.setActionCommand("menuList");
-    menuList.setBackground(Color.GRAY);
-    menuList.setForeground(Color.PINK);
-    
-    leftHeader.add(menuList);
+    leftHeader.add(backButton);
      
     
     // ADDING IT TO THE TOP SECTION the leftHeader to header Panel

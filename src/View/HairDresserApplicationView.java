@@ -310,53 +310,12 @@ public class HairDresserApplicationView extends JFrame {
         this.validate();
         this.repaint();
         }
-
-    
-//    @Override
-//    public void actionPerformed(ActionEvent e) {
-//        //   to identify different text field
-//        if(e.getActionCommand().equals("login")){  
-//            new LoginController();
-//        
-//    }
-//        else if(e.getActionCommand().equals("register")){
-//            
-//            ImageIcon icon = new ImageIcon("image/logo.png");
-//            
-//            Object[] registerChoice = {"Hairdresser", "Client"};
-//                Object defaultChoice = registerChoice[0];
-//                int optionChoosen = JOptionPane.showOptionDialog(this,
-//             "Who are you ?",
-//             "Register",
-//             JOptionPane.YES_NO_OPTION,
-//             JOptionPane.QUESTION_MESSAGE,
-//             icon,
-//             registerChoice,
-//             defaultChoice);
-//                
-//                
-//            if (optionChoosen == 0){
-//                 new RegisterHairDresserController(); // put the page of hairdresser register here
-//            }else{
-//                    new RegisterClientController(); // call register client page
-//                    
-//               
-//            }       
-//    }else if(e.getActionCommand().equals("Home")){
-//        new HairDresserApplicationController();
-//        
-//    }else if(e.getActionCommand().equals("Location")){
-//        new LocationController();
-//        
-//    }else if(e.getActionCommand().equals("Review")){
-//        new ReviewPageController();
-//        
-//    }
-//        
-//         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-//
-//    }
-//    
+         
+         public String getLocationSalon(){
+            return (String) menuList.getSelectedItem();
+        }  
+         
+ 
 }
 
          

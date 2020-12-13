@@ -25,7 +25,10 @@ public class HairDresserChecksScheduleController extends JFrame implements Actio
     
     @Override
     public void actionPerformed(ActionEvent e) {
-
+        if(e.getActionCommand().equals("Back")){  
+            new controller.CheckOrMakeBookController(); // <CHANGE TO YOUR BOOKS HAIRDRESSER
+        
+    }
     }
     
 }
