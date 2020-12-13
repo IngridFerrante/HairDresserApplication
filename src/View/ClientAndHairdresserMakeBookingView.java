@@ -39,9 +39,6 @@ public class ClientAndHairdresserMakeBookingView extends JFrame{
     private JLabel phone;
     private JTextField textphone; 
     private JLabel result;
-    private JTextField dateResult;
-    private JButton confirmDate; 
-    private JTextArea miniTextArea; 
     JComboBox menuLocation = null; 
     JComboBox menuService = null; 
     JComboBox menuDate = null; 
@@ -95,16 +92,6 @@ public class ClientAndHairdresserMakeBookingView extends JFrame{
     leftLayout.setAlignment(FlowLayout.LEFT);
     leftHeader.setBackground(Color.BLACK);
     
-//    //add drowndrop list    
-//    String[] menuApp = { "Home", "Location", "Review" };
-//    JComboBox menuList = new JComboBox(menuApp);
-//    menuList.setSelectedIndex(2);
-//    menuList.addActionListener(clientMakeBookingController);
-//    menuList.setActionCommand("menuList");
-//    menuList.setBackground(Color.GRAY);
-//    menuList.setForeground(Color.PINK);
-//    
-//    leftHeader.add(menuList);
     
     // ADDING IT TO THE TOP SECTION the leftHeader to header Panel
     header.add(leftHeader);
@@ -161,8 +148,7 @@ public class ClientAndHairdresserMakeBookingView extends JFrame{
     
     //ends header****************************888
         
-    
-    
+       
     
     //starts main Make a book page page
         JPanel rp = new JPanel(); // creating the main panel
@@ -224,23 +210,7 @@ public class ClientAndHairdresserMakeBookingView extends JFrame{
         year.setBackground(Color.GRAY);//set button color
         year.setForeground(Color.PINK);//set text button color
         rp.add(year);
-        
-//        confirmDate = new JButton("Confirm date"); 
-//        confirmDate.setFont(new Font("Arial", Font.PLAIN, 12)); 
-//        confirmDate.setSize(100, 15); 
-//        confirmDate.setLocation(380, 180); 
-//        confirmDate.addActionListener(clientMakeBookingController); 
-//        rp.add(confirmDate); 
-//  
-//        miniTextArea = new JTextArea(); 
-//        miniTextArea.setFont(new Font("Arial", Font.PLAIN, 15)); 
-//        miniTextArea.setSize(150, 30); 
-//        miniTextArea.setLocation(400, 100); 
-//        miniTextArea.setBackground(Color.red);
-//        miniTextArea.setLineWrap(true); 
-//        miniTextArea.setEditable(false); 
-//        rp.add(miniTextArea); 
-//        
+             
         //pick hour //make a loop to take a picked hour from the array
         String[] menuHourBook = { "Choose an hour","10:00", "12:00","2:00","4:00", "6:00" };
         menuHour = new JComboBox(menuHourBook);
@@ -294,15 +264,6 @@ public class ClientAndHairdresserMakeBookingView extends JFrame{
         result.setLocation(10, 360); 
         rp.add(result);
  
-        
-//        dateResult = new JTextField();
-//        //textClientFirstName.setText("first name"); 
-//        dateResult.setSize(200, 30); 
-//        dateResult.setLocation(450, 285); 
-//        dateResult.setBackground(Color.red);
-//        dateResult.addActionListener(clientMakeBookingController); 
-//        rp.add(dateResult); 
-
         
         // FOOTER starts*********************************************   
         JPanel footer = new JPanel(); // creating header
@@ -421,29 +382,10 @@ public class ClientAndHairdresserMakeBookingView extends JFrame{
          return (String) year.getSelectedItem();
      }
      
-     public void setTextArea(String message1){
-          miniTextArea.setText(message1);
-     }
-     
-//     public void actionPerformed(ActionEvent e) 
-//    { 
-//        if (e.getSource() == confirmDate) {  
-//                String date 
-//                    = "Date : "
-//                      + (String)day.getSelectedItem() 
-//                      + "/" + (String)month.getSelectedItem() 
-//                      + "/" + (String)year.getSelectedItem() 
-//                      + "\n"; 
-//
-//                miniTextArea.setText( date ); 
-//                miniTextArea.setEditable(false); 
-//
-//            } 
-//            else { 
-//                miniTextArea.setText(""); 
-// 
-//            } 
-//        } 
+//     public void setTextArea(String message1){
+//          miniTextArea.setText(message1);
+//     }
+      
 }
 
 // Driver Code - main method to unable seeing the page individually
