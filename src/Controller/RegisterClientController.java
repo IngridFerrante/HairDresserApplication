@@ -6,6 +6,8 @@
 package controller;
 
 import controller.LoginController;
+import Controller.LoginClientController;
+
 import view.RegisterClientView;
 import javax.swing.*; 
 import java.awt.*; 
@@ -57,7 +59,7 @@ public class RegisterClientController extends JFrame implements ActionListener {
             if(result == true)
             {
                 registerClientView.setResult("Welcome " + firstName + ". You registersted successfully. Now just login using you EMAIL and PASSWORD.");
-                new LoginController();
+                new LoginClientController();
             }
         }
     }

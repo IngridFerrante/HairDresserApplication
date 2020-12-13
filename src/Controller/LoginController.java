@@ -49,7 +49,7 @@ public class LoginController extends JFrame implements ActionListener {
         if(result){ // if result true give the message and we need to put to log into the page the person from that
             resultMessage = "welcome in";
             JOptionPane.showMessageDialog(loginView, resultMessage);
-            new CheckOrMakeBookController();
+            new HairDresserChecksDateScheduleController();
         }else {
           
             JOptionPane.showMessageDialog(loginView, resultMessage);
@@ -58,5 +58,12 @@ public class LoginController extends JFrame implements ActionListener {
     }
 }
     
-   
+ // Driver Code - main method to unable seeing the page individually
+class login { 
+  
+    public static void main(String[] args) throws Exception 
+    { 
+        LoginController loController = new LoginController(); 
+    } 
+}   
 
