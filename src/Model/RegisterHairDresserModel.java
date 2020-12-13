@@ -22,10 +22,10 @@ import controller.RegisterHairDresserController;
  */
 public class RegisterHairDresserModel {   
     // link to the database
-    private String dbServer = "jdbc:mysql://apontejaj.com:3306/Kelly_2019375?useSSL=false";
+    private String dbServer = "jdbc:mysql://apontejaj.com:3306/Ingrid_2019411?useSSL=false";
     // user to query DB to insert, delete and update
-    private String user = "Kelly_2019375";
-    private String password = "2019375";
+    private String user = "Ingrid_2019411";
+    private String password = "2019411";
     
     public RegisterHairDresserModel() {
         
