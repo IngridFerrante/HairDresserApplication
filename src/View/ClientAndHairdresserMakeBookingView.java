@@ -60,9 +60,9 @@ public class ClientAndHairdresserMakeBookingView extends JFrame{
             "26", "27", "28", "29", "30", 
             "31" }; 
     private String months[] 
-        = { "01", "02", "03", "04", 
-            "05", "06", "07", "08", 
-            "09", "10", "11", "12" }; 
+        = { "Jan", "feb", "Mar", "Apr", 
+            "May", "Jun", "July", "Aug", 
+            "Sup", "Oct", "Nov", "Dec"  }; 
     private String years[] 
         = { "2020", "2021"}; 
     
@@ -189,7 +189,7 @@ public class ClientAndHairdresserMakeBookingView extends JFrame{
         menuLocation.setForeground(Color.PINK);//set text button color
         rp.add(menuLocation);
         
-        String[] menuServiceBook = { "Choose a Service","Cut", "Dry","Stylling" };
+        String[] menuServiceBook = { "Choose a Service","Cut", "BlowDry","Colour", "Styling" };
         menuService = new JComboBox(menuServiceBook);
         menuService.setSelectedIndex(0);
         menuService.addActionListener(clientMakeBookingController);
@@ -242,7 +242,7 @@ public class ClientAndHairdresserMakeBookingView extends JFrame{
 //        rp.add(miniTextArea); 
 //        
         //pick hour //make a loop to take a picked hour from the array
-        String[] menuHourBook = { "Choose an hour","10:00", "12:00","2:00","4:00", "6:00" };
+        String[] menuHourBook = { "Choose an hour","10:00","12:00", "14:00", "16:00"};
         menuHour = new JComboBox(menuHourBook);
         menuHour.setSelectedIndex(0);
         menuHour.addActionListener(clientMakeBookingController);
@@ -386,13 +386,13 @@ public class ClientAndHairdresserMakeBookingView extends JFrame{
         return (String) menuService.getSelectedItem();     
     }
     public String getDay(){
-        return (String) menuDate.getSelectedItem();
+        return (String) day.getSelectedItem();
     }
     public String getMonth(){
-        return (String) menuDate.getSelectedItem();
+        return (String) month.getSelectedItem();
     }
     public String getYear(){
-        return (String) menuDate.getSelectedItem();
+        return (String) year.getSelectedItem();
     }
     public String getTime(){
         return (String) menuHour.getSelectedItem();
