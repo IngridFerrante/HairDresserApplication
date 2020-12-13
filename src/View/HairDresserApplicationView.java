@@ -6,6 +6,7 @@
 package View;
 
 import Controller.HairDresserApplicationController;
+import Controller.LocationController;
 import controller.LoginController;
 import controller.RegisterClientController;
 import controller.RegisterHairDresserController;
@@ -332,17 +333,19 @@ public class HairDresserApplicationView extends JFrame implements ActionListener
              registerChoice,
              defaultChoice);
                 
+                
             if (optionChoosen == 0){
                  new RegisterHairDresserController(); // put the page of hairdresser register here
             }else{
                     new RegisterClientController(); // call register client page
+                    
                
             }       
     }else if(e.getActionCommand().equals("Home")){
         new HairDresserApplicationController();
         
     }else if(e.getActionCommand().equals("Location")){
-        new view.LocationView();
+        new LocationController();
         
     }else if(e.getActionCommand().equals("Review")){
         new ReviewPageController();

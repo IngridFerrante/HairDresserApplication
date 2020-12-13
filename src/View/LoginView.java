@@ -60,13 +60,13 @@ public class LoginView extends JFrame{
         title.setLocation(120, 18); 
         p.add(title); 
         
-        UserName = new JLabel("Name: ");
+        UserName = new JLabel("Email: ");
         UserName.setFont(new Font("Arial", Font.PLAIN, 15)); 
         UserName.setSize(100, 20);
         UserName.setLocation(20, 60); //configure position
         p.add(UserName);
         
-        UserTxt = new JTextField("your email address",10);
+        UserTxt = new JTextField("",10);
         UserTxt.setFont(new Font("Arial", Font.PLAIN, 15)); 
         UserTxt.setSize(190, 20);
         UserTxt.setLocation(70, 60); //configure position

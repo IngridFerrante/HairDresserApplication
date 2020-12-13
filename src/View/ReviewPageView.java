@@ -255,7 +255,7 @@ public class ReviewPageView extends JFrame implements ActionListener {
         this.setTitle("Amil's hair - Registration");
         setResizable(false); 
     }
-         private void validation(){
+        private void validation(){
         this.validate();
         this.repaint();
         }
