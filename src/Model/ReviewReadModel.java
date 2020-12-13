@@ -67,6 +67,6 @@ public class ReviewReadModel {
             System.err.println("Got an exception! ");
             System.err.println(e.getMessage());
         }
-      
+      return reviewsList;
     }   
 }

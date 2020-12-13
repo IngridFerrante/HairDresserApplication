@@ -18,14 +18,19 @@ public class customerReviews {
     public customerReviews(String customerName, String review){
         this.customerName = customerName; 
         this.review = review;
+    } 
+
+    customerReviews() { //constructor to reviewReadModel
+        this.customerName = customerName; 
+        this.review = review;
     }
 
  
-    public String getCustomerName(){
+     String getCustomerName(){
         return customerName;
     }
     
-    public String getReview(){
+     String getReview(){
         return review;
     }
    
@@ -37,8 +42,6 @@ public class customerReviews {
         this.review = review;
     }
 
-  
-    
     
     
 }

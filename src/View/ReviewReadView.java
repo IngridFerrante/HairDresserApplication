@@ -232,6 +232,7 @@ public class ReviewReadView extends JFrame implements ActionListener{
         result.setText(message);
     }
   
+ 
   
     
     

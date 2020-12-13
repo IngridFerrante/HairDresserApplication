@@ -3,15 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package view;
+package View;
 
+import Controller.HairDresserApplicationController;
+import controller.LoginController;
+import controller.RegisterClientController;
+import controller.RegisterHairDresserController;
 import controller.ReviewPageController;
-import controller.CheckOrMakeBookController;
-
+import hairdresserapplication.HairDresserApplication;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.FlowLayout;
-import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -21,40 +23,30 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JTextArea;
-import javax.swing.JTextField;
 import javax.swing.UIManager;
 
 /**
  *
  * @author 35389
  */
-public class ReviewPageView extends JFrame implements ActionListener {
-          JComboBox days = null;
-          JComboBox month = null;
-          JComboBox year = null;
-          JComboBox menuList = null;
-          private JLabel cName;
-          private JTextField customerName;
-          private JTextArea writeReview;
-          
-          private JLabel result;
-          
-          
-    ReviewPageController ReviewPageController;
-   
-    public ReviewPageView(ReviewPageController controller)
+public class HairDresserApplicationView extends JFrame implements ActionListener{
+
+    JComboBox menuList = null; 
+    
+    HairDresserApplicationController hairDresserApplicationController;
+    
+    public HairDresserApplicationView(HairDresserApplicationController controller)
     {
-        ReviewPageController = controller;
+        hairDresserApplicationController = controller;
         attributesSetter();
         components();
         validation();
     }
-
     
-    private void components(){
-        // header
+     private void components(){
+         // header
     JPanel header = new JPanel(); // creating header
     
     // adding a grid to the header (1 row and 3 columns)
@@ -141,55 +133,106 @@ public class ReviewPageView extends JFrame implements ActionListener {
     //put it on the header
     header.add(rightHeader);
     
-    // creating the main panel 
-            JPanel mainReview = new JPanel();
-            mainReview.setBackground(Color.PINK);
-            
-            this.add(mainReview, BorderLayout.CENTER);
-            mainReview.setLayout(null);
-            
-            JLabel reviewTitle = new JLabel("How was the service ? "); 
-            reviewTitle.setFont(new Font("Arial", Font.PLAIN, 25)); 
-            reviewTitle.setSize(300, 25); 
-            reviewTitle.setLocation(150, 20);
-            mainReview.add(reviewTitle);
-            
-            JLabel cName = new JLabel("Name: ");
-            cName.setFont(new Font("Arial", Font.PLAIN, 18)); 
-            cName.setSize(300, 30);
-            cName.setLocation(150, 60);
-            mainReview.add(cName);
-            
-           customerName = new JTextField();
-           customerName.setSize(300, 30);
-           customerName.setLocation(150, 85);
-           customerName.setBackground(Color.GRAY);
-           customerName.setForeground(Color.white);
-           mainReview.add(customerName);
-           
-            writeReview = new JTextArea("My experience: ", 50, 50);
-            writeReview.setSize(300, 200); 
-            writeReview.setLocation(150, 140);
-            writeReview.setBackground(Color.GRAY);
-            writeReview.setForeground(Color.white);
-            
-            mainReview.add(writeReview);
-            
-            JButton sendReview = new JButton("Submit"); 
-            sendReview.setSize(150, 40);
-            sendReview.setLocation(300, 350);
-            sendReview.setBackground(Color.blue);
-            sendReview.setForeground(Color.white);
-            sendReview.addActionListener(ReviewPageController);
-            mainReview.add(sendReview);
-            
-            result = new JLabel(""); 
-            result.setFont(new Font("Arial", Font.PLAIN, 12)); 
-            result.setSize(500, 20); 
-            result.setLocation(10, 360); 
-            mainReview.add(result);
-            
-              // FOOTER
+    //ends header
+    
+    // Main Area setup from here
+    JPanel mainArea = new JPanel(); // creating the main panel
+    BorderLayout mainLayout = new BorderLayout();
+    mainArea.setLayout(mainLayout);
+    this.add(mainArea, BorderLayout.CENTER); // adding mainArea to the frame
+    
+    //create a main panel to hold panels
+    JPanel mainArea2 = new JPanel();
+    GridLayout mainBorder = new GridLayout(1,1);
+    mainArea2.setLayout(mainBorder);
+    // insert a border around the main panel and the border size
+    mainArea2.setBorder(BorderFactory.createLineBorder(Color.WHITE, 1));
+    
+        // ORGANISING RIGHT HAND SIDE -- 
+        JPanel backMainPanel = new JPanel();
+        mainArea2.add(backMainPanel);
+        backMainPanel.setBackground(Color.ORANGE);//just in case to see if is all good
+        
+        // DEVIDING MINI RIGHT SECCTION INTO TWO (TWO ROWS - ONE COLUMN)
+        GridLayout miniMainRightLayout = new GridLayout(2,1); //check this bit
+        backMainPanel.setLayout(miniMainRightLayout);
+        
+        // ORGANISING THE UPPER PART
+        JPanel topPart = new JPanel();
+        backMainPanel.add(topPart);
+        // insert a border around the leftHeader panel and the border size
+        topPart.setBorder(BorderFactory.createLineBorder(Color.pink, 5));
+        topPart.setBackground(Color.pink);
+//        JLabel p3 = new JLabel("photo and promotion");
+//        topPart.add(p3);
+        
+        // ORGANISING THE LOWER PART
+        JPanel bottonPart = new JPanel();
+        backMainPanel.add(bottonPart);
+        // insert a border around the leftHeader panel and the border size
+        bottonPart.setBackground(Color.GRAY);
+        bottonPart.setBorder(BorderFactory.createLineBorder(Color.black, 1));
+        
+        
+        JPanel p4 = new JPanel();
+        JLabel txtp4 = new JLabel("Cut");
+        p4.add(txtp4);
+        p4.setBackground(Color.white);
+        p4.setBorder(BorderFactory.createLineBorder(Color.black, 1));
+        
+        
+        JPanel p5 = new JPanel();
+        JLabel txtp5 = new JLabel("BlowDry");
+        p5.add(txtp5);
+        p5.setBackground(Color.white);
+        p5.setBorder(BorderFactory.createLineBorder(Color.black, 1));
+        
+        JPanel p6 = new JPanel();
+        JLabel txtp6 = new JLabel("Colour");
+        p6.add(txtp6);
+        p6.setBackground(Color.white);
+        p6.setBorder(BorderFactory.createLineBorder(Color.black, 1));
+        
+        JPanel p7 = new JPanel();
+        JLabel txtp7 = new JLabel("Styling");
+        p7.setBackground(Color.white);
+        p7.add(txtp7);
+        p7.setBorder(BorderFactory.createLineBorder(Color.black, 1));
+        
+        bottonPart.add(p4);
+        bottonPart.add(p5);
+        bottonPart.add(p6);
+        bottonPart.add(p7);
+        
+        mainArea.add(mainArea2, BorderLayout.CENTER);
+       
+        //this set close/stop the program copletetly once you close the window
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
+    
+    // organising the left side
+    JPanel leftMain = new JPanel();
+    topPart.add(leftMain);
+    leftMain.setBackground(Color.PINK);
+    
+    //set photo into panel
+    JLabel photo = new JLabel();
+    photo.setIcon(new ImageIcon("image/photo.png"));
+    
+    leftMain.add(photo);
+ 
+    // organising the right side
+    JPanel rightMain = new JPanel();
+    topPart.add(rightMain);
+    rightMain.setBackground(Color.PINK);
+    
+    JLabel promotion = new JLabel("Promotion goes here");
+    rightMain.add(promotion);
+    
+
+        
+
+// FOOTER
     
         JPanel footer = new JPanel(); // creating header
     
@@ -243,13 +286,10 @@ public class ReviewPageView extends JFrame implements ActionListener {
         
         footer.add(rightCol);
         
-        
-        
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//stops running when the window is closed 
-        
-        setVisible(true);
-    }
-     private void attributesSetter(){
+
+        JPanel footer2 = new JPanel(); // ends footer
+     }
+         private void attributesSetter(){
         this.setVisible(true);
         this.setSize(600,700);
         this.setTitle("Amil's hair - Registration");
@@ -259,33 +299,57 @@ public class ReviewPageView extends JFrame implements ActionListener {
         this.validate();
         this.repaint();
         }
-         
-         public String getCustomerName(){
-             return customerName.getText();
-         }
-         
-         public String getReview(){
-             return writeReview.getText();
-         }
-         
-     public void setResult(String message)
-    {
-        result.setText(message);
-    }
 
+    
     @Override
     public void actionPerformed(ActionEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        //   to identify different text field
+        if(e.getActionCommand().equals("login")){  
+            new LoginController();
+        
     }
+        else if(e.getActionCommand().equals("register")){
+            
+            ImageIcon icon = new ImageIcon("image/logo.png");
+            
+            Object[] registerChoice = {"Hairdresser", "Client"};
+                Object defaultChoice = registerChoice[0];
+                int optionChoosen = JOptionPane.showOptionDialog(this,
+             "Who are you ?",
+             "Register",
+             JOptionPane.YES_NO_OPTION,
+             JOptionPane.QUESTION_MESSAGE,
+             icon,
+             registerChoice,
+             defaultChoice);
+                
+            if (optionChoosen == 0){
+                 new RegisterHairDresserController(); // put the page of hairdresser register here
+            }else{
+                    new RegisterClientController(); // call register client page
+               
+            }       
+    }else if(e.getActionCommand().equals("Home")){
+        new HairDresserApplication();
+        
+    }else if(e.getActionCommand().equals("Location")){
+        new view.testLocationView();
+        
+    }else if(e.getActionCommand().equals("Review")){
+        new ReviewPageController();
+        
+    }
+        
+         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
+    }
     
 }
 
-
-class reviewPageView2 { 
+         
+     class mainPage { 
   
-    public static void main(String[] args) throws Exception 
-    { 
-        ReviewPageController review = new ReviewPageController(); 
+    public static void main(String[] args) throws Exception { 
+        HairDresserApplicationController review = new HairDresserApplicationController(); 
     } 
 }
