@@ -18,18 +18,30 @@ public class customerReviews {
     public customerReviews(String customerName, String review){
         this.customerName = customerName; 
         this.review = review;
+    } 
+
+    customerReviews() { //constructor to reviewReadModel
+        this.customerName = customerName; 
+        this.review = review;
     }
-    
-    String getCustomerName(){
+
+ 
+     String getCustomerName(){
         return customerName;
     }
     
-    String getReview(){
+     String getReview(){
         return review;
     }
    
+    public void setCustomerName(String customerName ){
+        this.customerName = customerName;
+    }
     
-    
+    public void setReview(String review ){
+        this.review = review;
+    }
+
     
     
 }
