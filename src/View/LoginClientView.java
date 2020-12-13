@@ -3,9 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package view;
+package View;
 
-import controller.LoginController;
+import Controller.LoginClientController;
+
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Font;
@@ -17,10 +18,9 @@ import javax.swing.JTextField;
 
 /**
  *
- * @author 35389
+ * @author Kelly
  */
-
-public class LoginView extends JFrame{
+public class LoginClientView extends JFrame{
     
      // Components of the LoginView form 
     private JLabel title;
@@ -30,10 +30,10 @@ public class LoginView extends JFrame{
     private JTextField PasswordTxt;
     private JButton loginButton;
     
-    LoginController logincontroller;   
-    public LoginView (LoginController controller)
+    LoginClientController loginCcontroller;   
+    public LoginClientView (LoginClientController controller)
     {
-        logincontroller = controller;       
+        loginCcontroller = controller;       
         // We encapsulated the building process of the w indow
         atributesSetter();
         components();
@@ -54,7 +54,7 @@ public class LoginView extends JFrame{
         p.setLayout(null); //holds the location inside the panel
         p.setBackground(Color.PINK);
         
-        title = new JLabel("Hairdresser Login"); 
+        title = new JLabel("Client Login"); 
         title.setFont(new Font("Arial", Font.PLAIN, 18)); 
         title.setSize(150, 20); 
         title.setLocation(80, 18); 
@@ -84,7 +84,7 @@ public class LoginView extends JFrame{
         p.add(PasswordTxt);
         
         loginButton = new JButton("Login");
-        loginButton.addActionListener(logincontroller);
+        loginButton.addActionListener(loginCcontroller);
         loginButton.setSize(70, 20);
         loginButton.setLocation(110, 160); //configure position
         p.add(loginButton);
@@ -108,12 +108,12 @@ public class LoginView extends JFrame{
 }
 
 
-//// Driver Code 
+//// Driver Code -- methos to acces the page
 class LoginUser { 
   
     public static void main(String[] args) throws Exception 
     { 
-        LoginController lg = new LoginController(); 
+        LoginClientController lg = new LoginClientController(); 
        
     } 
 } 

@@ -8,6 +8,7 @@ package View;
 import Controller.HairDresserApplicationController;
 import Controller.LocationController;
 import controller.LoginController;
+import Controller.LoginClientController;
 import controller.RegisterClientController;
 import controller.RegisterHairDresserController;
 import controller.ReviewPageController;
