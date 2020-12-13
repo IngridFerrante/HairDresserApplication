@@ -169,10 +169,15 @@ public class LocationView extends JFrame implements ActionListener{
             locationLayout.setAlignment(FlowLayout.LEFT);
             leftLocation.setBackground(Color.BLACK);
             
-            JLabel photo = new JLabel();
-            photo.setIcon(new ImageIcon("image/mapLocationOne.png"));
-            photo.setSize(new Dimension(50,50));
-            leftLocation.add(photo);
+            JLabel photo1 = new JLabel();
+            photo1.setIcon(new ImageIcon("image/mapLocationOne.png"));
+            photo1.setSize(new Dimension(50,50));
+            leftLocation.add(photo1);
+            
+            JLabel photo2 = new JLabel();
+            photo2.setIcon(new ImageIcon("image/mapLocationOne.png"));
+            photo2.setSize(new Dimension(50,50));
+            leftLocation.add(photo2);
             
             
             mainLocation.add(leftLocation);
