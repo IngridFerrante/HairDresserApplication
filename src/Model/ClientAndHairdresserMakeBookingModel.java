@@ -69,10 +69,10 @@ public class ClientAndHairdresserMakeBookingModel {
 }
        
         
-class reviewPageView3 { 
+class booking1 { 
   
     public static void main(String[] args) throws Exception 
     { 
-        ReviewPageController review = new ReviewPageController(); 
+        ClientAndHairdresserMakeBookingController booking = new ClientAndHairdresserMakeBookingController(); 
     }
 }

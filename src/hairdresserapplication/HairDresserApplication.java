@@ -179,47 +179,62 @@ public void MainPage()
         // insert a border around the leftHeader panel and the border size
         topPart.setBorder(BorderFactory.createLineBorder(Color.pink, 5));
         topPart.setBackground(Color.pink);
-//        JLabel p3 = new JLabel("photo and promotion");
+//        JLabel p3 = new JLabel("photo and openHour");
 //        topPart.add(p3);
         
         // ORGANISING THE LOWER PART
         JPanel bottonPart = new JPanel();
         backMainPanel.add(bottonPart);
-        // insert a border around the leftHeader panel and the border size
         bottonPart.setBackground(Color.GRAY);
-        bottonPart.setBorder(BorderFactory.createLineBorder(Color.black, 1));
+        // insert a border around the leftHeader panel and the border size
+        bottonPart.setBorder(BorderFactory.createLineBorder(Color.gray, 35));
         
         
         JPanel p4 = new JPanel();
-        JLabel txtp4 = new JLabel("Cut");
+        JLabel txtp4 = new JLabel("Cut: 30Euro");
         p4.add(txtp4);
+        txtp4.setBorder(BorderFactory.createEmptyBorder(40, 20, 20, 20));
         p4.setBackground(Color.white);
+        p4.setPreferredSize(new Dimension(100, 130));//set Panel size
         p4.setBorder(BorderFactory.createLineBorder(Color.black, 1));
         
         
         JPanel p5 = new JPanel();
-        JLabel txtp5 = new JLabel("BlowDry");
+        JLabel txtp5 = new JLabel("BlowDry: 20Euro");
         p5.add(txtp5);
+        txtp5.setBorder(BorderFactory.createEmptyBorder(40, 20, 20, 20));
+        p5.setPreferredSize(new Dimension(100, 130));//setPanel size
         p5.setBackground(Color.white);
         p5.setBorder(BorderFactory.createLineBorder(Color.black, 1));
         
         JPanel p6 = new JPanel();
-        JLabel txtp6 = new JLabel("Colour");
+        JLabel txtp6 = new JLabel("Colour: 60Euro");
         p6.add(txtp6);
+        txtp6.setBorder(BorderFactory.createEmptyBorder(40, 20, 20, 20));
+        p6.setPreferredSize(new Dimension(100, 130));//setPanel size
         p6.setBackground(Color.white);
         p6.setBorder(BorderFactory.createLineBorder(Color.black, 1));
         
         JPanel p7 = new JPanel();
-        JLabel txtp7 = new JLabel("Styling");
-        p7.setBackground(Color.white);
+        JLabel txtp7 = new JLabel("Styling: 50Euro");
         p7.add(txtp7);
+        txtp7.setBorder(BorderFactory.createEmptyBorder(40, 20, 20, 20));
+        p7.setPreferredSize(new Dimension(100, 130));//setPanel size
+        p7.setBackground(Color.white);
         p7.setBorder(BorderFactory.createLineBorder(Color.black, 1));
+//        
+//        JPanel p8 = new JPanel();
+//        JLabel txtp8 = new JLabel("Styling");
+//        p8.setPreferredSize(new Dimension(130, 50));//setPanel size
+//        p8.add(txtp8);
+//        p8.setBackground(Color.red);
+//        p8.setBorder(BorderFactory.createLineBorder(Color.black, 1));
         
         bottonPart.add(p4);
         bottonPart.add(p5);
         bottonPart.add(p6);
         bottonPart.add(p7);
-        
+//        bottonPart.add(p8);
         mainArea.add(mainArea2, BorderLayout.CENTER);
        
         //this set close/stop the program copletetly once you close the window
@@ -242,8 +257,9 @@ public void MainPage()
     topPart.add(rightMain);
     rightMain.setBackground(Color.PINK);
     
-    JLabel promotion = new JLabel("Promotion goes here");
-    rightMain.add(promotion);
+    JLabel openHour = new JLabel("Tuesday to Saturday: 10am to 6pm");
+    rightMain.add(openHour);
+    
     
 
         
