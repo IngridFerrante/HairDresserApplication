@@ -8,7 +8,8 @@ package controller;
 import Model.HairDresserChecksDateScheduleModel;
 import hairdresserapplication.HairDresserApplication;
 import view.HairDresserChecksDateScheduleView;
-import java.awt.BorderLayout;
+
+
 import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;

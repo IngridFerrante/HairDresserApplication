@@ -11,7 +11,8 @@ import controller.LoginController;
 import controller.RegisterClientController;
 import controller.RegisterHairDresserController;
 import controller.ReviewPageController;
-import hairdresserapplication.HairDresserApplication;
+//import hairdresserapplication.HairDresserApplication;
+
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -33,7 +34,7 @@ import javax.swing.UIManager;
  *
  * @author 35389
  */
-public class HairDresserApplicationView extends JFrame implements ActionListener{
+public class HairDresserApplicationView extends JFrame {
 
     JComboBox menuList = null; 
     
@@ -72,7 +73,7 @@ public class HairDresserApplicationView extends JFrame implements ActionListener
     
     menuList = new JComboBox(menuApp);
     menuList.setSelectedIndex(2);
-    menuList.addActionListener(this);
+    menuList.addActionListener(hairDresserApplicationController);
     menuList.setActionCommand("menuList");
     menuList.setBackground(Color.GRAY);
     menuList.setForeground(Color.PINK);
@@ -123,8 +124,8 @@ public class HairDresserApplicationView extends JFrame implements ActionListener
     login.setActionCommand("login");
     register.setActionCommand("register");
     
-    login.addActionListener(this);
-    register.addActionListener(this);
+    login.addActionListener(hairDresserApplicationController);
+    register.addActionListener(hairDresserApplicationController);
     
     //adding color to the pop up panel
      UIManager.put("OptionPane.background", Color.PINK);
@@ -311,51 +312,51 @@ public class HairDresserApplicationView extends JFrame implements ActionListener
         }
 
     
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        //   to identify different text field
-        if(e.getActionCommand().equals("login")){  
-            new LoginController();
-        
-    }
-        else if(e.getActionCommand().equals("register")){
-            
-            ImageIcon icon = new ImageIcon("image/logo.png");
-            
-            Object[] registerChoice = {"Hairdresser", "Client"};
-                Object defaultChoice = registerChoice[0];
-                int optionChoosen = JOptionPane.showOptionDialog(this,
-             "Who are you ?",
-             "Register",
-             JOptionPane.YES_NO_OPTION,
-             JOptionPane.QUESTION_MESSAGE,
-             icon,
-             registerChoice,
-             defaultChoice);
-                
-                
-            if (optionChoosen == 0){
-                 new RegisterHairDresserController(); // put the page of hairdresser register here
-            }else{
-                    new RegisterClientController(); // call register client page
-                    
-               
-            }       
-    }else if(e.getActionCommand().equals("Home")){
-        new HairDresserApplicationController();
-        
-    }else if(e.getActionCommand().equals("Location")){
-        new LocationController();
-        
-    }else if(e.getActionCommand().equals("Review")){
-        new ReviewPageController();
-        
-    }
-        
-         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-    }
-    
+//    @Override
+//    public void actionPerformed(ActionEvent e) {
+//        //   to identify different text field
+//        if(e.getActionCommand().equals("login")){  
+//            new LoginController();
+//        
+//    }
+//        else if(e.getActionCommand().equals("register")){
+//            
+//            ImageIcon icon = new ImageIcon("image/logo.png");
+//            
+//            Object[] registerChoice = {"Hairdresser", "Client"};
+//                Object defaultChoice = registerChoice[0];
+//                int optionChoosen = JOptionPane.showOptionDialog(this,
+//             "Who are you ?",
+//             "Register",
+//             JOptionPane.YES_NO_OPTION,
+//             JOptionPane.QUESTION_MESSAGE,
+//             icon,
+//             registerChoice,
+//             defaultChoice);
+//                
+//                
+//            if (optionChoosen == 0){
+//                 new RegisterHairDresserController(); // put the page of hairdresser register here
+//            }else{
+//                    new RegisterClientController(); // call register client page
+//                    
+//               
+//            }       
+//    }else if(e.getActionCommand().equals("Home")){
+//        new HairDresserApplicationController();
+//        
+//    }else if(e.getActionCommand().equals("Location")){
+//        new LocationController();
+//        
+//    }else if(e.getActionCommand().equals("Review")){
+//        new ReviewPageController();
+//        
+//    }
+//        
+//         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//
+//    }
+//    
 }
 
          
