@@ -69,16 +69,16 @@ private void components()
     
     //add drowndrop list
     
-    String[] menuApp = { "Home", "Location", "Review" };
-    
-     menuList = new JComboBox(menuApp);
-    menuList.setSelectedIndex(2);
-    menuList.addActionListener(hairDresserChecksController);
-    menuList.setActionCommand("menuList");
-    menuList.setBackground(Color.GRAY);
-    menuList.setForeground(Color.PINK);
-    
-    leftHeader.add(menuList);
+//    String[] menuApp = { "Home", "Location", "Review" };
+//    
+//    menuList = new JComboBox(menuApp);
+//    menuList.setSelectedIndex(2);
+//    menuList.addActionListener(hairDresserChecksController);
+//    menuList.setActionCommand("menuList");
+//    menuList.setBackground(Color.GRAY);
+//    menuList.setForeground(Color.PINK);
+//    
+//    leftHeader.add(menuList);
      
     
     // ADDING IT TO THE TOP SECTION the leftHeader to header Panel
@@ -109,23 +109,16 @@ private void components()
     rightLayout.setAlignment(FlowLayout.RIGHT);
     rightHeader.setBackground(Color.BLACK);
     
-    //add button register and login
-    JButton register = new JButton("Register");
-    JButton login = new JButton("Login");
-    rightHeader.add(register);
-    rightHeader.add(login); 
+    //add button register and logout
+    JButton logout = new JButton("Logout");
+    rightHeader.add(logout); 
     
-    login.setBackground(Color.GRAY);
-    login.setForeground(Color.pink);
-    register.setBackground(Color.GRAY);
-    register.setForeground(Color.pink);
+    logout.setBackground(Color.GRAY);
+    logout.setForeground(Color.pink);    
     
+    logout.setActionCommand("logout");
     
-    login.setActionCommand("login");
-    register.setActionCommand("register");
-    
-    login.addActionListener(hairDresserChecksController);
-    register.addActionListener(hairDresserChecksController);
+    logout.addActionListener(hairDresserChecksController);
     
     //adding color to the pop up panel
      UIManager.put("OptionPane.background", Color.PINK);
