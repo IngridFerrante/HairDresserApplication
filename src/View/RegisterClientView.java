@@ -79,17 +79,20 @@ public class RegisterClientView extends JFrame{
     leftLayout.setAlignment(FlowLayout.LEFT);
     leftHeader.setBackground(Color.BLACK);
     
-    //add drowndrop list    
-    String[] menuApp = { "Home", "Location", "Review" };
-    JComboBox menuList = new JComboBox(menuApp);
-    menuList.setSelectedIndex(2);
-    menuList.addActionListener(registerController);
-    menuList.setActionCommand("menuList");
-    menuList.setBackground(Color.GRAY);
-    menuList.setForeground(Color.PINK);
+    JButton reviewButton = new JButton("Review");
+    reviewButton.addActionListener(registerController);
+    reviewButton.setBackground(Color.gray);
+    reviewButton.setForeground(Color.PINK);
     
-    leftHeader.add(menuList);
+    leftHeader.add(reviewButton);
     
+    JButton locationButton = new JButton("Location");
+    locationButton.addActionListener(registerController);
+    locationButton.setBackground(Color.gray);
+    locationButton.setForeground(Color.PINK);
+    
+    
+    leftHeader.add(locationButton);
     // ADDING IT TO THE TOP SECTION the leftHeader to header Panel
     header.add(leftHeader);
       
