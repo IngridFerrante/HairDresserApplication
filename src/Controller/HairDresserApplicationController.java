@@ -28,8 +28,12 @@ public class HairDresserApplicationController extends JFrame implements ActionLi
 @Override
     public void actionPerformed(ActionEvent e) {
         //   to identify different text field
-        if(e.getActionCommand().equals("login")){  
+        if(e.getActionCommand().equals("loginHairdresser")){  
             new controller.LoginController();
+        
+    }
+        else if(e.getActionCommand().equals("loginClient")){  
+            new controller.LoginClientController();
         
     }
         else if(e.getActionCommand().equals("register")){
@@ -64,7 +68,10 @@ public class HairDresserApplicationController extends JFrame implements ActionLi
          setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
     }
-        
-    
-    
+}
+     class mainPage { 
+  
+    public static void main(String[] args) throws Exception { 
+        HairDresserApplicationController review = new HairDresserApplicationController(); 
+    } 
 }

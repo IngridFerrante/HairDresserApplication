@@ -6,7 +6,7 @@
 package controller;
 
 import controller.LoginController;
-import Controller.LoginClientController;
+import controller.LoginClientController;
 
 import view.RegisterClientView;
 import javax.swing.*; 

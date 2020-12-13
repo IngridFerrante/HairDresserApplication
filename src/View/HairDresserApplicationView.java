@@ -8,7 +8,7 @@ package View;
 import Controller.HairDresserApplicationController;
 import Controller.LocationController;
 import controller.LoginController;
-import Controller.LoginClientController;
+import controller.LoginClientController;
 import controller.RegisterClientController;
 import controller.RegisterHairDresserController;
 import controller.ReviewPageController;
@@ -114,22 +114,28 @@ public class HairDresserApplicationView extends JFrame {
     rightLayout.setAlignment(FlowLayout.RIGHT);
     rightHeader.setBackground(Color.BLACK);
     
-    //add button register and login
+    //add button register and loginHairdresser
     JButton register = new JButton("Register");
-    JButton login = new JButton("Login");
+    JButton LoginHairdresser = new JButton("Hairdresser Login");
+    JButton LoginClient = new JButton("Client Login");
     rightHeader.add(register);
-    rightHeader.add(login); 
+    rightHeader.add(LoginHairdresser); 
+    rightHeader.add(LoginClient); 
     
-    login.setBackground(Color.GRAY);
-    login.setForeground(Color.pink);
+    LoginHairdresser.setBackground(Color.GRAY);
+    LoginHairdresser.setForeground(Color.pink);
+    LoginClient.setBackground(Color.GRAY);
+    LoginClient.setForeground(Color.pink);
     register.setBackground(Color.GRAY);
     register.setForeground(Color.pink);
     
     
-    login.setActionCommand("login");
+    LoginHairdresser.setActionCommand("loginHairdresser");
+    LoginClient.setActionCommand("loginClient");
     register.setActionCommand("register");
     
-    login.addActionListener(hairDresserApplicationController);
+    LoginHairdresser.addActionListener(hairDresserApplicationController);
+    LoginClient.addActionListener(hairDresserApplicationController);
     register.addActionListener(hairDresserApplicationController);
     
     //adding color to the pop up panel
