@@ -5,6 +5,7 @@
  */
 package Model;
 
+import Controller.ReviewReadController;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -69,4 +70,12 @@ public class ReviewReadModel {
         }
       return reviewsList;
     }   
+}
+
+class testing41 { 
+  
+    public static void main(String[] args) throws Exception 
+    { 
+        ReviewReadController readReview = new ReviewReadController(); 
+    } 
 }

@@ -35,7 +35,7 @@ public class CheckOrMakeBookController extends JFrame implements ActionListener 
     @Override
     public void actionPerformed(ActionEvent e) 
     {
-        // if click the button link to the page
+        // if click the button link to the page that the button was selected
         if(e.getActionCommand().equals("Make a Book")){  
             new ClientAndHairdresserMakeBookingController();
         
