@@ -176,7 +176,7 @@ public class HairDresserApplicationView extends JFrame implements ActionListener
         
         
         JPanel p4 = new JPanel();
-        JLabel txtp4 = new JLabel("<html>Cut: <br> 70Euro</html>");
+        JLabel txtp4 = new JLabel("<html>Cut: <br> 90Euro</html>");
         p4.add(txtp4);
         txtp4.setBorder(BorderFactory.createEmptyBorder(40, 20, 20, 20));
         p4.setBackground(Color.white);
@@ -185,7 +185,7 @@ public class HairDresserApplicationView extends JFrame implements ActionListener
         
         
         JPanel p5 = new JPanel();
-        JLabel txtp5 = new JLabel("<html>BlowDry: <br> 40Euro</html>");
+        JLabel txtp5 = new JLabel("<html>BlowDry: <br> 70Euro</html>");
         p5.add(txtp5);
         txtp5.setBorder(BorderFactory.createEmptyBorder(40, 20, 20, 20));
         p5.setPreferredSize(new Dimension(100, 130));//setPanel size
@@ -193,7 +193,7 @@ public class HairDresserApplicationView extends JFrame implements ActionListener
         p5.setBorder(BorderFactory.createLineBorder(Color.black, 1));
         
         JPanel p6 = new JPanel();
-        JLabel txtp6 = new JLabel("<html>Colour: <br> 90Euro</html>");
+        JLabel txtp6 = new JLabel("<html>Colour: <br> 150Euro</html>");
         p6.add(txtp6);
         txtp6.setBorder(BorderFactory.createEmptyBorder(40, 20, 20, 20));
         p6.setPreferredSize(new Dimension(100, 130));//setPanel size
@@ -201,7 +201,7 @@ public class HairDresserApplicationView extends JFrame implements ActionListener
         p6.setBorder(BorderFactory.createLineBorder(Color.black, 1));
         
         JPanel p7 = new JPanel();
-        JLabel txtp7 = new JLabel("<html>Styling: <br> 80Euro</html>");
+        JLabel txtp7 = new JLabel("<html>Styling: <br> 120Euro</html>");
         p7.add(txtp7);
         txtp7.setBorder(BorderFactory.createEmptyBorder(40, 20, 20, 20));
         p7.setPreferredSize(new Dimension(100, 130));//setPanel size
@@ -235,7 +235,7 @@ public class HairDresserApplicationView extends JFrame implements ActionListener
     topPart.add(rightMain);
     rightMain.setBackground(Color.PINK);
     
-    JLabel promotion = new JLabel("<html> Opening Hours: <br> Monday: Closed  <br> Tuesday: 10:00 to 18:00  <br> Wednesday: 10:00 to 18:00  <br> Thursday: 10:00 to 18:00  <br> Friday: 10:00 to 20:00  <br> Saturday: 10:00 to 22:00  <br> Sunday: Closed </html>");
+    JLabel promotion = new JLabel("<html> Opening Hours: <br> Monday: Closed  <br> Tuesday: 10:00 to 18:00  <br> Wednesday: 10:00 to 18:00  <br> Thursday: 10:00 to 18:00  <br> Friday: 10:00 to 18:00  <br> Saturday: 10:00 to 18:00  <br> Sunday: Closed </html>");
     rightMain.add(promotion);
     
 

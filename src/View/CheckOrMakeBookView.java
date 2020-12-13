@@ -65,15 +65,15 @@ public class CheckOrMakeBookView extends JFrame{
     leftHeader.setBackground(Color.BLACK);
     
     //add drowndrop list    
-    String[] menuApp = { "Home", "Location", "Review" };
-    JComboBox menuList = new JComboBox(menuApp);
-    menuList.setSelectedIndex(2);
-    menuList.addActionListener(checkOrMakeBookController);
-    menuList.setActionCommand("menuList");
-    menuList.setBackground(Color.GRAY);
-    menuList.setForeground(Color.PINK);
-    
-    leftHeader.add(menuList);
+//    String[] menuApp = { "Home", "Location", "Review" };
+//    JComboBox menuList = new JComboBox(menuApp);
+//    menuList.setSelectedIndex(2);
+//    menuList.addActionListener(checkOrMakeBookController);
+//    menuList.setActionCommand("menuList");
+//    menuList.setBackground(Color.GRAY);
+//    menuList.setForeground(Color.PINK);
+//    
+//    leftHeader.add(menuList);
     
     // ADDING IT TO THE TOP SECTION the leftHeader to header Panel
     header.add(leftHeader);
