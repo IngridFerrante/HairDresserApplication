@@ -19,16 +19,25 @@ public class customerReviews {
         this.customerName = customerName; 
         this.review = review;
     }
-    
-    String getCustomerName(){
+
+ 
+    public String getCustomerName(){
         return customerName;
     }
     
-    String getReview(){
+    public String getReview(){
         return review;
     }
    
+    public void setCustomerName(String customerName ){
+        this.customerName = customerName;
+    }
     
+    public void setReview(String review ){
+        this.review = review;
+    }
+
+  
     
     
     
