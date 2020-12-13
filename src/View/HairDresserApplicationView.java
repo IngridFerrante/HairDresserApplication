@@ -235,7 +235,7 @@ public class HairDresserApplicationView extends JFrame implements ActionListener
     topPart.add(rightMain);
     rightMain.setBackground(Color.PINK);
     
-    JLabel promotion = new JLabel("Promotion goes here");
+    JLabel promotion = new JLabel("<html> Opening Hours: <br> Monday: Closed  <br> Tuesday: 10:00 to 18:00  <br> Wednesday: 10:00 to 18:00  <br> Thursday: 10:00 to 18:00  <br> Friday: 10:00 to 20:00  <br> Saturday: 10:00 to 22:00  <br> Sunday: Closed </html>");
     rightMain.add(promotion);
     
 
