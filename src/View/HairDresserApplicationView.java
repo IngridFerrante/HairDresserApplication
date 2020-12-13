@@ -333,10 +333,12 @@ public class HairDresserApplicationView extends JFrame implements ActionListener
              registerChoice,
              defaultChoice);
                 
+                
             if (optionChoosen == 0){
                  new RegisterHairDresserController(); // put the page of hairdresser register here
             }else{
                     new RegisterClientController(); // call register client page
+                    
                
             }       
     }else if(e.getActionCommand().equals("Home")){
