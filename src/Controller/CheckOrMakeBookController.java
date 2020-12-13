@@ -40,18 +40,11 @@ public class CheckOrMakeBookController extends JFrame implements ActionListener 
     } else if(e.getActionCommand().equals("Home")){
         new HairDresserApplicationController();
         
-    } else if(e.getActionCommand().equals("Location")){
+    }else{
         
-    }else if(HairDresserApplicationController.toString().equals("Review"))
-       new ReviewReadController();
     }
 } 
-  
-// Driver Code - main method to unable seeing the page individually
-class CheckOrBookClient { 
-  
-    public static void main(String[] args) throws Exception 
-    { 
-        CheckOrMakeBookController checkorbookController = new CheckOrMakeBookController(); 
-    } 
 }
+// Driver Code - main method to unable seeing the page individually
+
+
