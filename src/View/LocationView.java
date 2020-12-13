@@ -21,9 +21,9 @@ import javax.swing.JPanel;
  *
  * @author 35389
  */
-public class testLocationView extends JFrame implements ActionListener{
+public class LocationView extends JFrame implements ActionListener{
     
-    public testLocationView(){
+    public LocationView(){
            this.setVisible(true);
             this.setSize(600,700);
             this.setTitle("Amil's hair");
@@ -73,6 +73,6 @@ public class testLocationView extends JFrame implements ActionListener{
 
 class Test4 {
     public static void main(String[] args) throws Exception {
-       testLocationView c = new testLocationView();
+       LocationView c = new LocationView();
     }
 }

@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package view;
+package View;
 
-import controller.ClientAndHairdresserMakeBookingController;
+import Controller.ClientCheckBookingsController;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.FlowLayout;
@@ -28,20 +28,22 @@ import javax.swing.UIManager;
  *
  * @author 35389
  */
-public class clientCheckBookingsView extends JFrame implements ActionListener{
+public class ClientCheckBookingsView extends JFrame{
           JComboBox days = null;
           JComboBox month = null;
           JComboBox year = null;
-          JComboBox menuList = null;
+          
     
-    public clientCheckBookingsView(){
-           this.setVisible(true);
-            this.setSize(600,700);
-            this.setTitle("Amil's hair");
-
-            BorderLayout frame = new BorderLayout();
-            this.setLayout(frame);
-            
+ClientCheckBookingsController clientCheckBookingController;
+    public ClientCheckBookingsView(ClientCheckBookingsController controller)
+    {
+        clientCheckBookingController = controller;
+        attributesSetter();
+        components();
+        validation();
+    }
+    
+     private void components(){
              // header
     JPanel header = new JPanel(); // creating header
     
@@ -60,18 +62,6 @@ public class clientCheckBookingsView extends JFrame implements ActionListener{
     leftLayout.setAlignment(FlowLayout.LEFT);
     leftHeader.setBackground(Color.BLACK);
     
-    //add drowndrop list
-    
-    String[] menuApp = { "Home", "Location", "Review" };
-    
-     menuList = new JComboBox(menuApp);
-    menuList.setSelectedIndex(2);
-    menuList.addActionListener(this);
-    menuList.setActionCommand("menuList");
-    menuList.setBackground(Color.GRAY);
-    menuList.setForeground(Color.PINK);
-    
-    leftHeader.add(menuList);
      
     
     // ADDING IT TO THE TOP SECTION the leftHeader to header Panel
@@ -102,23 +92,17 @@ public class clientCheckBookingsView extends JFrame implements ActionListener{
     rightLayout.setAlignment(FlowLayout.RIGHT);
     rightHeader.setBackground(Color.BLACK);
     
-    //add button register and login
-    JButton register = new JButton("Register");
-    JButton login = new JButton("Login");
-    rightHeader.add(register);
+    //add button and logout
+    JButton login = new JButton("Logout");
     rightHeader.add(login); 
     
     login.setBackground(Color.GRAY);
-    login.setForeground(Color.pink);
-    register.setBackground(Color.GRAY);
-    register.setForeground(Color.pink);
+    login.setForeground(Color.pink);  
     
+    login.setActionCommand("logout");
+  
     
-    login.setActionCommand("login");
-    register.setActionCommand("register");
-    
-    login.addActionListener(this);
-    register.addActionListener(this);
+    login.addActionListener(clientCheckBookingController);
     
     //adding color to the pop up panel
      UIManager.put("OptionPane.background", Color.PINK);
@@ -202,7 +186,7 @@ public class clientCheckBookingsView extends JFrame implements ActionListener{
             newBooking.setLocation(250, 370);
             newBooking.setBackground(Color.blue);
             newBooking.setForeground(Color.gray);
-            newBooking.addActionListener(this);
+            newBooking.addActionListener(clientCheckBookingController);
             mainBooking.add(newBooking);
             
             
@@ -258,24 +242,30 @@ public class clientCheckBookingsView extends JFrame implements ActionListener{
         rightCol.setForeground(Color.PINK);
         rightFooter.add(rightCol);
         
-        footer.add(rightCol);
-            
-            
-            validate();
-            repaint();
-            
+   footer.add(rightCol);
+              
+        JPanel footer2 = new JPanel(); // creating header
+    
+        //footer ends*************************
+  
+        
+        setVisible(true); 
+        
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//stops running when the window is closed 
+     
+     }
+    
+    // Setting attributes
+    private void attributesSetter(){
+        this.setVisible(true);
+        this.setSize(600,700);
+        this.setTitle("Amil's hair - Registration");
+        setResizable(false); 
     }
     
-
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        
-        if(e.getActionCommand().equals("Make a new Booking")){  
-            new ClientAndHairdresserMakeBookingController();
-        
-    }
-
-            setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+     private void validation(){
+        this.validate();
+        this.repaint();
     }
     
     
@@ -284,8 +274,8 @@ public class clientCheckBookingsView extends JFrame implements ActionListener{
 
 
 
-class Test2 {
+class clientBooking2 {
     public static void main(String[] args) throws Exception {
-       clientCheckBookingsView b = new clientCheckBookingsView();
+       ClientCheckBookingsController b = new ClientCheckBookingsController();
     }
 }

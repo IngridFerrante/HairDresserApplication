@@ -7,8 +7,8 @@ package controller;
 
 import view.CheckOrMakeBookView;
 import controller.ClientAndHairdresserMakeBookingController;
+import Controller.ClientCheckBookingsController;
 
-import view.clientCheckBookingsView;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
@@ -32,13 +32,14 @@ public class CheckOrMakeBookController extends JFrame implements ActionListener 
   
 //    // method actionPerformed() 
 
+    @Override
     public void actionPerformed(ActionEvent e) 
     {
         if(e.getActionCommand().equals("Make a Book")){  
             new ClientAndHairdresserMakeBookingController();
         
     } else if(e.getActionCommand().equals("Your Books")){
-        new clientCheckBookingsView();
+             new ClientCheckBookingsController();
         
     }else{
         
@@ -46,5 +47,11 @@ public class CheckOrMakeBookController extends JFrame implements ActionListener 
 } 
 }
 // Driver Code - main method to unable seeing the page individually
-
+class makeouCheck { 
+  
+    public static void main(String[] args) throws Exception 
+    { 
+        CheckOrMakeBookController makeBookController = new CheckOrMakeBookController(); 
+    } 
+}
 

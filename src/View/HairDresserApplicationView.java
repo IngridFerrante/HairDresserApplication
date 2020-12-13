@@ -342,7 +342,7 @@ public class HairDresserApplicationView extends JFrame implements ActionListener
         new HairDresserApplicationController();
         
     }else if(e.getActionCommand().equals("Location")){
-        new view.testLocationView();
+        new view.LocationView();
         
     }else if(e.getActionCommand().equals("Review")){
         new ReviewPageController();
