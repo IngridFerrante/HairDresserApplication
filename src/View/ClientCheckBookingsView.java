@@ -6,6 +6,7 @@
 package View;
 
 import Controller.ClientCheckBookingsController;
+
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.FlowLayout;
@@ -123,7 +124,7 @@ ClientCheckBookingsController clientCheckBookingController;
             JLabel bookingTitle = new JLabel("Your bookings: "); 
             bookingTitle.setFont(new Font("Arial", Font.PLAIN, 25)); 
             bookingTitle.setSize(200, 30); 
-            bookingTitle.setLocation(150, 30);
+            bookingTitle.setLocation(200, 30);
             mainBooking.add(bookingTitle);
             
             

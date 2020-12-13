@@ -10,6 +10,7 @@ import controller.LoginController;
 import controller.RegisterClientController;
 import controller.RegisterHairDresserController;
 import controller.ReviewPageController;
+import view.ReviewPageView;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
