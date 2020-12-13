@@ -225,21 +225,6 @@ public class ClientAndHairdresserMakeBookingView extends JFrame{
         year.setForeground(Color.PINK);//set text button color
         rp.add(year);
         
-        confirmDate = new JButton("Confirm date"); 
-        confirmDate.setFont(new Font("Arial", Font.PLAIN, 12)); 
-        confirmDate.setSize(100, 15); 
-        confirmDate.setLocation(380, 180); 
-        confirmDate.addActionListener(clientMakeBookingController); 
-        rp.add(confirmDate); 
-  
-        miniTextArea = new JTextArea(); 
-        miniTextArea.setFont(new Font("Arial", Font.PLAIN, 15)); 
-        miniTextArea.setSize(150, 30); 
-        miniTextArea.setLocation(400, 100); 
-        miniTextArea.setBackground(Color.red);
-        miniTextArea.setLineWrap(true); 
-        miniTextArea.setEditable(false); 
-        rp.add(miniTextArea); 
         
         //pick hour //make a loop to take a picked hour from the array
         String[] menuHourBook = { "Choose an hour","10:00", "12:00","2:00","4:00", "6:00" };
@@ -285,6 +270,7 @@ public class ClientAndHairdresserMakeBookingView extends JFrame{
         BookButton.setSize(200, 40); 
         BookButton.setLocation(190, 380); 
         BookButton.setBackground(Color.blue);
+        BookButton.setForeground(Color.white);
         BookButton.addActionListener(clientMakeBookingController); 
         rp.add(BookButton); 
 
