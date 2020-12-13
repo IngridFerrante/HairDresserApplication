@@ -29,6 +29,7 @@ import javax.swing.UIManager;
  * @author 35389
  */
 public class LocationView extends JFrame implements ActionListener{
+    //conponents page
           JComboBox days = null;
           JComboBox month = null;
           JComboBox year = null;
@@ -39,7 +40,7 @@ public class LocationView extends JFrame implements ActionListener{
           private JLabel result;
           
           
-          LocationController locationController;
+    LocationController locationController;
     public LocationView(LocationController controller){
         
             locationController = controller;
@@ -66,14 +67,14 @@ public class LocationView extends JFrame implements ActionListener{
     leftLayout.setAlignment(FlowLayout.LEFT);
     leftHeader.setBackground(Color.BLACK);
     
-
+    //button to go to Review
     JButton reviewButton = new JButton("   Review    ");
     reviewButton.addActionListener(locationController);
     reviewButton.setBackground(Color.gray);
     reviewButton.setForeground(Color.PINK);
     
     leftHeader.add(reviewButton);
-    
+    //button to go to location
     JButton locationButton = new JButton("    Location    ");
     locationButton.addActionListener(locationController); // verify that later
     locationButton.setBackground(Color.gray);
@@ -81,7 +82,7 @@ public class LocationView extends JFrame implements ActionListener{
     
     
     leftHeader.add(locationButton);
-    
+    //button to go to homepage
     JButton homePage = new JButton("   Home    ");
     homePage.setBackground(Color.gray);
     homePage.setForeground(Color.PINK);
@@ -261,7 +262,7 @@ public class LocationView extends JFrame implements ActionListener{
          private void attributesSetter(){
         this.setVisible(true);
         this.setSize(600,700);
-        this.setTitle("Amil's hair - Registration");
+        this.setTitle("Amil's hair");
         setResizable(false); 
         }
          
@@ -278,6 +279,7 @@ public class LocationView extends JFrame implements ActionListener{
     
 }
 
+//method to access the page directly
 class Test4 {
     public static void main(String[] args) throws Exception {
        LocationController c = new LocationController();

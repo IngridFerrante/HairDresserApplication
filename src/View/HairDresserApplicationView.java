@@ -322,7 +322,7 @@ public class HairDresserApplicationView extends JFrame {
          private void attributesSetter(){
         this.setVisible(true);
         this.setSize(600,700);
-        this.setTitle("Amil's hair - Registration");
+        this.setTitle("Amil's hair");
         setResizable(false); 
     }
          private void validation(){
@@ -330,6 +330,7 @@ public class HairDresserApplicationView extends JFrame {
         this.repaint();
         }
          
+         //getter
          public String getLocationSalon(){
             return (String) menuList.getSelectedItem();
         }  

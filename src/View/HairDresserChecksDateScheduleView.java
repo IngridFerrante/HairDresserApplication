@@ -61,8 +61,6 @@ public class HairDresserChecksDateScheduleView extends JFrame {
     leftLayout.setAlignment(FlowLayout.LEFT);
     leftHeader.setBackground(Color.BLACK);
     
-     
-    
     // ADDING IT TO THE TOP SECTION the leftHeader to header Panel
     header.add(leftHeader);
     
@@ -100,9 +98,6 @@ public class HairDresserChecksDateScheduleView extends JFrame {
     logout.setForeground(Color.pink);
     logout.addActionListener(hairDresserScheduleController);
     
-   // logout.setActionCommand("logout");
-    
-   
     
     //adding color to the pop up panel
      UIManager.put("OptionPane.background", Color.PINK);
@@ -138,7 +133,7 @@ public class HairDresserChecksDateScheduleView extends JFrame {
      leftMain.setLayout(leftlayoutMain);
      leftlayoutMain.setAlignment(FlowLayout.LEFT);
      leftMain.setBackground(Color.PINK);
-     
+     // calendar
        String[]  dates 
         = { "1", "2", "3", "4", "5", 
             "6", "7", "8", "9", "10", 
@@ -149,9 +144,9 @@ public class HairDresserChecksDateScheduleView extends JFrame {
             "31" };
        
        String[] months
-        = { "Jan", "feb", "Mar", "Apr", 
-            "May", "Jun", "July", "Aug", 
-            "Sup", "Oct", "Nov", "Dec" };
+        = { "01", "02", "03", "04", 
+            "05", "06", "07", "08", 
+            "09", "10", "11", "12" };
        
        String[] years
                = {"2020","2021"};
@@ -303,6 +298,7 @@ public class HairDresserChecksDateScheduleView extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//stops running when the window is closed 
     }
      
+     //getters
      public String getDay(){
          return (String) days.getSelectedItem();
      }

@@ -31,7 +31,7 @@ import javax.swing.UIManager;
  */
 public class CheckOrMakeBookView extends JFrame{
     
-    // Components of the RegisterHairDresserController form  
+    // Components of the  form  
     private JLabel title;  
     private JButton YourBookButton;
     private JButton MakeBooksButton; 
@@ -41,11 +41,13 @@ public class CheckOrMakeBookView extends JFrame{
     public CheckOrMakeBookView(CheckOrMakeBookController controller)
     {
         checkOrMakeBookController = controller;
+        // encapsulated the building process of the window
         attributesSetter();
         components();
         validation();
     }
     
+    //to initialize the components 
      private void components(){
          JPanel header = new JPanel(); // creating header
     
@@ -63,8 +65,6 @@ public class CheckOrMakeBookView extends JFrame{
     leftHeader.setLayout(leftLayout);
     leftLayout.setAlignment(FlowLayout.LEFT);
     leftHeader.setBackground(Color.BLACK);
-    
-    
     
     // ADDING IT TO THE TOP SECTION the leftHeader to header Panel
     header.add(leftHeader);
@@ -105,11 +105,6 @@ public class CheckOrMakeBookView extends JFrame{
 //    register.setForeground(Color.pink);
     logout.addActionListener(checkOrMakeBookController);
     
-   // logout.setActionCommand("logout");//set action to logout of the site
-    //register.setActionCommand("register");
-    
-    
-    //register.addActionListener(checkOrMakeBookController);
     
     //adding color to the pop up panel
      UIManager.put("OptionPane.background", Color.PINK);
@@ -120,9 +115,9 @@ public class CheckOrMakeBookView extends JFrame{
     //put it on the header
     header.add(rightHeader);
     
-    //ends header****************************888
+    //*********ends header****************************
         
-    //starts main register page
+    //starts main page
         JPanel rp = new JPanel(); // creating the main panel
         rp.setBackground(Color.PINK);
 
@@ -130,12 +125,14 @@ public class CheckOrMakeBookView extends JFrame{
         this.add(rp, BorderLayout.CENTER);
         rp.setLayout(null); 
         
+        //top page panel
         title = new JLabel("Bookings"); 
         title.setFont(new Font("Arial", Font.PLAIN, 30)); 
         title.setSize(300, 40); 
         title.setLocation(220, 30); 
         rp.add(title); 
 
+        //button to check bookings
         MakeBooksButton = new JButton("Your Books"); 
         MakeBooksButton.setFont(new Font("Arial", Font.PLAIN, 15)); 
         MakeBooksButton.setSize(200, 50); 
@@ -145,6 +142,7 @@ public class CheckOrMakeBookView extends JFrame{
         MakeBooksButton.addActionListener(checkOrMakeBookController); 
         rp.add(MakeBooksButton);         
   
+        //button to make a booking
         YourBookButton = new JButton("Make a Book"); 
         YourBookButton.setFont(new Font("Arial", Font.PLAIN, 15)); 
         YourBookButton.setSize(200, 50); 
@@ -217,11 +215,11 @@ public class CheckOrMakeBookView extends JFrame{
      
      }
     
-    // Setting attributes
+    // Setting window attributes
     private void attributesSetter(){
         this.setVisible(true);
         this.setSize(600,700);
-        this.setTitle("Amil's hair - Registration");
+        this.setTitle("Amil's hair");//set the window title
         setResizable(false); 
     }
     

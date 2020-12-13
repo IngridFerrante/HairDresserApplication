@@ -65,19 +65,20 @@ public class LoginView extends JFrame{
         UserName.setSize(100, 20);
         UserName.setLocation(20, 60); //configure position
         p.add(UserName);
-        
+        //get the email from the user
         UserTxt = new JTextField("",10);
         UserTxt.setFont(new Font("Arial", Font.PLAIN, 15)); 
         UserTxt.setSize(190, 20);
         UserTxt.setLocation(70, 60); //configure position
         p.add(UserTxt);
-
+        
         UserPassword = new JLabel("Password: ");
         UserPassword.setFont(new Font("Arial", Font.PLAIN, 15)); 
         UserPassword.setSize(100, 20);
         UserPassword.setLocation(20, 100); //configure position
         p.add(UserPassword);
         
+        //get the password from the user
         PasswordTxt = new JTextField(10); 
         PasswordTxt.setSize(170, 20);
         PasswordTxt.setLocation(90, 100); //configure position

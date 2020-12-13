@@ -263,7 +263,7 @@ ClientCheckBookingsController clientCheckBookingController;
     private void attributesSetter(){
         this.setVisible(true);
         this.setSize(600,700);
-        this.setTitle("Amil's hair - Registration");
+        this.setTitle("Amil's hair");
         setResizable(false); 
     }
     

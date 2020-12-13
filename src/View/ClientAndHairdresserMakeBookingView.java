@@ -47,7 +47,7 @@ public class ClientAndHairdresserMakeBookingView extends JFrame{
     private JComboBox day; 
     private JComboBox month; 
     private JComboBox year; 
-    
+    //set calendar conponents
     private String days[] 
         = { "1", "2", "3", "4", "5", 
             "6", "7", "8", "9", "10", 
@@ -73,7 +73,7 @@ public class ClientAndHairdresserMakeBookingView extends JFrame{
     }
     
      private void components(){
-         // header    
+         // header starts   
          
     JPanel header = new JPanel(); // creating header
     
@@ -125,22 +125,15 @@ public class ClientAndHairdresserMakeBookingView extends JFrame{
     rightLayout.setAlignment(FlowLayout.RIGHT);
     rightHeader.setBackground(Color.BLACK);
     
-    //add button register and logout
-    //JButton register = new JButton("Register");
+    //add button logout
     JButton logout = new JButton("Logout");
-    //rightHeader.add(register);
-    rightHeader.add(logout); 
+    rightHeader.add(logout); //add button
     
+    //set colour
     logout.setBackground(Color.GRAY);
     logout.setForeground(Color.pink);
-    //register.setBackground(Color.GRAY);
-    //register.setForeground(Color.pink);
-    
-    
-
     
     logout.addActionListener(clientMakeBookingController);
-    //register.addActionListener(clientMakeBookingController);
     
     //adding color to the pop up panel
      UIManager.put("OptionPane.background", Color.PINK);
@@ -151,11 +144,11 @@ public class ClientAndHairdresserMakeBookingView extends JFrame{
     //put it on the header
     header.add(rightHeader);
     
-    //ends header****************************888
+    //ends header****************************
         
        
     
-    //starts main Make a book page page
+    //starts main Make a book page 
         JPanel rp = new JPanel(); // creating the main panel
         rp.setBackground(Color.PINK);
 
@@ -163,34 +156,36 @@ public class ClientAndHairdresserMakeBookingView extends JFrame{
         this.add(rp, BorderLayout.CENTER);
         rp.setLayout(null); 
         
+        //title on top page 
         title = new JLabel("Make a Book"); 
         title.setFont(new Font("Arial", Font.PLAIN, 30)); 
         title.setSize(300, 40); 
         title.setLocation(205, 20); 
         rp.add(title); 
 
+        //dropdown box showing the location
         String[] menuLocationBook = { "Salon Location","FoxRock", "Ballsbridge" };
         menuLocation = new JComboBox(menuLocationBook);
         menuLocation.setSelectedIndex(0);
         menuLocation.addActionListener(clientMakeBookingController);
-        menuLocation.setSize(200, 40); 
-        menuLocation.setLocation(190, 80);
-       // menuLocation.setActionCommand("menuLocation");
+        menuLocation.setSize(200, 40); // set box size
+        menuLocation.setLocation(190, 80);//set location inside the panel
         menuLocation.setBackground(Color.GRAY);//set button color
         menuLocation.setForeground(Color.PINK);//set text button color
         rp.add(menuLocation);
         
+        //dropdown box showing the service
         String[] menuServiceBook = { "Choose a Service","Cut", "BlowDry","Colour", "Styling" };
         menuService = new JComboBox(menuServiceBook);
         menuService.setSelectedIndex(0);
         menuService.addActionListener(clientMakeBookingController);
         menuService.setSize(200, 40); 
         menuService.setLocation(190, 130);
-       // menuDate.setActionCommand("menuDate");
         menuService.setBackground(Color.GRAY);//set button color
         menuService.setForeground(Color.PINK);//set text button color
         rp.add(menuService);    
         
+        //dropdown box - set day, month and year bot inside panel
         day = new JComboBox(days);
         day.addActionListener(clientMakeBookingController);
         day.setSize(60, 40); 
@@ -211,12 +206,11 @@ public class ClientAndHairdresserMakeBookingView extends JFrame{
         year.addActionListener(clientMakeBookingController);
         year.setSize(80, 40); 
         year.setLocation(310, 180);
-       // menuHour.setActionCommand("menuHour");
         year.setBackground(Color.GRAY);//set button color
         year.setForeground(Color.PINK);//set text button color
         rp.add(year);
              
-        //pick hour //make a loop to take a picked hour from the array
+        //pick hour //----- later try to make a loop to take a picked hour from the array
         String[] menuHourBook = { "Choose an hour","10:00","12:00", "14:00", "16:00"};
         menuHour = new JComboBox(menuHourBook);
         menuHour.setSelectedIndex(0);
@@ -227,20 +221,22 @@ public class ClientAndHairdresserMakeBookingView extends JFrame{
         menuHour.setForeground(Color.PINK);//set text button color
         rp.add(menuHour); 
         
+        //first name created in case the client make a book to another person (as a friend or relative)
         FirstName = new JLabel("First Name");      
         FirstName.setSize(200, 30); 
         FirstName.setLocation(190, 265); 
         FirstName.setForeground(Color.gray);      
         rp.add(FirstName); 
         
+        //field to insert name
         textClientFirstName = new JTextField(20);
-        //textClientFirstName.setText("first name"); 
         textClientFirstName.setSize(200, 30); 
         textClientFirstName.setLocation(190, 285); 
         textClientFirstName.setBackground(Color.gray);
         textClientFirstName.addActionListener(clientMakeBookingController); 
         rp.add(textClientFirstName); 
         
+        //first name created in case the client make a book to another person, and the hair dresser can contact directly
         phone = new JLabel("Phone Number");
         phone.setSize(200, 30); 
         phone.setLocation(190, 310); 
@@ -248,13 +244,13 @@ public class ClientAndHairdresserMakeBookingView extends JFrame{
         rp.add(phone);         
   
         textphone = new JTextField(20);
-        //textClientFirstName.setText("first name"); 
         textphone.setSize(200, 30); 
         textphone.setLocation(190, 330); 
         textphone.setBackground(Color.gray);
         textphone.addActionListener(clientMakeBookingController); 
         rp.add(textphone); 
         
+        //send all the information above to database
         BookButton = new JButton("Make a Book"); 
         BookButton.setFont(new Font("Arial", Font.PLAIN, 15)); 
         BookButton.setSize(200, 40); 
@@ -263,6 +259,7 @@ public class ClientAndHairdresserMakeBookingView extends JFrame{
         BookButton.addActionListener(clientMakeBookingController); 
         rp.add(BookButton); 
 
+        //set message result to the client
         result = new JLabel(""); 
         result.setFont(new Font("Arial", Font.PLAIN, 12)); 
         result.setSize(500, 20); 
@@ -336,7 +333,7 @@ public class ClientAndHairdresserMakeBookingView extends JFrame{
     private void attributesSetter(){
         this.setVisible(true);
         this.setSize(600,700);
-        this.setTitle("Amil's hair - Registration");
+        this.setTitle("Amil's hair");
         setResizable(false); 
     }
     
@@ -345,6 +342,7 @@ public class ClientAndHairdresserMakeBookingView extends JFrame{
         this.repaint();
     }
     
+     // getters for the booking 
     public String getNearByLocation(){
         return (String) menuLocation.getSelectedItem();
     }
@@ -387,9 +385,6 @@ public class ClientAndHairdresserMakeBookingView extends JFrame{
          return (String) year.getSelectedItem();
      }
      
-//     public void setTextArea(String message1){
-//          miniTextArea.setText(message1);
-//     }
       
 }
 

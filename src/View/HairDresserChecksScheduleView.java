@@ -32,6 +32,7 @@ import javax.swing.event.ListSelectionListener;
  * @author 35389
  */
 public class HairDresserChecksScheduleView extends JFrame{
+    // Components of the main page  
           JComboBox days = null;
           JComboBox month = null;
           JComboBox year = null;
@@ -67,6 +68,7 @@ private void components()
     leftLayout.setAlignment(FlowLayout.LEFT);
     leftHeader.setBackground(Color.BLACK);
 
+   // button to back the the previous page
     JButton backButton = new JButton("Back");
     backButton.addActionListener(hairDresserChecksController);
     backButton.setBackground(Color.gray);
