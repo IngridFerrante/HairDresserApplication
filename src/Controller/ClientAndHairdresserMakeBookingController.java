@@ -61,12 +61,29 @@ public class ClientAndHairdresserMakeBookingController extends JFrame implements
               
                 clientandhairdresserMakeBookingView.setResult("Booking for" + clientFirstname + " was successfully created.");
                 
-            }
+            } 
         }
+//        else if (e.getSource() == confirmDate) {  
+//                String data2 
+//                    = "Date : "
+//                      + (String)day.getSelectedItem() 
+//                      + "/" + (String)month.getSelectedItem() 
+//                      + "/" + (String)year.getSelectedItem() 
+//                      + "\n"; 
+//
+//                miniTextArea.setText( data2 ); 
+//                miniTextArea.setEditable(false); 
+//
+//            } 
+//            else { 
+//                miniTextArea.setText(""); 
+// 
+//            } 
+        } 
         
         
     }
-} 
+ 
   
 // Driver Code - main method to unable seeing the page individually
 class Booking2 { 

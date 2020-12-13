@@ -12,6 +12,8 @@ import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -19,6 +21,7 @@ import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.UIManager;
 
@@ -36,11 +39,38 @@ public class ClientAndHairdresserMakeBookingView extends JFrame{
     private JLabel phone;
     private JTextField textphone; 
     private JLabel result;
+    private JTextField dateResult;
+    private JButton confirmDate; 
+    private JTextArea miniTextArea; 
     JComboBox menuLocation = null; 
     JComboBox menuService = null; 
     JComboBox menuDate = null; 
     JComboBox menuHour = null;
     
+    private JComboBox day; 
+    private JComboBox month; 
+    private JComboBox year; 
+    
+    private String days[] 
+        = { "1", "2", "3", "4", "5", 
+            "6", "7", "8", "9", "10", 
+            "11", "12", "13", "14", "15", 
+            "16", "17", "18", "19", "20", 
+            "21", "22", "23", "24", "25", 
+            "26", "27", "28", "29", "30", 
+            "31" }; 
+    private String months[] 
+        = { "Jan", "feb", "Mar", "Apr", 
+            "May", "Jun", "July", "Aug", 
+            "Sup", "Oct", "Nov", "Dec" }; 
+    private String years[] 
+        = { "1995", "1996", "1997", "1998", 
+            "1999", "2000", "2001", "2002", 
+            "2003", "2004", "2005", "2006", 
+            "2007", "2008", "2009", "2010", 
+            "2011", "2012", "2013", "2014", 
+            "2015", "2016", "2017", "2018", 
+            "2019" }; 
     
     ClientAndHairdresserMakeBookingController clientMakeBookingController;
     public ClientAndHairdresserMakeBookingView(ClientAndHairdresserMakeBookingController controller)
@@ -177,50 +207,64 @@ public class ClientAndHairdresserMakeBookingView extends JFrame{
         rp.add(menuService);    
         
         //redo this bit using datePicker
-       String[]  day 
-        = { "1", "2", "3", "4", "5", 
-            "6", "7", "8", "9", "10", 
-            "11", "12", "13", "14", "15", 
-            "16", "17", "18", "19", "20", 
-            "21", "22", "23", "24", "25", 
-            "26", "27", "28", "29", "30", 
-            "31" };
-       
-       String[] month
-        = { "Jan", "feb", "Mar", "Apr", 
-            "May", "Jun", "July", "Aug", 
-            "Sup", "Oct", "Nov", "Dec" };
-       
-       String[] year
-               = {"2020","2021"};
+//       String[]  day 
+//        = { "1", "2", "3", "4", "5", 
+//            "6", "7", "8", "9", "10", 
+//            "11", "12", "13", "14", "15", 
+//            "16", "17", "18", "19", "20", 
+//            "21", "22", "23", "24", "25", 
+//            "26", "27", "28", "29", "30", 
+//            "31" };
+//       
+//       String[] month
+//        = { "Jan", "feb", "Mar", "Apr", 
+//            "May", "Jun", "July", "Aug", 
+//            "Sup", "Oct", "Nov", "Dec" };
+//       
+//       String[] year
+//               = {"2020","2021"};
         
         
-        menuDate = new JComboBox(day);
-        menuDate.addActionListener(clientMakeBookingController);
-        menuDate.setSize(60, 40); 
-        menuDate.setLocation(190, 180);
+        day = new JComboBox(days);
+        day.addActionListener(clientMakeBookingController);
+        day.setSize(60, 40); 
+        day.setLocation(190, 180);
+        day.setBackground(Color.GRAY);//set button color
+        day.setForeground(Color.PINK);//set text button color
+        rp.add(day);
+        
+        month = new JComboBox(months);
+        month.addActionListener(clientMakeBookingController);
+        month.setSize(60, 40); 
+        month.setLocation(250, 180);
+        month.setBackground(Color.GRAY);//set button color
+        month.setForeground(Color.PINK);//set text button color
+        rp.add(month);
+        
+        year = new JComboBox(years);
+        year.addActionListener(clientMakeBookingController);
+        year.setSize(80, 40); 
+        year.setLocation(310, 180);
        // menuHour.setActionCommand("menuHour");
-        menuDate.setBackground(Color.GRAY);//set button color
-        menuDate.setForeground(Color.PINK);//set text button color
-        rp.add(menuDate);
+        year.setBackground(Color.GRAY);//set button color
+        year.setForeground(Color.PINK);//set text button color
+        rp.add(year);
         
-        menuDate = new JComboBox(month);
-        menuDate.addActionListener(clientMakeBookingController);
-        menuDate.setSize(60, 40); 
-        menuDate.setLocation(250, 180);
-       // menuHour.setActionCommand("menuHour");
-        menuDate.setBackground(Color.GRAY);//set button color
-        menuDate.setForeground(Color.PINK);//set text button color
-        rp.add(menuDate);
-        
-        menuDate = new JComboBox(year);
-        menuDate.addActionListener(clientMakeBookingController);
-        menuDate.setSize(80, 40); 
-        menuDate.setLocation(310, 180);
-       // menuHour.setActionCommand("menuHour");
-        menuDate.setBackground(Color.GRAY);//set button color
-        menuDate.setForeground(Color.PINK);//set text button color
-        rp.add(menuDate);
+        confirmDate = new JButton("Confirm date"); 
+        confirmDate.setFont(new Font("Arial", Font.PLAIN, 12)); 
+        confirmDate.setSize(100, 15); 
+        confirmDate.setLocation(380, 180); 
+        confirmDate.addActionListener(clientMakeBookingController); 
+        rp.add(confirmDate); 
+  
+        miniTextArea = new JTextArea(); 
+        miniTextArea.setFont(new Font("Arial", Font.PLAIN, 15)); 
+        miniTextArea.setSize(150, 30); 
+        miniTextArea.setLocation(400, 100); 
+        miniTextArea.setBackground(Color.red);
+        miniTextArea.setLineWrap(true); 
+        miniTextArea.setEditable(false); 
+        rp.add(miniTextArea); 
         
         //pick hour //make a loop to take a picked hour from the array
         String[] menuHourBook = { "Choose an hour","10:00", "12:00","2:00","4:00", "6:00" };
@@ -274,8 +318,16 @@ public class ClientAndHairdresserMakeBookingView extends JFrame{
         result.setSize(500, 20); 
         result.setLocation(10, 360); 
         rp.add(result);
+ 
         
-        
+//        dateResult = new JTextField();
+//        //textClientFirstName.setText("first name"); 
+//        dateResult.setSize(200, 30); 
+//        dateResult.setLocation(450, 285); 
+//        dateResult.setBackground(Color.red);
+//        dateResult.addActionListener(clientMakeBookingController); 
+//        rp.add(dateResult); 
+
         
         // FOOTER starts*********************************************   
         JPanel footer = new JPanel(); // creating header
@@ -381,6 +433,33 @@ public class ClientAndHairdresserMakeBookingView extends JFrame{
     {
         result.setText(message);
     }
+     
+     public String getDaymini(){
+         return (String) day.getSelectedItem();
+     }
+     public void setminiTextArea1(String message1){
+          miniTextArea.setText(message1);
+     }
+     
+//     public void actionPerformed(ActionEvent e) 
+//    { 
+//        if (e.getSource() == confirmDate) {  
+//                String data2 
+//                    = "Date : "
+//                      + (String)day.getSelectedItem() 
+//                      + "/" + (String)month.getSelectedItem() 
+//                      + "/" + (String)year.getSelectedItem() 
+//                      + "\n"; 
+//
+//                miniTextArea.setText( data2 ); 
+//                miniTextArea.setEditable(false); 
+//
+//            } 
+//            else { 
+//                miniTextArea.setText(""); 
+// 
+//            } 
+//        } 
 }
 
 // Driver Code - main method to unable seeing the page individually
