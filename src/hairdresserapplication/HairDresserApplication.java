@@ -42,9 +42,7 @@ public class HairDresserApplication {
      */
     public static void main(String[] args) {
         new HairDresserApplicationController();
-       
-       
-       
+
     }
 
     }

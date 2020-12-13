@@ -176,7 +176,7 @@ public class HairDresserApplicationView extends JFrame implements ActionListener
         
         
         JPanel p4 = new JPanel();
-        JLabel txtp4 = new JLabel("Cut: 30Euro");
+        JLabel txtp4 = new JLabel("<html>Cut: <br>  30Euro</html>");
         p4.add(txtp4);
         txtp4.setBorder(BorderFactory.createEmptyBorder(40, 20, 20, 20));
         p4.setBackground(Color.white);
@@ -185,7 +185,7 @@ public class HairDresserApplicationView extends JFrame implements ActionListener
         
         
         JPanel p5 = new JPanel();
-        JLabel txtp5 = new JLabel("BlowDry: 20Euro");
+        JLabel txtp5 = new JLabel("<html>CBlowDry: <br> 20Euro</html>");
         p5.add(txtp5);
         txtp5.setBorder(BorderFactory.createEmptyBorder(40, 20, 20, 20));
         p5.setPreferredSize(new Dimension(100, 130));//setPanel size
@@ -193,7 +193,7 @@ public class HairDresserApplicationView extends JFrame implements ActionListener
         p5.setBorder(BorderFactory.createLineBorder(Color.black, 1));
         
         JPanel p6 = new JPanel();
-        JLabel txtp6 = new JLabel("Colour: 60Euro");
+        JLabel txtp6 = new JLabel("<html>CColour: <br> 60Euro</html>");
         p6.add(txtp6);
         txtp6.setBorder(BorderFactory.createEmptyBorder(40, 20, 20, 20));
         p6.setPreferredSize(new Dimension(100, 130));//setPanel size
@@ -201,7 +201,7 @@ public class HairDresserApplicationView extends JFrame implements ActionListener
         p6.setBorder(BorderFactory.createLineBorder(Color.black, 1));
         
         JPanel p7 = new JPanel();
-        JLabel txtp7 = new JLabel("Styling: 50Euro");
+        JLabel txtp7 = new JLabel("<html>CStyling: <br> 50Euro</html>");
         p7.add(txtp7);
         txtp7.setBorder(BorderFactory.createEmptyBorder(40, 20, 20, 20));
         p7.setPreferredSize(new Dimension(100, 130));//setPanel size
@@ -339,7 +339,7 @@ public class HairDresserApplicationView extends JFrame implements ActionListener
                
             }       
     }else if(e.getActionCommand().equals("Home")){
-        new HairDresserApplication();
+        new HairDresserApplicationController();
         
     }else if(e.getActionCommand().equals("Location")){
         new view.testLocationView();
