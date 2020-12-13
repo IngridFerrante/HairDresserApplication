@@ -72,18 +72,21 @@ public class ReviewPageView extends JFrame implements ActionListener {
     leftLayout.setAlignment(FlowLayout.LEFT);
     leftHeader.setBackground(Color.BLACK);
     
-    //add drowndrop list
+
+    JButton reviewButton = new JButton("Review");
+    reviewButton.addActionListener(ReviewPageController);
+    reviewButton.setBackground(Color.gray);
+    reviewButton.setForeground(Color.PINK);
     
-    String[] menuApp = { "Home", "Location", "Review" };
+    leftHeader.add(reviewButton);
     
-    menuList = new JComboBox(menuApp);
-    menuList.setSelectedIndex(2);
-    menuList.addActionListener(this);
-    menuList.setActionCommand("menuList");
-    menuList.setBackground(Color.GRAY);
-    menuList.setForeground(Color.PINK);
+    JButton locationButton = new JButton("Location");
+    locationButton.addActionListener(ReviewPageController);
+    locationButton.setBackground(Color.gray);
+    locationButton.setForeground(Color.PINK);
     
-    leftHeader.add(menuList);
+    
+    leftHeader.add(locationButton);
      
     
     // ADDING IT TO THE TOP SECTION the leftHeader to header Panel

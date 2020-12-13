@@ -29,18 +29,17 @@ import javax.swing.UIManager;
  * @author 35389
  */
 public class LocationView extends JFrame implements ActionListener{
-        JComboBox days = null;
+          JComboBox days = null;
           JComboBox month = null;
           JComboBox year = null;
           JComboBox menuList = null;
           private JLabel cName;
           private JTextField customerName;
           private JTextArea writeReview;
-          
           private JLabel result;
           
+          
           LocationController locationController;
-    
     public LocationView(LocationController controller){
         
             locationController = controller;
@@ -67,19 +66,21 @@ public class LocationView extends JFrame implements ActionListener{
     leftLayout.setAlignment(FlowLayout.LEFT);
     leftHeader.setBackground(Color.BLACK);
     
-    //add drowndrop list
+
+    JButton reviewButton = new JButton("Review");
+ //   reviewButton.addActionListener(locationController);
+    reviewButton.setBackground(Color.gray);
+    reviewButton.setForeground(Color.PINK);
     
-    String[] menuApp = { "Home", "Location", "Review" };
+    leftHeader.add(reviewButton);
     
-    menuList = new JComboBox(menuApp);
-    menuList.setSelectedIndex(2);
-    menuList.addActionListener(this);
-    menuList.setActionCommand("menuList");
-    menuList.setBackground(Color.GRAY);
-    menuList.setForeground(Color.PINK);
+    JButton locationButton = new JButton("Location");
+   //locationButton.addActionListener((locationController); // verify that later
+    locationButton.setBackground(Color.gray);
+    locationButton.setForeground(Color.PINK);
     
-    leftHeader.add(menuList);
-     
+    
+    leftHeader.add(locationButton);
     
     // ADDING IT TO THE TOP SECTION the leftHeader to header Panel
     header.add(leftHeader);

@@ -64,16 +64,20 @@ public class CheckOrMakeBookView extends JFrame{
     leftLayout.setAlignment(FlowLayout.LEFT);
     leftHeader.setBackground(Color.BLACK);
     
-    //add drowndrop list    
-//    String[] menuApp = { "Home", "Location", "Review" };
-//    JComboBox menuList = new JComboBox(menuApp);
-//    menuList.setSelectedIndex(2);
-//    menuList.addActionListener(checkOrMakeBookController);
-//    menuList.setActionCommand("menuList");
-//    menuList.setBackground(Color.GRAY);
-//    menuList.setForeground(Color.PINK);
-//    
-//    leftHeader.add(menuList);
+   JButton reviewButton = new JButton("Review");
+    reviewButton.addActionListener(checkOrMakeBookController);
+    reviewButton.setBackground(Color.gray);
+    reviewButton.setForeground(Color.PINK);
+    
+    leftHeader.add(reviewButton);
+    
+    JButton locationButton = new JButton("Location");
+    locationButton.addActionListener(checkOrMakeBookController);
+    locationButton.setBackground(Color.gray);
+    locationButton.setForeground(Color.PINK);
+    
+    
+    leftHeader.add(locationButton);
     
     // ADDING IT TO THE TOP SECTION the leftHeader to header Panel
     header.add(leftHeader);

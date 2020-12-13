@@ -70,16 +70,20 @@ public class HairDresserApplicationView extends JFrame {
     
     //add drowndrop list
     
-    String[] menuApp = { "Home", "Location", "Review" };
+    JButton reviewButton = new JButton("Review");
+    reviewButton.addActionListener(hairDresserApplicationController);
+    reviewButton.setBackground(Color.gray);
+    reviewButton.setForeground(Color.PINK);
     
-    menuList = new JComboBox(menuApp);
-    menuList.setSelectedIndex(2);
-    menuList.addActionListener(hairDresserApplicationController);
-    menuList.setActionCommand("menuList");
-    menuList.setBackground(Color.GRAY);
-    menuList.setForeground(Color.PINK);
+    leftHeader.add(reviewButton);
     
-    leftHeader.add(menuList);
+    JButton locationButton = new JButton("Location");
+    locationButton.addActionListener(hairDresserApplicationController);
+    locationButton.setBackground(Color.gray);
+    locationButton.setForeground(Color.PINK);
+    
+    
+    leftHeader.add(locationButton);
      
     
     // ADDING IT TO THE TOP SECTION the leftHeader to header Panel

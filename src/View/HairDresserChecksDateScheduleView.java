@@ -61,14 +61,20 @@ public class HairDresserChecksDateScheduleView extends JFrame {
     leftLayout.setAlignment(FlowLayout.LEFT);
     leftHeader.setBackground(Color.BLACK);
     
-    //back button
+     JButton reviewButton = new JButton("Review");
+    reviewButton.addActionListener(hairDresserScheduleController);
+    reviewButton.setBackground(Color.gray);
+    reviewButton.setForeground(Color.PINK);
     
-    JButton backButton = new JButton("Back");
-    backButton.addActionListener(hairDresserScheduleController);
-    backButton.setBackground(Color.gray);
-    backButton.setForeground(Color.PINK);
+    leftHeader.add(reviewButton);
     
-    leftHeader.add(backButton);
+    JButton locationButton = new JButton("Location");
+    locationButton.addActionListener(hairDresserScheduleController);
+    locationButton.setBackground(Color.gray);
+    locationButton.setForeground(Color.PINK);
+    
+    
+    leftHeader.add(locationButton);
      
     
     // ADDING IT TO THE TOP SECTION the leftHeader to header Panel
