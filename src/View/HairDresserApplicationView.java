@@ -6,6 +6,7 @@
 package View;
 
 import Controller.HairDresserApplicationController;
+import Controller.LocationController;
 import controller.LoginController;
 import controller.RegisterClientController;
 import controller.RegisterHairDresserController;
@@ -342,7 +343,7 @@ public class HairDresserApplicationView extends JFrame implements ActionListener
         new HairDresserApplicationController();
         
     }else if(e.getActionCommand().equals("Location")){
-        new view.testLocationView();
+        new LocationController();
         
     }else if(e.getActionCommand().equals("Review")){
         new ReviewPageController();

@@ -5,13 +5,12 @@
  */
 package view;
 
+import Controller.LocationController;
 import controller.ReviewPageController;
-import controller.CheckOrMakeBookController;
-
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.FlowLayout;
-import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -30,7 +29,10 @@ import javax.swing.UIManager;
  *
  * @author 35389
  */
-public class ReviewPageView extends JFrame implements ActionListener {
+public class LocationView extends JFrame implements ActionListener{
+    
+    LocationController locationController;
+    
           JComboBox days = null;
           JComboBox month = null;
           JComboBox year = null;
@@ -40,21 +42,17 @@ public class ReviewPageView extends JFrame implements ActionListener {
           private JTextArea writeReview;
           
           private JLabel result;
-          
-          
-    ReviewPageController ReviewPageController;
-   
-    public ReviewPageView(ReviewPageController controller)
-    {
-        ReviewPageController = controller;
+    
+    
+    public LocationView(LocationController controller){
+        locationController = controller;
         attributesSetter();
         components();
         validation();
     }
-
     
-    private void components(){
-        // header
+    private void components(){      
+              // header
     JPanel header = new JPanel(); // creating header
     
     // adding a grid to the header (1 row and 3 columns)
@@ -141,55 +139,32 @@ public class ReviewPageView extends JFrame implements ActionListener {
     //put it on the header
     header.add(rightHeader);
     
-    // creating the main panel 
-            JPanel mainReview = new JPanel();
-            mainReview.setBackground(Color.PINK);
+            //main
+             JPanel mainLocation = new JPanel();
+            mainLocation.setBackground(Color.PINK);
             
-            this.add(mainReview, BorderLayout.CENTER);
-            mainReview.setLayout(null);
+            this.add(mainLocation, BorderLayout.CENTER);
+            mainLocation.setLayout(null);
             
-            JLabel reviewTitle = new JLabel("How was the service ? "); 
-            reviewTitle.setFont(new Font("Arial", Font.PLAIN, 25)); 
-            reviewTitle.setSize(300, 25); 
-            reviewTitle.setLocation(150, 20);
-            mainReview.add(reviewTitle);
+         
+            //add a grid
+            GridLayout LocationLayout = new GridLayout(2,2); 
+            mainLocation.setLayout(LocationLayout);
             
-            JLabel cName = new JLabel("Name: ");
-            cName.setFont(new Font("Arial", Font.PLAIN, 18)); 
-            cName.setSize(300, 30);
-            cName.setLocation(150, 60);
-            mainReview.add(cName);
+            JPanel leftLocation = new JPanel(); 
+            FlowLayout locationLayout = new FlowLayout();
+            leftLocation.setLayout(locationLayout);
+            locationLayout.setAlignment(FlowLayout.LEFT);
+            leftLocation.setBackground(Color.BLACK);
             
-           customerName = new JTextField();
-           customerName.setSize(300, 30);
-           customerName.setLocation(150, 85);
-           customerName.setBackground(Color.GRAY);
-           customerName.setForeground(Color.white);
-           mainReview.add(customerName);
-           
-            writeReview = new JTextArea("My experience: ", 50, 50);
-            writeReview.setSize(300, 200); 
-            writeReview.setLocation(150, 140);
-            writeReview.setBackground(Color.GRAY);
-            writeReview.setForeground(Color.white);
+            JLabel photo = new JLabel();
+            photo.setIcon(new ImageIcon("image/mapLocationOne.png"));
+            photo.setSize(new Dimension(50,50));
+            leftLocation.add(photo);
             
-            mainReview.add(writeReview);
             
-            JButton sendReview = new JButton("Submit"); 
-            sendReview.setSize(150, 40);
-            sendReview.setLocation(300, 350);
-            sendReview.setBackground(Color.blue);
-            sendReview.setForeground(Color.white);
-            sendReview.addActionListener(ReviewPageController);
-            mainReview.add(sendReview);
-            
-            result = new JLabel(""); 
-            result.setFont(new Font("Arial", Font.PLAIN, 12)); 
-            result.setSize(500, 20); 
-            result.setLocation(10, 360); 
-            mainReview.add(result);
-            
-              // FOOTER
+            mainLocation.add(leftLocation);
+                  // FOOTER
     
         JPanel footer = new JPanel(); // creating header
     
@@ -249,43 +224,31 @@ public class ReviewPageView extends JFrame implements ActionListener {
         
         setVisible(true);
     }
-     private void attributesSetter(){
-        this.setVisible(true);
-        this.setSize(600,700);
-        this.setTitle("Amil's hair - Registration");
-        setResizable(false); 
-    }
-        private void validation(){
-        this.validate();
-        this.repaint();
-        }
-         
-         public String getCustomerName(){
-             return customerName.getText();
-         }
-         
-         public String getReview(){
-             return writeReview.getText();
-         }
-         
-     public void setResult(String message)
-    {
-        result.setText(message);
-    }
-
+            public void attributesSetter(){
+             this.setVisible(true);
+            this.setSize(600,700);
+            this.setTitle("Amil's hair - Registration");
+            setResizable(false); 
+            }
+            
+            private void validation(){
+            validate();
+            repaint();
+            }
+    
+ 
     @Override
     public void actionPerformed(ActionEvent e) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
     
 }
 
 
-class reviewPageView2 { 
+class LocationTest { 
   
     public static void main(String[] args) throws Exception 
     { 
-        ReviewPageController review = new ReviewPageController(); 
+        LocationController review = new LocationController(); 
     } 
 }

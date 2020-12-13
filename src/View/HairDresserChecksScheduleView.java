@@ -5,6 +5,7 @@
  */
 package view;
 
+import controller.HairDresserChecksDateScheduleController;
 import controller.HairDresserChecksScheduleController;
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -272,5 +273,11 @@ public void attributesSetter(){
    private void validation(){
         this.validate();
         this.repaint();
+    }
+}
+
+class dateSchedule3 {
+    public static void main(String[] args) throws Exception {
+       HairDresserChecksScheduleController a = new HairDresserChecksScheduleController();
     }
 }
