@@ -25,9 +25,9 @@ public class LocationController extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getActionCommand().equals("Location")){  
-            
+            new LocationController();
         
-    }else if(e.getActionCommand().equals("Back")){  
+    }else if(e.getActionCommand().equals("Review")){  
             new controller.CheckOrMakeBookController();
         
     }
