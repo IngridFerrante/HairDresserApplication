@@ -92,6 +92,12 @@ public class ClientAndHairdresserMakeBookingView extends JFrame{
     leftLayout.setAlignment(FlowLayout.LEFT);
     leftHeader.setBackground(Color.BLACK);
     
+     JButton backButton = new JButton("Back");
+    backButton.addActionListener(clientMakeBookingController);
+    backButton.setBackground(Color.gray);
+    backButton.setForeground(Color.PINK);
+    
+    leftHeader.add(backButton);
     
     // ADDING IT TO THE TOP SECTION the leftHeader to header Panel
     header.add(leftHeader);

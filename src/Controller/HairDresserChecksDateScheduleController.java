@@ -65,7 +65,10 @@ import model.BookAppointment;
                 
             }
            
-        }
+        }else if(e.getActionCommand().equals("Back")){  
+            new controller.CheckOrMakeBookController();
+        
+    }
         
     }
 }
