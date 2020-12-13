@@ -63,15 +63,29 @@ public class ClientAndHairdresserMakeBookingController extends JFrame implements
                 
             } 
         }
-//        else if (e.getSource() == confirmDate) {  
-//                String data2 
-//                    = "Date : "
+//        else if (e.getSource().equals("Confirm date")) {  
+//            String day = clientandhairdresserMakeBookingView.getDaymini();
+//            String month = clientandhairdresserMakeBookingView.getMonthmini();
+//            String year = clientandhairdresserMakeBookingView.getYearmini();
+//            
+//            //miniTextArea text = new miniTextArea(day ,month , year);
+//            
+//            boolean miniTextArea = clientandhairdresserMakeBookingView.equals(day +month + year);
+//            
+//            
+//            if(miniTextArea == true)
+//            {
+//              
+//                clientandhairdresserMakeBookingView.setTextArea(day + month + year);
+//                
+//            } 
+//          String data2 = "Date : "
 //                      + (String)day.getSelectedItem() 
 //                      + "/" + (String)month.getSelectedItem() 
 //                      + "/" + (String)year.getSelectedItem() 
 //                      + "\n"; 
 //
-//                miniTextArea.setText( data2 ); 
+//           miniTextArea.setText( data2 ); 
 //                miniTextArea.setEditable(false); 
 //
 //            } 

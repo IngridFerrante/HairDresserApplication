@@ -60,17 +60,11 @@ public class ClientAndHairdresserMakeBookingView extends JFrame{
             "26", "27", "28", "29", "30", 
             "31" }; 
     private String months[] 
-        = { "Jan", "feb", "Mar", "Apr", 
-            "May", "Jun", "July", "Aug", 
-            "Sup", "Oct", "Nov", "Dec" }; 
+        = { "01", "02", "03", "04", 
+            "05", "06", "07", "08", 
+            "09", "10", "11", "12" }; 
     private String years[] 
-        = { "1995", "1996", "1997", "1998", 
-            "1999", "2000", "2001", "2002", 
-            "2003", "2004", "2005", "2006", 
-            "2007", "2008", "2009", "2010", 
-            "2011", "2012", "2013", "2014", 
-            "2015", "2016", "2017", "2018", 
-            "2019" }; 
+        = { "2020", "2021"}; 
     
     ClientAndHairdresserMakeBookingController clientMakeBookingController;
     public ClientAndHairdresserMakeBookingView(ClientAndHairdresserMakeBookingController controller)
@@ -205,25 +199,6 @@ public class ClientAndHairdresserMakeBookingView extends JFrame{
         menuService.setBackground(Color.GRAY);//set button color
         menuService.setForeground(Color.PINK);//set text button color
         rp.add(menuService);    
-        
-        //redo this bit using datePicker
-//       String[]  day 
-//        = { "1", "2", "3", "4", "5", 
-//            "6", "7", "8", "9", "10", 
-//            "11", "12", "13", "14", "15", 
-//            "16", "17", "18", "19", "20", 
-//            "21", "22", "23", "24", "25", 
-//            "26", "27", "28", "29", "30", 
-//            "31" };
-//       
-//       String[] month
-//        = { "Jan", "feb", "Mar", "Apr", 
-//            "May", "Jun", "July", "Aug", 
-//            "Sup", "Oct", "Nov", "Dec" };
-//       
-//       String[] year
-//               = {"2020","2021"};
-        
         
         day = new JComboBox(days);
         day.addActionListener(clientMakeBookingController);
@@ -437,21 +412,30 @@ public class ClientAndHairdresserMakeBookingView extends JFrame{
      public String getDaymini(){
          return (String) day.getSelectedItem();
      }
-     public void setminiTextArea1(String message1){
+     
+     public String getMonthmini(){
+         return (String) month.getSelectedItem();
+     }
+      
+     public String getYearmini(){
+         return (String) year.getSelectedItem();
+     }
+     
+     public void setTextArea(String message1){
           miniTextArea.setText(message1);
      }
      
 //     public void actionPerformed(ActionEvent e) 
 //    { 
 //        if (e.getSource() == confirmDate) {  
-//                String data2 
+//                String date 
 //                    = "Date : "
 //                      + (String)day.getSelectedItem() 
 //                      + "/" + (String)month.getSelectedItem() 
 //                      + "/" + (String)year.getSelectedItem() 
 //                      + "\n"; 
 //
-//                miniTextArea.setText( data2 ); 
+//                miniTextArea.setText( date ); 
 //                miniTextArea.setEditable(false); 
 //
 //            } 
