@@ -172,7 +172,7 @@ public class LocationView extends JFrame implements ActionListener{
             
             JLabel photo1 = new JLabel();
             photo1.setIcon(new ImageIcon("image/mapLocationOne.png"));
-            photo1.setSize(new Dimension(50,50));
+            //photo1.setSize(new Dimension(50,50));
             leftLocation.add(photo1);
             
             JLabel mapOne = new JLabel("  Brighton Rd, Foxrock, Dublin 18  ");
@@ -188,7 +188,7 @@ public class LocationView extends JFrame implements ActionListener{
             
             JLabel photo2 = new JLabel();
             photo2.setIcon(new ImageIcon("image/mapLocationTwo.png"));
-            photo2.setSize(new Dimension(50,50));
+            //photo2.setSize(new Dimension(50,50));
             rightLocation.add(photo2);
             
             JLabel mapTwo = new JLabel(" Serpentine Ave, Ballsbridge, Dublin 4");

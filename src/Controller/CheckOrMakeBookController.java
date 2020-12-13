@@ -5,10 +5,11 @@
  */
 package controller;
 
+//import related pages, to get their functionalities 
 import view.CheckOrMakeBookView;
 import controller.ClientAndHairdresserMakeBookingController;
 import Controller.ClientCheckBookingsController;
-
+//import related functions, to get their functionalities 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;

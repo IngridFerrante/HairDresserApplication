@@ -155,7 +155,7 @@ public class HairDresserApplicationView extends JFrame {
     //put it on the header
     header.add(rightHeader);
     
-    //ends header
+    //ends header********************************************
     
     // Main Area setup from here
     JPanel mainArea = new JPanel(); // creating the main panel
