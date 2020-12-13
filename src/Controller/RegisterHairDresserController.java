@@ -22,8 +22,8 @@ public class RegisterHairDresserController extends JFrame implements ActionListe
   
     RegisterHairDresserView registerHairDresserView;
     RegisterHairDresserModel registerHairDresserModel;
-    // constructor, to initialize the components 
-    // with default values 
+
+    
     public RegisterHairDresserController() 
     { 
         this.registerHairDresserView = new RegisterHairDresserView(this);
@@ -37,7 +37,7 @@ public class RegisterHairDresserController extends JFrame implements ActionListe
     @Override
     public void actionPerformed(ActionEvent e) 
     {
-     //   to identify different text field
+     //   getting aCTIONS command  to the buttons
         if(e.getActionCommand().equals("login")){  
             new LoginController();
         }
@@ -79,7 +79,7 @@ public class RegisterHairDresserController extends JFrame implements ActionListe
     }
 } 
   
-// Driver Code - main method to unable seeing the page individually
+//  // method to test the page individuality
 class Registration { 
   
     public static void main(String[] args) throws Exception 

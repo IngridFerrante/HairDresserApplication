@@ -26,6 +26,7 @@ public class LocationController extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        //getting actionCommands to the buttons
         if(e.getActionCommand().equals("loginHairdresser")){  
             new controller.LoginController();
         

@@ -35,6 +35,7 @@ public class ReviewPageController extends JFrame implements ActionListener{
     
     @Override
     public void actionPerformed(ActionEvent e) {
+        // getting action commands to the button
         if(e.getActionCommand().equals("Submit")){  
             String CustomerName = reviewPageView.getCustomerName();
             String review = reviewPageView.getReview();

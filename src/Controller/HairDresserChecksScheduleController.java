@@ -25,8 +25,9 @@ public class HairDresserChecksScheduleController extends JFrame implements Actio
     
     @Override
     public void actionPerformed(ActionEvent e) {
+        // action commands to buttons
         if(e.getActionCommand().equals("Back")){  
-            new controller.CheckOrMakeBookController(); // <CHANGE TO YOUR BOOKS HAIRDRESSER
+            new controller.CheckOrMakeBookController(); 
         
     }else if(e.getActionCommand().equals("Logout")){  
             new Controller.HairDresserApplicationController();
@@ -34,7 +35,7 @@ public class HairDresserChecksScheduleController extends JFrame implements Actio
     }
     
 }
-
+// method to test the page individuality
 class Test3 {
     public static void main(String[] args) throws Exception {
        HairDresserChecksScheduleController check = new HairDresserChecksScheduleController();

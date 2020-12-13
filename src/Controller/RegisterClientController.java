@@ -24,8 +24,8 @@ public class RegisterClientController extends JFrame implements ActionListener {
   
     RegisterClientView registerClientView;
     RegisterClientModel registerClientModel;
-    // constructor, to initialize the components 
-    // with default values 
+   
+    
     public RegisterClientController() 
     { 
         this.registerClientView = new RegisterClientView(this);
@@ -77,7 +77,7 @@ public class RegisterClientController extends JFrame implements ActionListener {
 } 
 
   
-// Driver Code - main method to unable seeing the page individually
+//// method to test the page individuality
 class RegistrationClient { 
   
     public static void main(String[] args) throws Exception 

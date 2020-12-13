@@ -17,8 +17,8 @@ import View.ClientCheckBookingsView;
 public class ClientCheckBookingsController extends JFrame implements ActionListener {
 
     ClientCheckBookingsView clientCheckBookingsView;
-    // constructor, to initialize the components 
-    // with default values 
+    
+    
     public ClientCheckBookingsController(){
         this.clientCheckBookingsView = new ClientCheckBookingsView(this);
     }
@@ -26,7 +26,7 @@ public class ClientCheckBookingsController extends JFrame implements ActionListe
     
     @Override
     public void actionPerformed(ActionEvent e) {
-        
+        //commands to buttons
         if(e.getActionCommand().equals("Your Booking")){  
             new controller.ClientAndHairdresserMakeBookingController();
         

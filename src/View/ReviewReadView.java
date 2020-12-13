@@ -29,7 +29,7 @@ import javax.swing.UIManager;
  * @author 35389
  */
 public class ReviewReadView extends JFrame implements ActionListener{
-
+/// Components of the ReviewReadView form 
           JComboBox days = null;
           JComboBox month = null;
           JComboBox year = null;
@@ -67,14 +67,15 @@ public class ReviewReadView extends JFrame implements ActionListener{
     leftLayout.setAlignment(FlowLayout.LEFT);
     leftHeader.setBackground(Color.BLACK);
     
-
+    // Button to the header
     JButton reviewButton = new JButton("   Review    ");
     reviewButton.addActionListener(reviewReadController);
     reviewButton.setBackground(Color.gray);
     reviewButton.setForeground(Color.PINK);
     
+    //add to the left side of the header
     leftHeader.add(reviewButton);
-    
+    // Button to the header
     JButton locationButton = new JButton("    Location    ");
     locationButton.addActionListener(reviewReadController); // verify that later
     locationButton.setBackground(Color.gray);
@@ -163,6 +164,7 @@ public class ReviewReadView extends JFrame implements ActionListener{
             this.add(mainReview, BorderLayout.CENTER);
             mainReview.setLayout(null);
             
+            // title
             JLabel reviewTitle = new JLabel("Reviews:"); 
             reviewTitle.setFont(new Font("Arial", Font.PLAIN, 25)); 
             reviewTitle.setSize(300, 30); 
@@ -174,7 +176,7 @@ public class ReviewReadView extends JFrame implements ActionListener{
             result.setSize(500, 20); 
             result.setLocation(10, 360); 
             mainReview.add(result);
-            
+            //add button to add a review
             JButton addReview = new JButton("Add a Review"); 
             addReview.setBackground(Color.gray);
             addReview.setForeground(Color.PINK);

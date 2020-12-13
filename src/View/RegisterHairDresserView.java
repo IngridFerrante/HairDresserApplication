@@ -82,6 +82,7 @@ public class RegisterHairDresserView extends JFrame{
     leftLayout.setAlignment(FlowLayout.LEFT);
     leftHeader.setBackground(Color.BLACK);
     
+    //add button
     JButton reviewButton = new JButton("   Review    ");
     reviewButton.addActionListener(registerController);
     reviewButton.setBackground(Color.gray);
@@ -89,14 +90,17 @@ public class RegisterHairDresserView extends JFrame{
     
     leftHeader.add(reviewButton);
     
+    //add button
     JButton locationButton = new JButton("    Location    ");
     locationButton.addActionListener(registerController); // verify that later
     locationButton.setBackground(Color.gray);
     locationButton.setForeground(Color.PINK);
     
+    //add leftside on header
     
     leftHeader.add(locationButton);
     
+    //add buton
     JButton homePage = new JButton("   Home    ");
     homePage.setBackground(Color.gray);
     homePage.setForeground(Color.PINK);
@@ -142,7 +146,7 @@ public class RegisterHairDresserView extends JFrame{
     register.setBackground(Color.GRAY);
     register.setForeground(Color.pink);
     
-    
+   
     login.setActionCommand("login");
     register.setActionCommand("register");
     
@@ -174,12 +178,14 @@ public class RegisterHairDresserView extends JFrame{
         title.setLocation(220, 30); 
         rp.add(title); 
         
+        //title
         location = new JLabel("Location"); 
         location.setFont(new Font("Arial", Font.PLAIN, 18)); 
         location.setSize(100, 20); 
         location.setLocation(100, 100); 
         rp.add(location); 
         
+        //dropdown list in the form
         String[] menuLocationBook = { "Salon Location","FoxRock", "Ballsbridge" };
         menuLocation = new JComboBox(menuLocationBook);
         menuLocation.setSelectedIndex(0);
@@ -189,27 +195,8 @@ public class RegisterHairDresserView extends JFrame{
         rp.add(menuLocation);
         
         
-//        location1 = new JRadioButton("FoxRock"); 
-//        location1.setFont(new Font("Arial", Font.PLAIN, 15)); 
-//        location1.setSelected(true); 
-//        location1.setSize(90, 20); 
-//        location1.setLocation(250, 100); 
-//        location1.setBackground(Color.pink);
-//        rp.add(location1); 
-//  
-//        location2 = new JRadioButton("Ballsbridge"); 
-//        location2.setFont(new Font("Arial", Font.PLAIN, 15)); 
-//        location2.setSelected(false); 
-//        location2.setSize(100, 20); 
-//        location2.setLocation(340, 100); 
-//        location2.setBackground(Color.pink);
-//        rp.add(location2); 
-//  
-//        //buttonGroup permit just one selection
-//        loc = new ButtonGroup(); 
-//        loc.add(location1); 
-//        loc.add(location2); 
-        
+
+        //titles and textfields to put the requirement below:
         name = new JLabel("First Name"); 
         name.setFont(new Font("Arial", Font.PLAIN, 18)); 
         name.setSize(100, 20); 
@@ -370,6 +357,8 @@ public class RegisterHairDresserView extends JFrame{
         this.validate();
         this.repaint();
     }
+     
+     //getters
     public String getLocationSalon(){
         return (String) menuLocation.getSelectedItem();
     }  

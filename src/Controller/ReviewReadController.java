@@ -34,7 +34,7 @@ public ReviewReadController()
 
     @Override
     public void actionPerformed(ActionEvent e){
-       
+        // getting action commands to the button
         if(e.getActionCommand().equals("loginHairdresser")){  
             new controller.LoginController();
         

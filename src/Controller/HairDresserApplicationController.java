@@ -26,8 +26,9 @@ public class HairDresserApplicationController extends JFrame implements ActionLi
     }
     
 @Override
+//cp,,amds tp buttons
     public void actionPerformed(ActionEvent e) {
-        //   to identify different text field
+       // commanding buttons
         if(e.getActionCommand().equals("loginHairdresser")){  
             new controller.LoginController();
         

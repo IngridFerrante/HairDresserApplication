@@ -25,8 +25,7 @@ public class LoginClientController extends JFrame implements ActionListener {
     LoginClientModel loginCModel;
  //   Register register;
     
-    // constructor, to initialize the components 
-    // with default values 
+    
     public LoginClientController(){
         this.loginCView = new LoginClientView(this);
         this.loginCModel = new LoginClientModel();
@@ -56,7 +55,7 @@ public class LoginClientController extends JFrame implements ActionListener {
     
     }
 }
-//// Driver Code -- methos to acces the page
+//// // method to test the page individuality
 class LoginUser { 
   
     public static void main(String[] args) throws Exception 
