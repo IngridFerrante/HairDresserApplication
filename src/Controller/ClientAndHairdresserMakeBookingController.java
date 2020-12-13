@@ -5,6 +5,7 @@
  */
 package controller;
 
+// //import related pages, to get their functionalities
 import hairdresserapplication.HairDresserApplication;
 import model.BookAppointment;
 import model.ClientAndHairdresserMakeBookingModel;
@@ -17,7 +18,7 @@ import javax.swing.JFrame;
 /**
  *
  * @author Kelly
- */
+ */                                                     
 public class ClientAndHairdresserMakeBookingController extends JFrame implements ActionListener { 
   
     ClientAndHairdresserMakeBookingView clientandhairdresserMakeBookingView;
@@ -26,21 +27,19 @@ public class ClientAndHairdresserMakeBookingController extends JFrame implements
     // with default values 
     public ClientAndHairdresserMakeBookingController() 
     { 
+            
         this.clientandhairdresserMakeBookingView = new ClientAndHairdresserMakeBookingView (this);
         this.clientandhairdresserMakeBookingModel = new ClientAndHairdresserMakeBookingModel();
     } 
   
-//    // method actionPerformed() 
-//    // to get the action performed 
-//    // by the user and act accordingly 
     @Override
     public void actionPerformed(ActionEvent e) 
     {
-     //   to identify different text field
+   
         if(e.getActionCommand().equals("logout")){  
             new HairDresserApplication();
         
-        }
+        } // getting the information to send to the database that pass through the model
         else if(e.getActionCommand().equals("Make a Book")){
             String nearbylocation = clientandhairdresserMakeBookingView.getNearByLocation();
             String service = clientandhairdresserMakeBookingView.getlService();
@@ -62,9 +61,11 @@ public class ClientAndHairdresserMakeBookingController extends JFrame implements
                 clientandhairdresserMakeBookingView.setResult("Booking for" + clientFirstname + " was successfully created.");
                 
             }  
+            //control the button back to go back the page
         }else if(e.getActionCommand().equals("Back")){  
             new controller.CheckOrMakeBookController();
         
+            //control the button logout to direct to the mainPage 
     }  else if(e.getActionCommand().equals("Logout")){  
             new Controller.HairDresserApplicationController();
     }
