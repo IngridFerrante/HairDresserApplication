@@ -49,6 +49,7 @@ public class LoginController extends JFrame implements ActionListener {
         if(result){ // if result true give the message and we need to put to log into the page the person from that
             resultMessage = "welcome in";
             JOptionPane.showMessageDialog(loginView, resultMessage);
+            new CheckOrMakeBookController();
         }else {
           
             JOptionPane.showMessageDialog(loginView, resultMessage);
