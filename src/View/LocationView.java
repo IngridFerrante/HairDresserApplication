@@ -163,23 +163,38 @@ public class LocationView extends JFrame implements ActionListener{
             GridLayout LocationLayout = new GridLayout(2,2); 
             mainLocation.setLayout(LocationLayout);
             
+            
             JPanel leftLocation = new JPanel(); 
             FlowLayout locationLayout = new FlowLayout();
             leftLocation.setLayout(locationLayout);
             locationLayout.setAlignment(FlowLayout.LEFT);
-            leftLocation.setBackground(Color.BLACK);
+            leftLocation.setBackground(Color.PINK);
             
             JLabel photo1 = new JLabel();
             photo1.setIcon(new ImageIcon("image/mapLocationOne.png"));
             photo1.setSize(new Dimension(50,50));
             leftLocation.add(photo1);
             
+            JLabel mapOne = new JLabel("  Brighton Rd, Foxrock, Dublin 18  ");
+            
+            
+            leftLocation.add(mapOne);
+            
+            JPanel rightLocation = new JPanel(); 
+            FlowLayout locationLayout2 = new FlowLayout();
+            rightLocation.setLayout(locationLayout2);
+            locationLayout2.setAlignment(FlowLayout.RIGHT);
+            rightLocation.setBackground(Color.PINK);
+            
             JLabel photo2 = new JLabel();
-            photo2.setIcon(new ImageIcon("image/mapLocationOne.png"));
+            photo2.setIcon(new ImageIcon("image/mapLocationTwo.png"));
             photo2.setSize(new Dimension(50,50));
-            leftLocation.add(photo2);
+            rightLocation.add(photo2);
             
+            JLabel mapTwo = new JLabel(" Serpentine Ave, Ballsbridge, Dublin 4");
+            rightLocation.add(mapTwo);
             
+            mainLocation.add(rightLocation);
             mainLocation.add(leftLocation);
             
             // FOOTER
